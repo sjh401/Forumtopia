@@ -8,11 +8,13 @@ url
 
 ## Wireframes
 
-![image](https://user-images.githubusercontent.com/85095722/127693845-8df04e65-3a49-4f7c-8dde-3f72908a0dc7.png)
+![image](https://i.imgur.com/06OqHXt.png)
 
 
 
 ## Component Hierarchy
+
+![image](https://i.imgur.com/MfbA3BK.png)
 
 
 ## API and Data Sample
