@@ -32,6 +32,10 @@ url
 
 - extra fun things
 
+## Team Expectations
+
+https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/edit?usp=sharing
+
 ## Project Schedule
 
 |  Day | Deliverable | Status
