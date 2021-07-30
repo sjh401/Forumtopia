@@ -19,7 +19,15 @@ url
 
 ## API and Data Sample
 ```
-
+const PostSchema = new Schema (
+{ 
+  title: { type: String, required: true },
+  username: { type: String, required: true },
+  body: { type: String, required: true },
+  imgUrl: { type: String, required: false }
+},
+{timestamps: true},
+)
  ```
     
 ### MVP/PostMVP
