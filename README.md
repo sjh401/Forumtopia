@@ -39,6 +39,7 @@ const PostSchema = new Schema (
 - CRUD Posts
 - CRUD Threads
 - Media Query
+- Heroku & Netlify Deploy
 
 
 #### PostMVP
@@ -69,7 +70,7 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-|  Boilerplate Setup & Installs | H | 2hrs | | |
+| Boilerplate Setup & Installs | H | 2hrs | | |
 | Client & Services Set-Up | H | 2hrs| | |
 | Views Set-Up | H | 3hrs | | |
 | Components Set-Up | H | 2hrs | | |
@@ -80,13 +81,16 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 | React App Clean | H | 2hrs | | |
 | User Tests | H | 3hrs | | |
 | CRUD Posts | H | 3hrs | | |
+| CSS & Styling | H | 2hrs | | |
 | Media-Query | H | 2hrs | | |
 | User Profile Display | M | 2hrs | | |
 | DM Feature | M | 3hrs | | |
 | User Authentication | H | 3hrs | | |
+| Deploying to Heroku | H | 2hrs | | |
+| Netlify Deploy | H | 2hrs | | |
 | Clickalbe Walk-Through | H | 2hrs | | |
 | Presentation Prep | H | 2hrs | | |
-| Total | | 40hrs | | |
+| Total | | 46hrs | | |
 
 ## SWOT Analysis
 
