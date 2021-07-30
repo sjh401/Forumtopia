@@ -8,6 +8,9 @@ url
 
 ## Wireframes
 
+![image](https://user-images.githubusercontent.com/85095722/127693845-8df04e65-3a49-4f7c-8dde-3f72908a0dc7.png)
+
+
 
 
 ## Component Hierarchy
@@ -52,12 +55,6 @@ url
 ## SWOT Analysis
 
 ### Strengths:
-
-
 ### Weaknesses:
-
-
 ### Opportunities:
-
 ### Threats:
-
