@@ -45,15 +45,15 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 30| Prompt / Wireframes / Priority Matrix / Timeframes | Incomcplete
+|July 30| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
 |August 1| Meet-up Before Approval | Incomplete
 |August 2| Project Approval | Incomcplete
-|August 2| Core Application Structure (HTML, Tim, etc.) | Incomcplete
-|August 3| Pseudocode / actual code | Incomcplete
-|August 4| Initial Clickable Model | Incomcplete
-|August 5| MVP  | Incomcplete
-|August 6-9| Post MVP | Incomcplete
-|August 10| Presentations | Incomcplete
+|August 2| Core Application Structure (HTML, Tim, etc.) | Incomplete
+|August 3| Pseudocode / actual code | Incomplete
+|August 4| Initial Clickable Model | Incomplete
+|August 5| MVP  | Incomplete
+|August 6-9| Post MVP | Incomplete
+|August 10| Presentations | Incomplete
 
 ## Timeframes
 
