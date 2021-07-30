@@ -62,7 +62,7 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 |August 2| Core Application Structure (HTML, Tim, etc.) | Incomplete
 |August 3| Pseudocode / actual code | Incomplete
 |August 4| Initial Clickable Model | Incomplete
-|August 5| MVP  | Incomplete
+|August 5| MVP | Incomplete
 |August 6-9| Post MVP | Incomplete
 |August 10| Presentations | Incomplete
 
@@ -71,18 +71,18 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Boilerplate Setup & Installs | H | 2hrs | | |
-| Client & Services Set-Up | H | 2hrs| | |
-| Views Set-Up | H | 3hrs | | |
-| Components Set-Up | H | 2hrs | | |
+| Client & Services Setup | H | 2hrs| | |
+| Views Arrangement | H | 3hrs | | |
+| Components Build | H | 2hrs | | |
 | Front End Routing | H | 3hrs | | |
-| DB Set-Up | H | 2hrs | | |
-| Models| H | 1hr | | |
+| Models Construction | H | 1hr | | |
+| DB Initialization | H | 2hrs | | |
 | Routes & Controllers | H | 3hrs | | |
-| React App Clean | H | 2hrs | | |
 | User Tests | H | 3hrs | | |
 | CRUD Posts | H | 3hrs | | |
 | CSS & Styling | H | 2hrs | | |
 | Media-Query | H | 2hrs | | |
+| React App Clean | M | 2hrs | | |
 | User Profile Display | M | 2hrs | | |
 | DM Feature | M | 3hrs | | |
 | User Authentication | H | 3hrs | | |
