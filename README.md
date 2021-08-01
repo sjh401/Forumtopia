@@ -95,10 +95,10 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 ## SWOT Analysis
 
 ### Strengths:
-Ashley
+We have a good balance of skills in the team.
 ### Weaknesses:
-In Ashley we trust
+Working in a group for the first time will be a challenge but communication will be key.
 ### Opportunities:
-Learn from Ashley
+It will be a good experience with co-coding and working with multiple branchs, etc in Github.
 ### Threats:
-Ashley leaves to do a project by herself
+If communication is poor, the team will suffer.
