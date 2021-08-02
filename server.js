@@ -15,7 +15,7 @@ app.use("/api", routes)
 
 app.get("/", (req, res) => res.send("API DOCUMENTATION"))
 
-debug.once("connectedd", () => {
+db.on("connected", () => {
   console.log("Connected to MongoDB")
   app.listen(PORT, () => console.log(`Connected on port: ${PORT}`))
 })

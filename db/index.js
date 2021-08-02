@@ -9,20 +9,21 @@ mongoose.set("useCreateIndex", true)
 
 mongoose.set("returnOriginal", true)
 
-mongoose.connect(MONGODB_URI, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-})
-  .catch((error) => 
-    console.error("Error connecting to MongoDB: ", error.message)
-  )
+mongoose
+  .connect(MONGODB_URI,
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true
+    })
+    .catch(e => {
+        console.error('Connection error:', e.message)
+    })
 
-mongoose.connection.on("disconnected", () =>
-    console.log("Disconnected from MongoDB")
-  )
 
-mongoose.connection.on("error", (error) =>
-  console.error(`MongoDB connection error: ${error.message}`)
-)
+const db = mongoose.connection
 
-export default mongoose.connection;
+db.on("error", (e) => console.error(`MongoDB connection error: ${e.message}`));
+db.on("connected", () => console.log("MongoDB connected!"));
+db.on("disconnected", () => console.log("MongoDB disconnected."));
+
+export default db
