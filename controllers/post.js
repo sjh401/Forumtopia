@@ -3,7 +3,7 @@ import Post from "../models/post.js"
 export const createPost = async (req, res) => {
   try {
     const post = new Post(req.body)
-    post.userId = req.userId
+    post.userId = req.user
     await post.save()
     res.status(201).json(post)
   } catch (e) {
@@ -47,7 +47,7 @@ export const updatePost = async (req, res) => {
 export const deletePost = async (req, res) => {
   try {
     const { id } = req.params
-    const posy = await Post.findByIdAndDelete(id)
+    const post = await Post.findByIdAndDelete(id)
     res.send(post)
 
   } catch (e) {
