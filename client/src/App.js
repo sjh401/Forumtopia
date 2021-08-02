@@ -1,15 +1,25 @@
+
 //import logo from './logo.svg';
-import './App.css';
+
 import Navbar from "./Navbar"
 import "./Navbar.css"
 import {Route} from "react-router-dom"
 import Background from  "./Background"
 import MainNav from "./MainNav"
 
+import './App.css';
+import Home from './screens/home/Home';
+import CreatePost from './screens/create/Create';
+import SignIn from './screens/sign-in/SignIn';
+import SignUp from './screens/sign-up/SignUp';
+import Edit from './screens/edit/Edit';
+
+
 
 function App() {
   return (
     <div className="App">
+
       <Navbar/>
       <MainNav/>
        <Background/>
@@ -41,6 +51,24 @@ Elon Musk's SpaceX launches 143 satellites on single rocket, sets world record.<
             <h3>EA play show Dead Space. Could this be EA's big comeback</h3>
           </div>
           </div>
+
+      {/* <Route to="/">
+        <Home />
+      </Route>
+      <Route to="/create-post">
+        <CreatePost />
+      </Route>
+      <Route to="/sign-up">
+        <SignUp />
+      </Route>
+      <Route to="/sign-in">
+        <SignIn />
+      </Route>
+      <Route to="/edit-post">
+        <Edit />
+      </Route> */}
+
+
     </div>
   );
 }
