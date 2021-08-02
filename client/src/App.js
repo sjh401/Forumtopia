@@ -7,6 +7,7 @@ import SignUp from './screens/sign-up/SignUp';
 import Edit from './screens/edit/Edit';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
       <Route to="/edit-post">
         <Edit />
       </Route>
+
     </div>
   );
 }
