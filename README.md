@@ -4,13 +4,11 @@ url
 ```
 
 ## Project Description
-
+This will be a social media forum where users can post and share information with other users, while interacting with eachothers posts and topics.
 
 ## Wireframes
 
 ![image](https://i.imgur.com/06OqHXt.png)
-
-
 
 ## Component Hierarchy
 
