@@ -1,18 +1,20 @@
 import Thread from "../models/thread.js"
+// import populate from "../models/post.js";
 
-export const createThread = async (res, req) => {
-  try {const thread = new Thread(req.body)
-  thread.userId = req.userId
-  await thread.save()
-  res.status(201).json(thread)
-} catch (e) {
-  res.status(500).json({error: e.message})
-}
+export const createThread = async (req, res) => {
+  try {
+    const thread = new Thread(req.body)
+    thread.userId = req.user
+    await thread.save()
+    res.status(201).json(thread)
+  } catch (e) {
+    res.status(500).json({error: e.message})
+  }
 }
 
 export const getThreads = async (req, res) => {
   try {
-    const thread = await Thread.find({})
+    const thread = await Thread.find().populate('posts')
     res.send(thread)
   } catch (e) {
     res.status(404).json({error: e.message})
