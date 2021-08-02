@@ -60,6 +60,7 @@ const PostSchema = new Schema (
 - Login and Log Out
 - CRUD Posts
 - CRUD Threads
+- User Authentication
 - Media Query
 - Heroku & Netlify Deploy
 
@@ -68,7 +69,8 @@ const PostSchema = new Schema (
 
 - User Profile
 - Direct Message Feature
-- User Authentication
+- User Authorization
+
 
 ## Team Expectations
 
