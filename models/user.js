@@ -6,8 +6,8 @@ const UserSchema = new Schema(
     username: { type: String, required: true, unique: true },
     email: { type: String, required: true , trim: true, unique: true },
     passwordDigest: { type: String, required: true, select: false },
-    posts: [{ type: Schema.Types.ObjectID, ref: "Post", required: true }],
-    threads: [{ type: Schema.Types.ObjectID, ref: "Thread", required: true }]
+    posts: { type: Schema.Types.ObjectId, ref: "Post", required: true },
+    // threads: [{ type: Schema.Types.ObjectId, ref: "Thread", required: true }]
   },
   {timestamps: true}
 )
