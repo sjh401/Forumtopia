@@ -1,4 +1,4 @@
-import mongoose from "mongoos"
+import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const ThreadSchema = new Schema(
