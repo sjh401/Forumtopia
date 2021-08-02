@@ -1,5 +1,13 @@
+
+//import logo from './logo.svg';
+
+import Navbar from "./Navbar"
+import "./Navbar.css"
+import {Route} from "react-router-dom"
+import Background from  "./Background"
+import MainNav from "./MainNav"
+
 import './App.css';
-import { Route } from 'react-router-dom';
 import Home from './screens/home/Home';
 import CreatePost from './screens/create/Create';
 import SignIn from './screens/sign-in/SignIn';
@@ -11,7 +19,40 @@ import Edit from './screens/edit/Edit';
 function App() {
   return (
     <div className="App">
-      <Route to="/">
+
+      <Navbar/>
+      <MainNav/>
+       <Background/>
+      <Route exact path = "/">
+        {/* <Home/> */}
+      </Route>
+      <Route path="/Signup">
+
+      </Route>
+      <Route path="/Signin">
+
+      </Route>
+      <h1>Trending Now</h1>
+<div className = "together">
+            <div className = "first">
+            <div className = "move">
+            <h3>
+Elon Musk's SpaceX launches 143 satellites on single rocket, sets world record.</h3>
+            </div>
+            
+            </div>
+            <div className = "second">
+           <h3>Happy Spider-Man day</h3>
+          </div>
+          <div className = "third">
+            <h3>Activision hit with another lawsuit as female employees are in a frenzy.</h3>
+          </div>
+          <div className = "fourth">
+            <h3>EA play show Dead Space. Could this be EA's big comeback</h3>
+          </div>
+          </div>
+
+      {/* <Route to="/">
         <Home />
       </Route>
       <Route to="/create-post">
@@ -25,10 +66,13 @@ function App() {
       </Route>
       <Route to="/edit-post">
         <Edit />
-      </Route>
+      </Route> */}
+
 
     </div>
   );
 }
 
 export default App;
+
+//
