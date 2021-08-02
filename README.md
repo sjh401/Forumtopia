@@ -19,9 +19,11 @@ This will be a social media forum where users can post and share information wit
 const PostSchema = new Schema (
 { 
   title: { type: String, required: true },
-  username: { type: String, required: true },
   body: { type: String, required: true },
-  imgUrl: { type: String, required: false }
+  imgUrl: { type: String, required: false },
+  userID: { type: Schema.Types.ObjectID, ref: "User", required: true },
+  threadID: { type: Schema.Types.ObjectID, ref: "Thread", required: true }
+    
 },
 {timestamps: true},
 )
