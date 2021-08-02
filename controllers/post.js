@@ -13,7 +13,7 @@ export const createPost = async (req, res) => {
 
 export const getPosts = async (req, res) => {
   try {
-    const posts = await Post.find({})
+    const posts = await Post.find().populate('threads')
     res.send(posts)
   } catch (e) {
     res.status(404).json({error: e.message})

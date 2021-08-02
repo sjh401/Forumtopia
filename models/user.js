@@ -7,7 +7,7 @@ const UserSchema = new Schema(
     email: { type: String, required: true , trim: true, unique: true },
     passwordDigest: { type: String, required: true, select: false },
     posts: { type: Schema.Types.ObjectId, ref: "Post", required: true },
-    // threads: [{ type: Schema.Types.ObjectId, ref: "Thread", required: true }]
+    threads: [{ type: Schema.Types.ObjectId, ref: "Thread", required: true }]
   },
   {timestamps: true}
 )
