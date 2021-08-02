@@ -12,3 +12,5 @@ router.use("/", postRoutes)
 router.use("/", threadRoutes)
 
 export default router
+
+// test
