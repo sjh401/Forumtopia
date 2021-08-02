@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 //import logo from './logo.svg';
 
@@ -6,6 +7,13 @@ import "./Navbar.css"
 import {Route} from "react-router-dom"
 import Background from  "./Background"
 import MainNav from "./MainNav"
+=======
+import Navbar from "./components/nav/NavBar"
+import "./components/nav/NavBar.css"
+import {Route} from "react-router-dom"
+import Background from  "./components/background/Background"
+
+>>>>>>> stephen-dev
 
 import './App.css';
 import Home from './screens/home/Home';
@@ -13,6 +21,7 @@ import CreatePost from './screens/create/Create';
 import SignIn from './screens/sign-in/SignIn';
 import SignUp from './screens/sign-up/SignUp';
 import Edit from './screens/edit/Edit';
+import MainNavBar from "./components/nav/MainNavbar"
 
 
 
@@ -22,6 +31,7 @@ function App() {
     <div className="App">
 
       <Navbar/>
+<<<<<<< HEAD
       <MainNav/>
        <Background/>
       <Route exact path = "/">
@@ -58,8 +68,14 @@ Elon Musk's SpaceX launches 143 satellites on single rocket, sets world record.<
       </Route>
       <Route to="/create-post">
         <CreatePost />
+=======
+      <MainNavBar/>
+      <Background/>
+      <Route exact path = "/">
+        <Home/>
+>>>>>>> stephen-dev
       </Route>
-      <Route to="/sign-up">
+      {/* <Route to="/sign-up">
         <SignUp />
       </Route>
       <Route to="/sign-in">
@@ -67,9 +83,16 @@ Elon Musk's SpaceX launches 143 satellites on single rocket, sets world record.<
       </Route>
       <Route to="/edit-post">
         <Edit />
+<<<<<<< HEAD
       </Route> */}
 
 
+=======
+      </Route>
+      <Route to="/create-post">
+        <CreatePost />
+      </Route> */}
+>>>>>>> stephen-dev
     </div>
   );
 }
