@@ -7,7 +7,7 @@ export const createPost = async (req, res) => {
     await post.save()
     res.status(201).json(post)
   } catch (e) {
-    res.status(500).json({ error: e.message })
+    res.status(500).json({error: e.message})
   }
 }
 
@@ -30,7 +30,7 @@ export const getPost = async (req, res) => {
       res.status(404).json({error: "Post not found"})
     }
   } catch (e) {
-    res.status(404).json({erroe: e.message})
+    res.status(404).json({error: e.message})
   }
 }
 
@@ -40,7 +40,7 @@ export const updatePost = async (req, res) => {
     const post = await Post.findByIdAndUpdate(id)
     res.send(post)
   } catch (e) {
-    res.status(424).json({erroe: e.message})
+    res.status(424).json({error: e.message})
   }
 }
 
