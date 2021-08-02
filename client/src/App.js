@@ -1,23 +1,30 @@
+import Navbar from "./components/nav/NavBar"
+import "./components/nav/NavBar.css"
+import {Route} from "react-router-dom"
+import Background from  "./components/background/Background"
+
+
 import './App.css';
-import { Route } from 'react-router-dom';
 import Home from './screens/home/Home';
 import CreatePost from './screens/create/Create';
 import SignIn from './screens/sign-in/SignIn';
 import SignUp from './screens/sign-up/SignUp';
 import Edit from './screens/edit/Edit';
+import MainNavBar from "./components/nav/MainNavbar"
 
 
 
 function App() {
   return (
     <div className="App">
-      <Route to="/">
-        <Home />
+
+      <Navbar/>
+      <MainNavBar/>
+      <Background/>
+      <Route exact path = "/">
+        <Home/>
       </Route>
-      <Route to="/create-post">
-        <CreatePost />
-      </Route>
-      <Route to="/sign-up">
+      {/* <Route to="/sign-up">
         <SignUp />
       </Route>
       <Route to="/sign-in">
@@ -26,7 +33,9 @@ function App() {
       <Route to="/edit-post">
         <Edit />
       </Route>
-
+      <Route to="/create-post">
+        <CreatePost />
+      </Route> */}
     </div>
   );
 }
