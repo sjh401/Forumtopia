@@ -1,4 +1,4 @@
-## Forumtopia
+# Forumtopia
 ```
 url
 ```
@@ -16,9 +16,32 @@ This will be a social media forum where users can post and share information wit
 
 ## API and Data Sample
 ```
-const PostSchema = new Schema (
+const UserSchema = new Schema (
+{ 
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true , trim: true, unique: true },
+  passwordDigest: { type: String, required: true, select: false },
+  posts: { type: Schema.Types.ObjectID, ref: "Post", required: true },
+  threads: { type: Schema.Types.ObjectID, ref: "Thread", required: true }
+    
+},
+{timestamps: true},
+)
+
+const ThreadSchema = new Schema (
 { 
   title: { type: String, required: true },
+  body: { type: String, required: true },
+  imgUrl: { type: String, required: false },
+  userID: { type: Schema.Types.ObjectID, ref: "User", required: true },
+  posts: { type: Schema.Types.ObjectID, ref: "Post", required: true }
+    
+},
+{timestamps: true},
+)
+
+const PostSchema = new Schema (
+{ 
   body: { type: String, required: true },
   imgUrl: { type: String, required: false },
   userID: { type: Schema.Types.ObjectID, ref: "User", required: true },
@@ -79,8 +102,15 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 | Routes & Controllers | H | 3hrs | | |
 | User Tests | H | 3hrs | | |
 | CRUD Posts | H | 3hrs | | |
-| CSS & Styling | H | 2hrs | | |
-| Media-Query | H | 2hrs | | |
+| CSS Homepage | H | 2hrs | | |
+| CSS Buttons & Links | H | 1hr | | |
+| CSS Threads | H | 2hrs | | |
+| CSS Posts | H | 2hrs | | |
+| CSS User Profile | H | 2hrs | | |
+| Media-Query Homepage | H | 2hrs | | |
+| Media-Query Threads | H | 2hrs | | |
+| Media-Query Posts | H | 2hrs | | |
+| Media-Query User Profile | H | 2hrs | | |
 | React App Clean | M | 2hrs | | |
 | User Profile Display | M | 2hrs | | |
 | DM Feature | M | 3hrs | | |
@@ -89,7 +119,7 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 | Netlify Deploy | H | 2hrs | | |
 | Clickalbe Walk-Through | H | 2hrs | | |
 | Presentation Prep | H | 2hrs | | |
-| Total | | 46hrs | | |
+| Total | | 61hrs | | |
 
 ## SWOT Analysis
 
