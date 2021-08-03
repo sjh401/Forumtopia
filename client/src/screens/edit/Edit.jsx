@@ -7,7 +7,7 @@ export default function Edit(props) {
   const history = useHistory();
 
   const handleChange = (e) => {
-    const { id, value } = e.targer;
+    const { id, value } = e.target;
     setInput((prevInput) => ({
       ...prevInput,
       [id]: value,
