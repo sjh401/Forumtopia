@@ -24,16 +24,16 @@ function App() {
       <Route exact path = "/">
         <Home/>
       </Route>
-      {/* <Route to="/sign-up">
+      <Route path="/sign-up">
         <SignUp />
       </Route>
-      <Route to="/sign-in">
+      <Route path="/sign-in">
         <SignIn />
       </Route>
-      <Route to="/edit-post">
+      {/* <Route path="/edit-post">
         <Edit />
       </Route>
-      <Route to="/create-post">
+      <Route path="/create-post">
         <CreatePost />
       </Route> */}
     </div>

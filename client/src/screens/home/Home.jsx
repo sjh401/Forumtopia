@@ -11,7 +11,7 @@ export default function HomeScreen(props) {
                 <div className = "together">
                     <div className = "first">
                         <div className = "move">
-                        <h3>Elon Musk's SpaceX launches 143 satellites on single rocket, sets world record.</h3>
+                        <h3>They Elon Musk's SpaceX launches 143 satellites on single rocket, sets world record.</h3>
                         </div>
                     </div>
                     <div className = "second">
