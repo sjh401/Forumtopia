@@ -5,7 +5,9 @@ import Navbar from "./Navbar"
 import "./Navbar.css"
 import {Route} from "react-router-dom"
 import Background from  "./Background"
-import MainNav from "./MainNav"
+import MainNav from "../components/Navbar/MainNav"
+//import Background from "./Background"
+
 
 import './App.css';
 import Home from './screens/home/Home';
