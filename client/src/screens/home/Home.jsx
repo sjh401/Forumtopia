@@ -5,7 +5,7 @@ export default function HomeScreen(props) {
     const [ threads, setTheards ] = useState({})
 
     return (
-        <Layout>
+        
             <div>
                 <h1>Trending Now</h1>
                 <div className = "together">
@@ -25,6 +25,6 @@ export default function HomeScreen(props) {
                     </div>
                 </div>
             </div>
-        </Layout>
+        
     )
 }
