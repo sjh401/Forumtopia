@@ -25,6 +25,7 @@ export default function SignUp() {
     }
     return (
         <div>
+            
             {/* <Layout> */}
                 <form className="move" onSubmit={handleSubmit}>
                     <label>Username</label>

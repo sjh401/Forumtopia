@@ -24,8 +24,9 @@ function App() {
 
       <Navbar/>
       <MainNavBar/>
-      <Background/>
+      
       <Route exact path = "/">
+      <Background/>
         <Home/>
       </Route>
       { !ins && 
