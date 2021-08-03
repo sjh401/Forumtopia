@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import Layout from '../../components/Layout/Layout';
+//import Layout from '../../components/Layout/Layout';
 
 export default function SignIn(props) {
     const [ input, setInput ] = useState({ email: "" , password: "" })
@@ -25,7 +25,7 @@ export default function SignIn(props) {
     }
 
     return (
-         <Layout>
+         //<Layout>
             <div>
                 Sign In
                 <form onSubmit={handleSubmit}>
@@ -53,6 +53,6 @@ export default function SignIn(props) {
                     <button>Sign In</button>
                 </form>
             </div>
-         </Layout>
+         //</Layout>
     )
 }
