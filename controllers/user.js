@@ -11,24 +11,20 @@ exp.setDate(today.getDate() + 5)
 
 export const signUp = async (req, res) => {
   try {
-    const { username, email, password, posts, threads } = req.body;
-    const passwordDigest = await bcrypt.hash(password, SALT_ROUNDS)
+    const { username, email, password} = req.body;
+    const passwordDigest = await bcrypt.hash(password, parseInt(SALT_ROUNDS))
 
     const user = new User({
       email,
       username,
       passwordDigest,
-      posts,
-      threads,
     })
     await user.save()
-    console.log(user)
+
     const payload = {
       id: user._id,
       username: user.username,
       email: user.email,
-      posts: user.posts,
-      threads: user.threads,
       exp: parseInt(exp.getTime() / 1000)
     }
 
@@ -45,7 +41,7 @@ export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username }).select(
-      "email username passwordDigest posts threads"
+      "email username passwordDigest"
     )
 
     if (await bcrypt.compare(password, user.passwordDigest)) {
@@ -53,8 +49,6 @@ export const login = async (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
-        posts: user.posts,
-        threads: user.threads,
         exp: parseInt(exp.getTime() / 1000)
       }
       const token = jwt.sign(payload, TOKEN_KEY)
@@ -86,6 +80,35 @@ export const getUsers = async (req, res) => {
   try {
     const users = await User.find({})
     res.send(users)
+  } catch (e) {
+    res.status(404).json({error: e.message})
+  }
+}
+
+export const getUser = async (req, res) => {
+  try {
+    const {id} = req.params
+    const user = await User.findById(id)
+    if (user) {
+      res.json(user)
+    } else {
+      res.status(404).json({error: "User not found"})
+    }
+  } catch (e) {
+    res.status(404).json({error: e.message})
+  }
+}
+
+export const updateUser = async (req, res) => {
+  try {
+    const { id } = req.params
+    const {body} = req
+    const user = await User.findById(id, body, {new: true})
+    if (user) {
+      res.json(user)
+    } else {
+      res.status(404).json({error: "Cannot be updated"})
+    }
   } catch (e) {
     res.status(404).json({error: e.message})
   }

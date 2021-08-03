@@ -6,8 +6,7 @@ const ThreadSchema = new Schema(
     title: { type: String, required: true },
     body: { type: String, required: true },
     imgUrl: { type: String, required: false },
-    userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
-    posts: [{ type: Schema.Types.ObjectId, ref: "Post", required: false }]
+    userId: [{ type: Schema.Types.ObjectId, ref: "User", required: true }],
   },
   {timestamps: true}
 )
