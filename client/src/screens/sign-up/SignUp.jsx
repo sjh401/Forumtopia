@@ -23,7 +23,7 @@ export default function SignUp() {
         }));
     }
     return (
-        <div>
+        <div className = "former">
             {/* <Layout> */}
                 <form onSubmit={handleSubmit}>
                     <label>Username</label>
@@ -42,6 +42,7 @@ export default function SignUp() {
                      value={input.email}
                      onChange={handleInput}
                      />
+                     <label>Password</label>
                      <input 
                      id="password"
                      type="password"
