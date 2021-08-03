@@ -11,9 +11,9 @@ const options = [
 //   "Signup",
 //   "Signin"
 <Link to="/">Home</Link>,
-<Link to="/Signin">Signin</Link>,
-<Link to ="/Signup">Signup</Link>,
-<Link to ="New-post">Create a post</Link>
+<Link to="/sign-in">Signin</Link>,
+<Link to ="/sign-in">Signup</Link>,
+<Link to ="/create-post">Create a post</Link>
 ];
 
 const ITEM_HEIGHT = 48;
