@@ -1,5 +1,4 @@
 import Thread from "../models/thread.js"
-// import populate from "../models/post.js";
 
 export const createThread = async (req, res) => {
   try {
@@ -14,8 +13,8 @@ export const createThread = async (req, res) => {
 
 export const getThreads = async (req, res) => {
   try {
-    const thread = await Thread.find().populate('posts')
-    res.send(thread)
+    const threads = await Thread.find({}).populate('userId')
+    res.send(threads)
   } catch (e) {
     res.status(404).json({error: e.message})
   }
