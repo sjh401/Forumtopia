@@ -4,7 +4,7 @@ import { createPost, getPosts, getPost, updatePost, deletePost} from "../control
 
 const router = Router()
 
-router.post("/create-post", restrict, createPost)
+router.post("/threads/:id/posts", restrict, createPost)
 router.get("/posts", getPosts)
 router.get("/posts/:id", getPost)
 router.put("/posts/:id", updatePost)
