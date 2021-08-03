@@ -3,6 +3,7 @@
 import {useState} from "react"
 //import Layout from "../../components/Layout/Layout"
 import {useHistory} from "react-router-dom"
+import "./SignUp.css"
 
 export default function SignUp() {
     const [input, setInput] = useState({username: "", email: "", password: ""})
@@ -23,9 +24,9 @@ export default function SignUp() {
         }));
     }
     return (
-        <div className = "former">
+        <div>
             {/* <Layout> */}
-                <form onSubmit={handleSubmit}>
+                <form className="move" onSubmit={handleSubmit}>
                     <label>Username</label>
                     <br/>
                     <input id="username" 
