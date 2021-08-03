@@ -10,13 +10,11 @@ export default function MainNavBar(props) {
               <div className = "name">
               <Link to="/">Forumtopia</Link>
               </div>
-
               <div className="space">
-                <Link to="/Signin">Signin</Link>
-                <Link to="/Signup">Signup</Link>
-                <Link to ="/Newpost">Create a post</Link>
+                <Link to="/sign-in">Sign In</Link>
+                <Link to="/sign-up">Sign Up</Link>
+                {/* <Link to ="/Newpost">Create a post</Link> */}
               </div>
-
             </nav>
             </div>
           </div>
