@@ -1,5 +1,5 @@
 //import React from 'react'
-import {SignUp} from "../../services/sign-up"
+//import {signUp} from "../../services/sign-in/Sign-up"
 import {useState} from "react"
 import Layout from "../../components/Layout/Layout"
 import {useHistory} from "react-router-dom"
@@ -10,8 +10,8 @@ export default function SignUp() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const user = await signUp(input)
-        setUser(user);
+        //const user = await signUp(input)
+        //setUser(user);
         history.push("/")
     };
 
