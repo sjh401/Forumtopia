@@ -16,6 +16,7 @@ export default function EditPost(props) {
         }
         fetchPost();
     }, [id]);
+    
     const handleChange = (e) => {
         const { id, value } = e.target;
         setPost(setInput((prevInput) => ({
