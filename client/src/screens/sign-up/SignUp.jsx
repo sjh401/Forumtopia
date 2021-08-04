@@ -1,57 +1,57 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom';
-import Layout from '../../components/Layout';
+import {useState} from "react"
+import {useHistory} from "react-router-dom"
+import "./SignUp.css"
 
-export default function SignUp(props) {
-    const [ input, setInput ] = useState({ username: "", email: "" , password: "" })
-    const { setUser } = props;
+export default function SignUp() {
+    const [input, setInput] = useState({username: "", email: "", password: ""})
     const history = useHistory();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // const user = await signUp(input)
-        // console.log(user);
-        // setUser(user)
-        history.push("/");
-    }
+        history.push("/")
+    };
 
     const handleInput = (e) => {
-        const { id, value } = e.target;
+        const {id, value} = e.target;
         setInput((prevInput) => ({
             ...prevInput,
             [id]: value,
-        }))
+        }));
     }
-
     return (
-        // <Layout>
-            <div>
-                Sign Up
-                <form onSubmit={handleSubmit}>
-                <label>Username</label>
-                    <input 
-                    id="username" 
-                    value={input.username} 
-                    type="password" 
-                    onChange={handleInput} />
-                    <br />
-                    <label>Email</label>
-                    <input 
-                    id="email" 
-                    value={input.email} 
-                    type="email" 
-                    onChange={handleInput} />
-                    <br />
-                    <label>Password</label>
-                    <input 
-                    id="password" 
-                    value={input.password} 
-                    type="password" 
-                    onChange={handleInput} />
-                    <br />
-                    <button>Sign In</button>
-                </form>
+        <div>
+            <div className="logo">
+                <h1>Forumtopia</h1>
             </div>
-        // </Layout>
+            <div className = "back">
+            </div>
+            <form className="move" onSubmit={handleSubmit}>
+                <label>Username</label>
+                <br/>
+                <input id="username" 
+                type="text" 
+                value={input.username}
+                onChange={handleInput}
+                /> 
+                <br/>
+                <label>Email</label>
+                <br/>
+                <input
+                id="email"
+                type="email"
+                value={input.email}
+                onChange={handleInput}
+                />
+                <label>Password</label>
+                <input 
+                id="password"
+                type="password"
+                value={input.password}
+                onChange={handleInput}
+                />
+                <br/>
+                <button>Sign Up</button>
+            </form>
+        </div>
     )
 }
