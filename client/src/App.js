@@ -7,8 +7,6 @@ import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp"
 import EditThread from "./screens/edit-thread/EditThread";
 import CreateThread from "./screens/Create /createthread";
-import Footer from "./components/Footer/Footer";
-import MainNavBar from "./components/Nav/MainNavBar";
 
 
 function App() {
