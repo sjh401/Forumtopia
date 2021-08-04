@@ -1,8 +1,9 @@
 //import React from 'react'
 //import {signUp} from "../../services/sign-in/Sign-up"
 import {useState} from "react"
-import Layout from "../../components/Layout/Layout"
+//import Layout from "../../components/Layout/Layout"
 import {useHistory} from "react-router-dom"
+import "./SignUp.css"
 
 export default function SignUp() {
     const [input, setInput] = useState({username: "", email: "", password: ""})
@@ -24,8 +25,9 @@ export default function SignUp() {
     }
     return (
         <div>
-            <Layout>
-                <form onSubmit={handleSubmit}>
+            
+            {/* <Layout> */}
+                <form className="move" onSubmit={handleSubmit}>
                     <label>Username</label>
                     <br/>
                     <input id="username" 
@@ -42,6 +44,7 @@ export default function SignUp() {
                      value={input.email}
                      onChange={handleInput}
                      />
+                     <label>Password</label>
                      <input 
                      id="password"
                      type="password"
@@ -51,7 +54,7 @@ export default function SignUp() {
                      <br/>
                      <button>Sign Up</button>
                 </form>
-            </Layout>
+            {/* </Layout> */}
         </div>
     )
 }
