@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
-//import Layout from '../../components/Layout/Layout';
 
 export default function SignIn(props) {
     const [ input, setInput ] = useState({ email: "" , password: "" })
@@ -10,9 +9,6 @@ export default function SignIn(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-         //const user = await signIn(input)
-        // console.log(user);
-        // setUser(user)
         history.push("/");
     }
 
@@ -25,7 +21,6 @@ export default function SignIn(props) {
     }
 
     return (
-         //<Layout>
             <div>
                 Sign In
                 <form onSubmit={handleSubmit}>
@@ -43,16 +38,8 @@ export default function SignIn(props) {
                     type="password" 
                     onChange={handleInput} />
                     <br />
-                    {/* <label></label>
-                    <input 
-                    id="" 
-                    value={input.fdfda} 
-                    type="" 
-                    onChange={handleInput} />
-                    <br /> */}
                     <button>Sign In</button>
                 </form>
             </div>
-         //</Layout>
     )
 }

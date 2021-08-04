@@ -1,19 +1,20 @@
 img{
-    /* width: 100%;
-height: 92vh; */
-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
 }
 
-.Background{
-    overflow: hidden;
+.text span{
+    background: white;
+    width: 298px;
+    height: 1px;
+    position: absolute;
+    left: 0;
 }
-
 .Background figure{
-position: relative;
-width: 500%;
-  animation: lefts 30s infinite;
-  margin: 0;
-  left: 0;
+    position: relative;
+    width: 500%;
+    animation: lefts 30s infinite;
+    margin: 0;
+    left: 0;
 }
 
 .Background figure img{
@@ -22,15 +23,22 @@ width: 500%;
     float: left;
 }
 
-
-@keyframes lefts
-{
+.Background{
+    overflow: hidden;
+}
+.text{
+    width: 300px;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    color: white
+}
+@keyframes lefts{
     0%
     {
         left: 0;
         
     }
-    
     20%
     {
         left: 0;
@@ -73,21 +81,4 @@ width: 500%;
         left: 1000px;
         color: white
     }
-}
-
-
-.text{
-    width: 300px;
-    position: absolute;
-    top: 200px;
-    left: 100px;
-    color: white
-}
-
-.text span{
-    background: white;
-    width: 298px;
-    height: 1px;
-    position: absolute;
-    left: 0;
 }
