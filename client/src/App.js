@@ -32,7 +32,7 @@ function App() {
       </Route>
       </Route>
       <Route path="/sign-up">
-        <signUp user={user} setUser={setUser} />
+        <SignUp user={user} setUser={setUser} />
       </Route>
       <Route path="/threads-edit">
         <EditThread user={user} setUser={setUser} />
