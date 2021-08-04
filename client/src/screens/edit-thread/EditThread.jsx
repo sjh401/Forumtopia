@@ -4,7 +4,8 @@ import Layout from '../../components/Layout/Layout'
 import { getThread, updateThread } from '../../services/thread';
 
 export default function Edit(props) {
-    const [ thread, setThread ] = useState({ title:"", body: "", imgUrl: ""});
+    const [ input, setInout ] = useState({ title:"", body: "", imgUrl: ""})
+    const [ thread, setThread ] = useState({});
     const [ isUpdated, setIsUpdated ] = useState(null);
     const { id } = useParams
 
@@ -19,7 +20,7 @@ export default function Edit(props) {
     const handleChange = (e) => {
         const { id, value } = e.target;
         setThread({
-            ...product,
+            ...input,
             [id]: value,
         })
     }
@@ -31,7 +32,7 @@ export default function Edit(props) {
     }
 
     if(isUpdated) {
-        return <Redirect to={`/products/${id}`} />
+        return <Redirect to={`/threads/${id}`} />
     }
     return (
         <Layout user={props.user}>
