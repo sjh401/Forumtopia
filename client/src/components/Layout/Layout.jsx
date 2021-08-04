@@ -1,9 +1,12 @@
-import React from 'react'
+import Nav from '../Nav/MainNavBar'
+import Footer from "../Footer/Footer"
 
-export default function Layout() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const Layout = (props) => (
+  <div>
+    <Nav user={props.user} />
+    <div>{props.children}</div>
+    <Footer />
+  </div>
+)
+
+export default Layout
