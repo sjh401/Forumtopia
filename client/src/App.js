@@ -25,6 +25,9 @@ function App() {
         <SignIn setUser={setUser} />
       <Route Path="create-post"><CreatePost/></Route>
       </Route>
+      <Route path="/sign-up">
+        <SignIn setUser={setUser}/>
+      </Route>
     </div>
   )
 }
