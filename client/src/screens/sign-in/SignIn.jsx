@@ -26,6 +26,7 @@ export default function SignIn(props) {
   return (
     <Layout>
       Sign In
+      <br />
       <form onSubmit={handleSubmit}>
         <label>Username:</label>
         <input
