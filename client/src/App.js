@@ -23,6 +23,9 @@ function App() {
       <Route path="/sign-in">
         <SignIn setUser={setUser}/>
       </Route>
+      <Route path="/sign-up">
+        <SignIn setUser={setUser}/>
+      </Route>
     </div>
   )
 }
