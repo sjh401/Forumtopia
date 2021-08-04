@@ -1,36 +1,45 @@
-import {Route} from "react-router-dom"
-import {useState} from "react"
-import './App.css';
-import Home from './screens/home/Home';
-import SignIn from './screens/sign-in/SignIn';
-import SignUp from './screens/sign-up/SignUp';
-import Footer from './components/Footer/Footer';
-
-
+import {useState, useEffect} from "react"
+import Home from "./screens/home/Home";
+import SignIn from "./screens/sign-in/SignIn";
+import {verify} from "./services/user"
+import { Route } from "react-router-dom"
+import CreatePost from "./screens/Create /createpost";
+import EditPost from "./screens/edit-thread/EditPost";
+import EditThread from "./screens/edit-thread/EditThread";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
-
-  const [ user, setUser ] = useState(null);
-
+  const [user, setUser] = useState(null)
+  
+  useEffect(() => {
+    const verifyUser = async() => {
+      setUser(await verify())
+    }
+    verifyUser()
+  }, [])
+  
   return (
-    <div className="App">
-      <Route exact path = "/">
-        <Home/>
+    <div>
+      <Route exact path="/">
+        <Home user={user} setUser={setUser} />
       </Route>
-      { !user && 
-        <div>
-          <Route path="/sign-up">
-            <SignUp />
-          </Route>
-          <Route path="/sign-in">
-            <SignIn />
-        </Route>
-        <Footer />
-        </div>
-      }
+      <Route path="/sign-in">
+        <SignIn user={user} setUser={setUser} />
+      <Route path="create-post">
+        <CreatePost user={user} setUser={setUser} />
+      </Route>
+      </Route>
+      <Route path="/sign-up">
+        <SignIn user={user} setUser={setUser} />
+      </Route>
+      <Route path="/threads/:id">
+        <EditThread user={user} setUser={setUser} />
+      </Route>
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default App;
+
