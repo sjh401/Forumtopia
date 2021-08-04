@@ -1,12 +1,19 @@
 import {useState} from "react"
 import {useHistory} from "react-router-dom"
 import "./SignUp.css"
+import {signUp} from "../../services/user"
+import Layout from "../../components/Layout/Layout"
+
+
 
 export default function SignUp() {
     const [input, setInput] = useState({username: "", email: "", password: ""})
     const history = useHistory();
+const {setUser} = props
 
     const handleSubmit = async (e) => {
+        const user = await signUp(input);
+        setUser(user);
         e.preventDefault();
         history.push("/")
     };
@@ -19,7 +26,7 @@ export default function SignUp() {
         }));
     }
     return (
-        <div>
+        <Layout>
             <div className="logo">
                 <h1>Forumtopia</h1>
             </div>
@@ -52,6 +59,6 @@ export default function SignUp() {
                 <br/>
                 <button>Sign Up</button>
             </form>
-        </div>
+        </Layout>
     )
 }
