@@ -6,7 +6,7 @@ import Layout from "../../components/Layout/Layout"
 
 
 
-export default function SignUp() {
+export default function SignUp(props) {
     const [input, setInput] = useState({username: "", email: "", password: ""})
     const history = useHistory();
 const {setUser} = props
