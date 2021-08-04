@@ -4,6 +4,8 @@ import SignIn from "./screens/sign-in/SignIn";
 import {verify} from "./services/user"
 import { Route } from "react-router-dom"
 import CreatePost from "./screens/Create /createpost";
+import EditPost from "./screens/edit-thread/EditPost";
+import EditThread from "./screens/edit-thread/EditThread";
 
 
 function App() {
@@ -19,14 +21,19 @@ function App() {
   return (
     <div>
       <Route exact path="/">
-        <Home />
+        <Home user={user} setUser={setUser} />
       </Route>
       <Route path="/sign-in">
-        <SignIn setUser={setUser} />
-      <Route Path="create-post"><CreatePost/></Route>
+        <SignIn user={user} setUser={setUser} />
+      <Route path="create-post">
+        <CreatePost user={user} setUser={setUser} />
+      </Route>
       </Route>
       <Route path="/sign-up">
-        <SignIn setUser={setUser}/>
+        <SignIn user={user} setUser={setUser} />
+      </Route>
+      <Route path="/threads/:id">
+        <EditThread user={user} setUser={setUser} />
       </Route>
     </div>
   )
