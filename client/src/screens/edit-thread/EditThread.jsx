@@ -19,11 +19,10 @@ export default function Edit(props) {
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setInput((prevInput) => ({
+        setThread(setInput((prevInput) => ({
             ...prevInput,
             [id]: value,
-        }));
-        setThread(input)
+        })));
     }
 
     const handleSubmit = async (e) => {
