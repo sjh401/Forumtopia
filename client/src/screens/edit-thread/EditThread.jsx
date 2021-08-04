@@ -33,7 +33,7 @@ export default function EditThread(props) {
     }
 
     if(isUpdated) {
-        return <Redirect to={`/threads/${id}`} />
+        return <Redirect to={`/thread/${id}`} />
     }
     return (
         <Layout user={props.user}>

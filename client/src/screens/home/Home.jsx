@@ -44,11 +44,11 @@ export default function HomeScreen(props) {
                 </div>
                 <div classname="threads-home">
                     {threads.map( thread => (
-                        <div key={thread._id}>
+                        <div key={thread.userId} >
                             <h4>{thread.title}</h4>
                             <img style={{width: "100px", height: "100px"}} src={thread.imgUrl} />
                             <p>{thread.body}</p>
-                            {displayEditLik(thread)}
+                            <p>{displayEditLik(thread)}</p>
                         </div>
                     ))}
 
