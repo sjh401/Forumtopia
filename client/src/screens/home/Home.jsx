@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getThreads } from '../../services/thread'
 import "./Home.css"
+import Thread from "../Threadcss/Thread"
+
+
 export default function HomeScreen(props) {
     const [ threads, setThreads ] = useState([])
 
@@ -48,7 +51,9 @@ export default function HomeScreen(props) {
                             {displayEditLik(thread)}
                         </div>
                     ))}
+
                 </div>
+                <Thread/>
             </div>
         
     )
