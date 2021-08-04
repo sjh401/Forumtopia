@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import Layout from '../../components/Layout/Layout';
 
 
 
@@ -19,24 +20,26 @@ export default function CreatePost(props) {
   }
 
   const handleSubmit= async (e) =>{
-    e.preventDefault(id, input);
-    await createPost(input);
+    e.preventDefault();
+    await CreatePost(input);
     history.pushState("/");
   };
 
   return (
-    <div>
+    <Layout>
       Create a Post 
       <form onsubmit={handleSubmit} className="form-horizontal">
-        <label>body</label>
+        <label>Body:</label>
         <br />
         <input id="body" value={input.body} onChnage={handleChange} />
         <br />
         <label>Image:</label>
         <input id="imgUrl" value={input.imgUrl} onChange={handleChange} />
+        <br />
         <button>Submit</button>
 
       </form>
-    </div>
+        
+      </Layout>
   )
 }
