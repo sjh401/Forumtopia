@@ -7,13 +7,13 @@ export const createPost = async (req, res) => {
     const post = new Post(req.body)
     const { id } = req.params
     const thread = await Thread.findById(id)
-    
     const user = await User.findById(req.user)
     post.userId = user.id
     await post.save()
     user.posts.push(post._id)
-    thread.posts.push(post._id)
     await user.save()
+    thread.posts.push(post._id)
+    
     await thread.save()
     res.status(201).json(post)
   } catch (e) {
@@ -33,7 +33,7 @@ export const getPosts = async (req, res) => {
 export const getPost = async (req, res) => {
   try {
     const {id} = req.params
-    const post = await Post.findById()
+    const post = await Post.findById(id)
     if (post) {
       res.json(post)
     } else {
