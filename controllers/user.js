@@ -37,7 +37,7 @@ export const signUp = async (req, res) => {
   }
 }
 
-export const login = async (req, res) => {
+export const signIn = async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username }).select(
@@ -88,7 +88,7 @@ export const getUsers = async (req, res) => {
 export const getUser = async (req, res) => {
   try {
     const {id} = req.params
-    const user = await User.findById(id)
+    const user = await User.findById(id).populate('posts')
     if (user) {
       res.json(user)
     } else {

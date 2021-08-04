@@ -1,43 +1,47 @@
-import Navbar from "./components/nav/NavBar"
-import "./components/nav/NavBar.css"
-import {Route} from "react-router-dom"
-import Background from  "./components/background/Background"
+import {useState, useEffect} from "react"
+import { verify} from "./services/user"
+import { Route } from "react-router-dom"
 
-
-import './App.css';
-import Home from './screens/home/Home';
-import CreatePost from './screens/create/Create';
-import SignIn from './screens/sign-in/SignIn';
-import SignUp from './screens/sign-up/SignUp';
-import Edit from './screens/edit/Edit';
-import MainNavBar from "./components/nav/MainNavBar"
-
+import Home from "./screens/home/Home";
+import SignIn from "./screens/sign-in/SignIn";
+import SignUp from "./screens/sign-up/SignUp"
+import EditThread from "./screens/edit-thread/EditThread";
+import CreateThread from "./screens/Create /createthread";
+import Thread from "./screens/edit-thread/Thread";
 
 
 function App() {
+  const [user, setUser] = useState(null)
+  
+  useEffect(() => {
+    const verifyUser = async() => {
+      setUser(await verify())
+    }
+    verifyUser()
+  }, [])
+  
   return (
-    <div className="App">
-
-      <Navbar/>
-      <MainNavBar/>
-      <Background/>
-      <Route exact path = "/">
-        <Home/>
-      </Route>
-      <Route path="/sign-up">
-        <SignUp />
+    <div>
+      <Route exact path="/">
+        <Home user={user} setUser={setUser} />
       </Route>
       <Route path="/sign-in">
-        <SignIn />
+        <SignIn user={user} setUser={setUser} />
       </Route>
-      {/* <Route path="/edit-post">
-        <Edit />
+      <Route path="/threads-create">
+        <CreateThread user={user} setUser={setUser} />
       </Route>
-      <Route path="/create-post">
-        <CreatePost />
-      </Route> */}
+      <Route path="/sign-up">
+        <SignUp user={user} setUser={setUser} />
+      </Route>
+      <Route path="/thread-edit/:id">
+        <EditThread user={user} setUser={setUser} />
+      </Route>
+      <Route path="/thread/:id">
+        <Thread user={user} setUser={setUser}/>
+      </Route>
     </div>
-  );
+  )
 }
 
 export default App;
