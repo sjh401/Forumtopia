@@ -5,7 +5,6 @@ import { getThread, updateThread } from '../../services/thread';
 
 export default function Edit(props) {
     const [ thread, setThread ] = useState({ title:"", body: "", imgUrl: ""});
-    
     const [ isUpdated, setIsUpdated ] = useState(null);
     const { id } = useParams
 
