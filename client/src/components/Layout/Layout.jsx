@@ -1,4 +1,4 @@
-import Nav from '../Nav/Nav'
+import Nav from '../Nav/MainNavBar'
 import Footer from "../Footer/Footer"
 
 const Layout = (props) => (
