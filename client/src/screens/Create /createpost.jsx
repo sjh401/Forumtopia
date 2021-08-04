@@ -1,12 +1,13 @@
-import{ useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
 
 
-export default function createpost(props) {
+
+export default function CreatePost(props) {
   
   const [input, setInput] = useState({ body: "", imgUrl: "" });
-  const history = usehistory();
+  const history = useHistory();
   
   const handleChange = (e) => {
     const { id, value } = e.target
@@ -18,8 +19,8 @@ export default function createpost(props) {
   }
 
   const handleSubmit= async (e) =>{
-    e.preventDefault();
-    await createpost(input);
+    e.preventDefault(id, input);
+    await createPost(input);
     history.pushState("/");
   };
 

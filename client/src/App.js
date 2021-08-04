@@ -3,6 +3,7 @@ import Home from "./screens/home/Home";
 import SignIn from "./screens/sign-in/SignIn";
 import {verify} from "./services/user"
 import { Route } from "react-router-dom"
+import CreatePost from "./screens/Create /createpost";
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
         <Home />
       </Route>
       <Route path="/sign-in">
-        <SignIn setUser={setUser}/>
+        <SignIn setUser={setUser} />
+      <Route Path="create-post"><CreatePost/></Route>
       </Route>
     </div>
   )
