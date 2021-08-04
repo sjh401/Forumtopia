@@ -6,6 +6,7 @@ import Home from "./screens/home/Home";
 import SignIn from "./screens/sign-in/SignIn";
 import EditThread from "./screens/edit-thread/EditThread";
 import CreateThread from "./screens/Create /createthread";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
       <Route path="/threads-edit">
         <EditThread user={user} setUser={setUser} />
       </Route>
+      <Footer />
     </div>
   )
 }
