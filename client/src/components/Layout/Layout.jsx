@@ -1,4 +1,4 @@
-import Nav from '../Nav/MainNavBar'
+import Nav from "../MobileNav/MainNavBar"
 import Footer from "../Footer/Footer"
 
 const Layout = (props) => (
