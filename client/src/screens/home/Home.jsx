@@ -1,10 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { getThreads } from '../../services/thread'
 import "./Home.css"
 export default function HomeScreen(props) {
-    const [ threads, setThreads ] = useState({})
+    const [ threads, setThreads ] = useState([])
 
+    useEffect(() => {
+        const fetchThreads = async () => {
+            let data = await getThreads();
+            console.log(data)
+            setThreads(data)
+        }
+        fetchThreads()
+    }, [])
+
+    const displayEditLik = (thread) => {
+        if(thread.userId._id === props.user?.id) {
+            return <Link to={`/thread-edit/${thread._id}`}>Edit</Link>
+        }
+    }
+    console.log(props.user)
     return (
-        
             <div>
                 <h1 className="trend">Trending Now</h1>
                 <div className = "together">
@@ -22,6 +38,16 @@ export default function HomeScreen(props) {
                     <div className = "fourth">
                         <h3>EA play show Dead Space. Could this be EA's big comeback</h3>
                     </div>
+                </div>
+                <div classname="threads-home">
+                    {threads.map( thread => (
+                        <div key={thread._id}>
+                            <h4>{thread.title}</h4>
+                            <img style={{width: "100px", height: "100px"}} src={thread.imgUrl} />
+                            <p>{thread.body}</p>
+                            {displayEditLik(thread)}
+                        </div>
+                    ))}
                 </div>
             </div>
         
