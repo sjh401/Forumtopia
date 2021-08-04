@@ -4,7 +4,7 @@ import Layout from '../../components/Layout/Layout'
 import { getThread, updateThread } from '../../services/thread';
 
 export default function Edit(props) {
-    const [ input, setInout ] = useState({ title:"", body: "", imgUrl: ""})
+    const [ input, setInput ] = useState({ title:"", body: "", imgUrl: ""})
     const [ thread, setThread ] = useState({});
     const [ isUpdated, setIsUpdated ] = useState(null);
     const { id } = useParams
@@ -19,10 +19,11 @@ export default function Edit(props) {
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setThread({
-            ...input,
+        setInput((prevInput) => ({
+            ...prevInput,
             [id]: value,
-        })
+        }));
+        setThread(input)
     }
 
     const handleSubmit = async (e) => {
