@@ -6,7 +6,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
   return (
-    <div>
+    <footer>
       Created by:
       Araceli Sanchez<a href="https://github.com/CyberCeli" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faGithub} className="git" /></a>
       <a href="https://linkedin.com/in/araceli-sanchez-015239217" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} className="Linkedin" /></a>,
@@ -18,6 +18,6 @@ export default function Footer() {
       <a href="https://linkedin.com/in/harritystephen" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} className="Linkedin" /></a>,
       Timothy Lundy<a href="https://github.com/Shinji-exe" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faGithub} className="git" /></a>
       <a href="https://linkedin.com/in/timothy-lundy-a229421b3" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} className="Linkedin" /></a>
-    </div>
+    </footer>
   )
 }

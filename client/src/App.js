@@ -8,6 +8,7 @@ import SignUp from "./screens/sign-up/SignUp"
 import EditThread from "./screens/edit-thread/EditThread";
 import CreateThread from "./screens/Create /createthread";
 import Footer from "./components/Footer/Footer";
+import MainNavBar from "./components/Nav/MainNavBar";
 
 
 function App() {
@@ -37,7 +38,6 @@ function App() {
       <Route path="/threads-edit">
         <EditThread user={user} setUser={setUser} />
       </Route>
-      <Footer />
     </div>
   )
 }
