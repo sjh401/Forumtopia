@@ -1,9 +1,10 @@
 import {useState, useEffect} from "react"
-import {verify} from "./services/user"
+import { verify} from "./services/user"
 import { Route } from "react-router-dom"
 
 import Home from "./screens/home/Home";
 import SignIn from "./screens/sign-in/SignIn";
+import SignUp from "./screens/sign-up/SignUp"
 import EditThread from "./screens/edit-thread/EditThread";
 import CreateThread from "./screens/Create /createthread";
 import Footer from "./components/Footer/Footer";
@@ -31,7 +32,7 @@ function App() {
       </Route>
       </Route>
       <Route path="/sign-up">
-        <SignIn user={user} setUser={setUser} />
+        <signUp user={user} setUser={setUser} />
       </Route>
       <Route path="/threads-edit">
         <EditThread user={user} setUser={setUser} />
