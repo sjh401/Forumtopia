@@ -27,9 +27,9 @@ function App() {
       </Route>
       <Route path="/sign-in">
         <SignIn user={user} setUser={setUser} />
+      </Route>
       <Route path="/threads-create">
         <CreateThread user={user} setUser={setUser} />
-      </Route>
       </Route>
       <Route path="/sign-up">
         <SignUp user={user} setUser={setUser} />
