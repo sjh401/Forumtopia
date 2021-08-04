@@ -5,7 +5,7 @@ import { signUp, signIn, verify, getUsers, getUser, updateUser } from "../contro
 const router = Router()
 
 router.post("/sign-up", signUp)
-router.post("/signIn", signIn)
+router.post("/sign-in", signIn)
 router.get("/verify", verify)
 router.get("/users", getUsers)
 router.get("/users/:id", getUser)

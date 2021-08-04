@@ -1,34 +1,31 @@
-import {Route} from "react-router-dom"
-import {useState} from "react"
-import './App.css';
-import Home from './screens/home/Home';
-import SignIn from './screens/sign-in/SignIn';
-import SignUp from './screens/sign-up/SignUp';
-
-
+import {useState, useEffect} from "react"
+import Home from "./screens/home/Home";
+import SignIn from "./screens/sign-in/SignIn";
+import {verify} from "./services/user"
+import { Route } from "react-router-dom"
 
 
 function App() {
-
-  const [ user, setUser ] = useState(null);
-
+  const [user, setUser] = useState(null)
+  
+  useEffect(() => {
+    const verifyUser = async() => {
+      setUser(await verify())
+    }
+    verifyUser()
+  }, [])
+  
   return (
-    <div className="App">
-      <Route exact path = "/">
-        <Home/>
+    <div>
+      <Route exact path="/">
+        <Home />
       </Route>
-      { !user && 
-        <div>
-          <Route path="/sign-up">
-            <SignUp />
-          </Route>
-          <Route path="/sign-in">
-            <SignIn />
-          </Route>
-        </div>
-      }
+      <Route path="/sign-in">
+        <SignIn setUser={setUser}/>
+      </Route>
     </div>
-  );
+  )
 }
 
 export default App;
+
