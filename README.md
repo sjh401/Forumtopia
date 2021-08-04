@@ -82,9 +82,9 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 |---|---| ---|
 |July 30| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
 |August 1| Meet-up Before Approval | Complete
-|August 2| Project Approval | Incomcplete
-|August 2| Core Application Structure (HTML, Tim, etc.) | Incomplete
-|August 3| Pseudocode / actual code | Incomplete
+|August 2| Project Approval | Complete
+|August 2| Core Application Structure (HTML, Tim, etc.) | Complete
+|August 3| Pseudocode / actual code | Complete
 |August 4| Initial Clickable Model | Incomplete
 |August 5| MVP | Incomplete
 |August 6-9| Post MVP | Incomplete
@@ -94,7 +94,7 @@ https://docs.google.com/document/d/1c72iVv7Hm1qJ0E8E0LnE5yhzbRI21jbyYjcZPmOaquA/
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Boilerplate Setup & Installs | H | 2hrs | | |
+| Boilerplate Setup & Installs | H | 2hrs | 2hrs | |
 | Client & Services Setup | H | 2hrs| | |
 | Views Arrangement | H | 3hrs | | |
 | Components Build | H | 2hrs | | |
