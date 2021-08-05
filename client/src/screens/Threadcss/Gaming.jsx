@@ -1,4 +1,3 @@
-import React from 'react'
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -16,13 +15,13 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-
-import "./Thread.css";
+import Banner from '../../components/Gamer/Banner';
+import Layout from "../../components/Layout/Layout"
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      maxWidth: 500,
+      width: 500,
     },
     media: {
       height: 0,
@@ -40,8 +39,13 @@ export default function Gaming() {
   const [expanded, setExpanded] = React.useState(false);
 
     return (
-        <div className="group">
+        <Layout>
         <div>
+            <Banner/>
+        <div className="group">
+              
+        <div>
+          
        <Card className={classes.root}>
         <CardHeader
           avatar={
@@ -153,5 +157,7 @@ export default function Gaming() {
       </div>
       </div>
       </div>
+      </div>
+      </Layout>
     )
 }

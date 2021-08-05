@@ -8,6 +8,8 @@ import SignUp from "./screens/sign-up/SignUp"
 import EditThread from "./screens/edit-thread/EditThread";
 import CreateThread from "./screens/Create /createthread";
 import Thread from "./screens/edit-thread/Thread";
+import Gaming from "./screens/Threadcss/Gaming";
+
 
 
 function App() {
@@ -34,6 +36,9 @@ function App() {
       </Route>
       <Route path="/sign-up">
         <SignUp user={user} setUser={setUser} />
+      </Route>
+      <Route path = "/threads">
+        <Gaming/>
       </Route>
       <Route path="/thread-edit/:id">
         <EditThread user={user} setUser={setUser} />
