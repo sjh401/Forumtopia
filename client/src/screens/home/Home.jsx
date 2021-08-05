@@ -6,6 +6,7 @@ import "./Home.css"
 import Thread from "../Threadcss/Thread"
 
 
+
 export default function HomeScreen(props) {
     const [ threads, setThreads ] = useState([])
 
@@ -26,6 +27,7 @@ export default function HomeScreen(props) {
     console.log(props.user)
     return (
         <Layout>
+            <div>
                 <h1 className="trend">Trending Now</h1>
                 <div className = "together">
                     <div className = "first">
@@ -43,6 +45,7 @@ export default function HomeScreen(props) {
                         <h3>EA play show Dead Space. Could this be EA's big comeback</h3>
                     </div>
                 </div>
+                <span className="spans"></span>
                 <div classname="threads-home">
                     {threads.map( thread => (
                         <div key={thread.userId} >
@@ -55,7 +58,8 @@ export default function HomeScreen(props) {
 
                 </div>
                 <Thread/>
-        </Layout>
+                </div>
+                </Layout>
 
         
     )

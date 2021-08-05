@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "./Mobile.css"
+import "./Navs.css"
 
 export default function MainNavBar(props) {
   return (
