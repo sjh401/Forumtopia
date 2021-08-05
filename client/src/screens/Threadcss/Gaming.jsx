@@ -127,18 +127,18 @@ export default function Gaming() {
               <MoreVertIcon />
             </IconButton>
           }
-          title="New York Times"
-          subheader="August 4, 2021"
+          title="Electronic Arts"
+          subheader="August 5, 2021"
         />
         <CardMedia
           className={classes.media}
-          image="https://images.hdqwalls.com/download/venom-2-8k-ux-1280x720.jpg"
-          title="GTA:V Tuners"
+          image="https://updatecrazy.com/wp-content/uploads/2021/06/Battlefield-2042-Cover-Art-1280x720.jpg"
+          title="Battlefield: 2042"
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-              <h2>Comics</h2>
-          Spider-Man day has passed and fans are still wondering when Spider-Man: No Way Home will release,but Sony manages to drop a new Venom trailer 
+              <h2>Battlefield:2042</h2>
+          Battlefield:2042
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
