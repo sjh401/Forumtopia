@@ -6,20 +6,20 @@ import Layout from '../../components/Layout/Layout';
 
 
 export default function CreateThread(props) {
-  
+
   const [input, setInput] = useState({ title: "", body: "", imgUrl: "" });
   const history = useHistory();
-  
+
   const handleChange = (e) => {
     const { id, value } = e.target
-    
+
     setInput(prevInput => ({
       ...prevInput,
       [id]: value
     }))
   }
 
-  const handleSubmit= async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await CreateThread(input);
     history.pushState("/");
@@ -27,7 +27,7 @@ export default function CreateThread(props) {
 
   return (
     <Layout>
-     Create Thread 
+      Create Thread
       <form onsubmit={handleSubmit} className="form-horizontal">
         <label>Title: </label>
         <br />
@@ -42,6 +42,8 @@ export default function CreateThread(props) {
         <button>Submit</button>
 
       </form>
-      </Layout>
+    </Layout>
   )
 }
+
+

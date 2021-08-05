@@ -2,12 +2,12 @@ import {useState, useEffect} from "react"
 import { verify} from "./services/user"
 import { Route } from "react-router-dom"
 
-import Home from "./screens/home/Home";
-import SignIn from "./screens/sign-in/SignIn";
-import SignUp from "./screens/sign-up/SignUp"
-import EditThread from "./screens/edit-thread/EditThread";
-import CreateThread from "./screens/Create /createthread";
-import Thread from "./screens/edit-thread/Thread";
+import Home from "./screens/Home/Home";
+import SignIn from "./screens/SignIn/SignIn";
+import SignUp from "./screens/SignUp/SignUp"
+import EditThread from "./screens/Thread/EditThread";
+import CreateThread from "./screens/Thread/CreateThread";
+import Thread from "./screens/Thread/Thread";
 
 
 function App() {
