@@ -10,7 +10,8 @@ export default function MainNavBar(props) {
               </div>
               <div className="space">
                 <Link to="/sign-in">Sign In</Link>
-                <Link to="/sign-up">Sign Up</Link>
+        <Link to="/sign-up">Sign Up</Link>
+        <Link to="signout">Sign Out</Link>
               </div>
           </div>
         )
