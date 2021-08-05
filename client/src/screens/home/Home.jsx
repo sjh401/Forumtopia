@@ -3,27 +3,31 @@ import { Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import { getThreads } from '../../services/thread'
 import "./Home.css"
+import ThreadCard from './ThreadCard'
+import { verify } from "../../services/user"
 
 
 
 export default function HomeScreen(props) {
   const [threads, setThreads] = useState([])
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const verifyUser = async () => {
+      setUser(await verify())
+    }
+    verifyUser()
+  }, [])
 
   useEffect(() => {
     const fetchThreads = async () => {
       let data = await getThreads();
-      console.log(data)
       setThreads(data)
     }
     fetchThreads()
   }, [])
 
-  const displayEditLik = (thread) => {
-    if (thread.userId._id === props.user?.id) {
-      return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}>Edit</Link>
-    }
-  }
-  console.log(props.user)
+
   return (
     <Layout>
       <h1 className="trend">Trending Now</h1>
@@ -43,19 +47,13 @@ export default function HomeScreen(props) {
           <h3>EA play show Dead Space. Could this be EA's big comeback</h3>
         </div>
       </div>
-      <div classname="threads-home">
-        {threads.map(thread => (
-          <div key={thread.userId} >
-            <h4>{thread.title}</h4>
-            <Link to={`/thread/${thread._id}`} ><img style={{ width: "100px", height: "100px" }} alt={thread.imgUrl} src={thread.imgUrl} /></Link>
-            <p>{thread.body}</p>
-            {displayEditLik(thread)}
-          </div>
-        ))}
-
+      <div className="threads-home">
+        {threads.map((thread) => {
+          return <ThreadCard key={thread._id} thread={thread} user={user} />
+        })}
       </div>
     </Layout>
 
-
   )
 }
+

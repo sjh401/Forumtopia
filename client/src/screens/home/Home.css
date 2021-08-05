@@ -1,41 +1,17 @@
-.trend{
+.trend {
   display: flex;
   justify-content: center;
-}
-body{
-  background-color: white;
-}
-
-footer {
-  background-color: black;
-  width: 100%;
-  height: 40px;
-  bottom: 0;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-footer p{
-  color: white;
-}
-
-footer .github{
-  color: white;
-  width: 30px;
-  padding: 9px; 
-  transition: 2s ease-in-out;
-}
-footer .Linkedin{
-  color: white;
-  width: 30px;
-  transition: 2s ease-in-out;
 }
 
 /* Class */
-.Background{
+.Background {
   overflow: hidden;
 }
+
+h4 {
+  color: black
+}
+
 .Background figure {
   position: relative;
   width: 500%;
@@ -43,20 +19,22 @@ footer .Linkedin{
   margin: 0;
   left: 0;
 }
-.Background figure img{
-  width: 20%; 
+
+.Background figure img {
+  width: 20%;
   height: 720px;
   float: left;
-  
+
 }
-.together
-{
+
+.together {
   display: flex;
   justify-content: space-around;
   padding: 4px;
   background-color: white;
 }
-.first{
+
+.first {
   background-image: url("https://indicanews.com/wp-content/uploads/2020/05/spacex-1280x720.jpg");
   width: 400px;
   height: 400px;
@@ -68,18 +46,21 @@ footer .Linkedin{
   flex-direction: column;
   justify-content: flex-end;
 }
-  .first h3{
+
+.first h3 {
   background-color: rgba(13, 14, 15, 0.6);
   color: white;
   margin: 0;
   bottom: 0;
   position: sticky;
 }
-.first .move{
+
+.first .move {
   position: flex;
   align-items: flex-end;
 }
-.second{
+
+.second {
   background-image: url("https://www.superherohype.com/assets/uploads/2021/06/Black-Widow-Final-Poster-featured-1280x720.jpg");
   width: 400px;
   height: 400px;
@@ -91,12 +72,14 @@ footer .Linkedin{
   flex-direction: column;
   justify-content: flex-end;
 }
-.second h3{
+
+.second h3 {
   background-color: rgba(184, 180, 180, 0.6);
   color: white;
   margin: 0;
 }
-.third{
+
+.third {
   background-image: url("https://trackercdn.com/ghost/images/2021/7/26758_ACTIVISION_BLIZZARD_LOGO_WHITE_ON_BLACK.png");
   width: 400px;
   height: 400px;
@@ -108,12 +91,14 @@ footer .Linkedin{
   flex-direction: column;
   justify-content: flex-end;
 }
-.third h3{
+
+.third h3 {
   background-color: rgba(32, 93, 207, 0.4);
   color: white;
   margin: 0;
 }
-.fourth{
+
+.fourth {
   background-image: url("https://www.playstationlifestyle.net/assets/uploads/2020/06/dead-space-1280x720.jpg");
   width: 400px;
   height: 400px;
@@ -125,30 +110,31 @@ footer .Linkedin{
   flex-direction: column;
   justify-content: flex-end;
 }
-.fourth h3{
+
+.fourth h3 {
   background-color: rgba(219, 19, 19, 0.4);
   color: white;
   margin: 0;
 }
 
-@media screen and (max-width: 650px){
-  .Background figure img{
-    width: 20%; 
+@media screen and (max-width: 650px) {
+  .Background figure img {
+    width: 20%;
     height: 500px;
     float: left;
   }
 }
 
 @media screen and (max-width: 420px) {
-  .Background figure img{
+  .Background figure img {
     width: 20%;
     height: 300px;
     float: left;
   }
 }
 
-@media screen and (max-width: 650px){
-  .first{
+@media screen and (max-width: 650px) {
+  .first {
     background-image: url("https://assets2.rockpapershotgun.com/steam-deck-arcade.jpg/BROK/resize/1920%3E/format/jpg/quality/80/steam-deck-arcade.jpg");
     width: 350px;
     height: 300px;
@@ -157,79 +143,88 @@ footer .Linkedin{
     background-repeat: no-repeat;
     transition: 1s ease-in-out;
   }
-  .together{
+
+  .together {
     display: block;
   }
-  .second{
+
+  .second {
     width: 350px;
   }
-  .third{
+
+  .third {
     width: 350px;
   }
-  .fourth{
+
+  .fourth {
     width: 350px;
   }
 }
 
 @keyframes lefts {
-  0%
-  {
+  0% {
     left: 0;
-    
+
   }
-  20%
-  {
+
+  20% {
     left: 0;
   }
-  25%
-  {
+
+  25% {
     left: -100%;
   }
-  45%
-  {
+
+  45% {
     left: -100%;
   }
-  50%
-  {
+
+  50% {
     left: -200%;
   }
-  70%
-  {
+
+  70% {
     left: -200%;
   }
-  75%
-  {
+
+  75% {
     left: -300%;
   }
-  95%
-  {
+
+  95% {
     left: -300%;
   }
-  100%
-  {
+
+  100% {
     left: -400%;
   }
 }
 
 /* psudo */
-.first:hover{
-  background-size:210%;
+.first:hover {
+  background-size: 210%;
 }
-.second:hover{
-  background-size:210%;
+
+.second:hover {
+  background-size: 210%;
 }
-.third:hover{
-  background-size:210%;
+
+.third:hover {
+  background-size: 210%;
 }
-.fourth:hover{
-  background-size:210%;
+
+.fourth:hover {
+  background-size: 210%;
 }
-.github:hover{
+
+.github:hover {
   color: purple;
 }
-.Linkedin:hover{
+
+.Linkedin:hover {
   color: skyblue
 }
-h3:hover{
+
+h3:hover {
   text-decoration: underline;
 }

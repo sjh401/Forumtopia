@@ -9,9 +9,9 @@ export const createPost= async (id, input) => {
   }
 };
 
-export const getPosts = async () => {
+export const getPosts = async (id) => {
   try {
-    const res = await api.get("/posts");
+    const res = await api.get(`/threads/${id}/posts`);
     return res.data;
   } catch (e) {
     throw e;

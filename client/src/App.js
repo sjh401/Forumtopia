@@ -37,7 +37,7 @@ function App() {
       <Route path="/thread-edit/:id">
         <EditThread user={user} setUser={setUser} />
       </Route>
-      <Route path="/thread/:id">
+      <Route path="/thread/:id/posts">
         <Thread user={user} setUser={setUser}/>
       </Route>
     </div>

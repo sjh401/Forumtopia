@@ -1,0 +1,22 @@
+.name {
+  font-size: 2rem;
+}
+
+.main-navbar-container {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px
+}
+
+.navbar-links {
+  margin: 10px
+}
+
+@media only screen and (max-width: 600px) {
+  .user-login-signup {
+    display: none;
+
+  }
+}

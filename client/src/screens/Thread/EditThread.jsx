@@ -16,7 +16,7 @@ export default function EditThread(props) {
       setThread(thread);
     }
     fetchThread();
-  }, [id,]);
+  }, [id]);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
