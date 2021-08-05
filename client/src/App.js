@@ -22,6 +22,7 @@ function App() {
   
   return (
     <div>
+      
       <Route exact path="/">
         <Home user={user} setUser={setUser} />
       </Route>
@@ -40,6 +41,7 @@ function App() {
       <Route path="/thread/:id">
         <Thread user={user} setUser={setUser}/>
       </Route>
+      
     </div>
   )
 }

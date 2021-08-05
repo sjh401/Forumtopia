@@ -1,0 +1,21 @@
+@media screen and(max-width: 600px) {
+    .menu{
+        display: none;
+    } 
+}
+
+.menu{
+    background-color:black;
+}
+
+.name a{
+    color: white;
+}
+
+.space{
+    display: flex;
+    justify-content: right;
+}
+.space a{
+    color: white;
+}

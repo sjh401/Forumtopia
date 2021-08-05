@@ -16,6 +16,12 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+import "./Thread.css";
+
+
+
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 500,
@@ -34,15 +40,17 @@ export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+//   const handleExpandClick = () => {
+//     setExpanded(!expanded);
+//   };
 
   return (
-    <Card className={classes.root}>
+      <div className="group">
+      <div>
+     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
+           <Avatar aria-label="recipe" className={classes.avatar}>
             
           </Avatar>
         }
@@ -51,18 +59,18 @@ export default function RecipeReviewCard(props) {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="Rockstar Games"
+        subheader="August 4, 2021"
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        image="https://i.ytimg.com/vi/mP6KvFnltWc/maxresdefault.jpg"
+        title="GTA:V Tuners"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+            <h2>Gaming</h2>
+          A mix of Grand Theft Auto and Midnight Club is a feeling you'll get with the new GTA:V update
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -74,5 +82,81 @@ export default function RecipeReviewCard(props) {
         </IconButton>
       </CardActions>
     </Card>
+    <div>
+    <Card className={classes.root}>
+      <CardHeader
+        avatar={
+           <Avatar aria-label="recipe" className={classes.avatar}>
+            
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title="New York Times"
+        subheader="August 4, 2021"
+      />
+      <CardMedia
+        className={classes.media}
+        image="https://s7d2.scene7.com/is/image/TWCNews/082020_ap_joe_bidendncspeechwilmingtondelewareandrewharnikcredit"
+        title="GTA:V Tuners"
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+            <h2>Politics</h2>
+        President Biden Delivers Remarks on his Administration’s Progress Toward Fighting the COVID-19 Pandemic by Increasing Vaccinations at Home and Around the World.
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+      </CardActions>
+    </Card>
+    </div>
+    <div>
+    <Card className={classes.root}>
+      <CardHeader
+        avatar={
+           <Avatar aria-label="recipe" className={classes.avatar}>
+            
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title="New York Times"
+        subheader="August 4, 2021"
+      />
+      <CardMedia
+        className={classes.media}
+        image="https://images.hdqwalls.com/download/venom-2-8k-ux-1280x720.jpg"
+        title="GTA:V Tuners"
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+            <h2>Comics</h2>
+        Spider-Man day has passed and fans are still wondering when Spider-Man: No Way Home will release,but Sony manages to drop a new Venom trailer 
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+      </CardActions>
+    </Card> 
+    </div>
+    </div>
+    </div>
   );
 }
