@@ -3,12 +3,12 @@ import Footer from "../Footer/Footer"
 import MainNavBar from "../Nav/MainNavBar"
 
 const Layout = (props) => (
-  <div>
+  <>
     <MainNavBar user={props.user} />
-    <MobileNav/>
-    <div>{props.children}</div>
+    <MobileNav />
+    <div className="main-content">{props.children}</div>
     <Footer />
-  </div>
+  </>
 )
 
 export default Layout

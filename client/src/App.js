@@ -5,9 +5,10 @@ import { Route } from "react-router-dom"
 import Home from "./screens/home/Home";
 import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp"
-import EditThread from "./screens/edit-thread/EditThread";
-import CreateThread from "./screens/Create /createthread";
-import Thread from "./screens/edit-thread/Thread";
+import EditThread from "./screens/Threads/EditThread";
+import CreateThread from "./screens/Threads/createthread";
+import Thread from "./screens/Threads/Thread";
+import "./index.css"
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   }, [])
   
   return (
-    <div>
+    <>
       <Route exact path="/">
         <Home user={user} setUser={setUser} />
       </Route>
@@ -40,7 +41,7 @@ function App() {
       <Route path="/thread/:id">
         <Thread user={user} setUser={setUser}/>
       </Route>
-    </div>
+    </>
   )
 }
 
