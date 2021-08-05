@@ -5,17 +5,27 @@ import Thread from "../models/thread.js"
 
 export const createPost = async (req, res) => {
   try {
+
     const post = new Post(req.body)
+    console.log(`Post:`, post)
     post.userId = req.user
+
     const { id } = req.params
     const thread = await Thread.findById(id)
+    console.log(`Thread: `, thread)
+    post.threadId = thread._id
+    
 
     const user = await User.findById(req.user)
-    post.userId = user.id
+    console.log(`User:`, user)
+    
+    post.userId = user._id
+
     await post.save()
     user.posts.push(post._id)
     thread.posts.push(post._id)
-    post.threadId = thread._id
+
+    
     await user.save()
     await thread.save()
     res.status(201).json(post)
@@ -26,7 +36,11 @@ export const createPost = async (req, res) => {
 
 export const getPosts = async (req, res) => {
   try {
-    const posts = await Post.find({}).populate('userId').populate('threadId')
+    const { id } = req.params
+    const thread = await Thread.findById(id)
+    const posts = await Post.find(req.body).populate('threadId')
+    console.log(posts)
+    console.log(thread)
     res.json(posts)
   } catch (e) {
     res.status(404).json({error: e.message})
