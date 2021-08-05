@@ -4,36 +4,35 @@ import Layout from '../../components/Layout/Layout'
 import { getThread, updateThread } from '../../services/thread';
 
 export default function EditThread(props) {
-    const [ input, setInput ] = useState({ title:"", body: "", imgUrl: ""})
     const [ thread, setThread ] = useState({});
+    const [ input, setInput ] = useState({ title: thread.title , body: thread.body, imgUrl: thread.imgUrl })
     const [ isUpdated, setIsUpdated ] = useState(null);
     const { id } = useParams();
 
     useEffect(() => {
         const fetchThread = async () => {
             const thread = await getThread(id);
-            console.log(thread)
+            console.log(thread);
             setThread(thread);
         }
         fetchThread();
-    }, [id,]);
+    }, [id]);
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setThread(setInput((prevInput) => ({
+        setInput((prevInput) => ({
             ...prevInput,
             [id]: value,
-        })));
+        }));
     }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const updated = await updateThread(id, thread);
-        setIsUpdated(updated)
+        const updated = await updateThread(id,input);
+        setIsUpdated(updated);
     }
-
+    console.log(input)
     if(isUpdated) {
-        return <Redirect to={`/thread/${id}`} />
+        return <Redirect to={`/`} />
     }
     return (
         <Layout user={props.user}>
