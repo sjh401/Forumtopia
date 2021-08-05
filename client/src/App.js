@@ -9,6 +9,8 @@ import EditThread from "./screens/edit-thread/EditThread";
 import CreateThread from "./screens/Create /createthread";
 import Thread from "./screens/edit-thread/Thread";
 
+import CreatePost from "./screens/Create /CreatePost";
+import createthread from "./screens/Create /createthread";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -25,6 +27,10 @@ function App() {
       <Route exact path="/">
         <Home user={user} setUser={setUser} />
       </Route>
+      <Route path="/:id/create-post"> <CreatePost />
+      </Route>
+        <Route path="/create-thread"><CreateThread />
+        </Route>
       <Route path="/sign-in">
         <SignIn user={user} setUser={setUser} />
       </Route>
@@ -37,6 +43,7 @@ function App() {
       <Route path="/thread-edit/:id">
         <EditThread user={user} setUser={setUser} />
       </Route>
+     
       <Route path="/thread/:id">
         <Thread user={user} setUser={setUser}/>
       </Route>
