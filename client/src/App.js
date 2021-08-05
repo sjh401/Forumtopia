@@ -7,7 +7,7 @@ import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp"
 import EditThread from "./screens/edit-thread/EditThread";
 import CreateThread from "./screens/Create /createthread";
-import Footer from "./components/Footer/Footer";
+import Thread from "./screens/edit-thread/Thread";
 
 
 function App() {
@@ -34,10 +34,12 @@ function App() {
       <Route path="/sign-up">
         <SignUp user={user} setUser={setUser} />
       </Route>
-      <Route path="/threads-edit">
+      <Route path="/thread-edit/:id">
         <EditThread user={user} setUser={setUser} />
       </Route>
-      <Footer />
+      <Route path="/thread/:id">
+        <Thread user={user} setUser={setUser}/>
+      </Route>
     </div>
   )
 }

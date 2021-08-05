@@ -7,15 +7,16 @@ export default function EditThread(props) {
     const [ input, setInput ] = useState({ title:"", body: "", imgUrl: ""})
     const [ thread, setThread ] = useState({});
     const [ isUpdated, setIsUpdated ] = useState(null);
-    const { id } = useParams
+    const { id } = useParams();
 
     useEffect(() => {
         const fetchThread = async () => {
             const thread = await getThread(id);
+            console.log(thread)
             setThread(thread);
         }
         fetchThread();
-    }, [id]);
+    }, [id,]);
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -32,7 +33,7 @@ export default function EditThread(props) {
     }
 
     if(isUpdated) {
-        return <Redirect to={`/threads/${id}`} />
+        return <Redirect to={`/thread/${id}`} />
     }
     return (
         <Layout user={props.user}>
@@ -50,9 +51,8 @@ export default function EditThread(props) {
                 id="body"
                 placeholder={thread?.body}
                 value={input.body}
-                type="text-area"
-                rows={10}
-                cols={78}
+                type="text"
+                style={{width:"150px", height:"250px"}}
                 onChange={handleChange} />
                 <br />
                 <label>Image</label>
