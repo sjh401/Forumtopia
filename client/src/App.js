@@ -15,6 +15,8 @@ import CreateThread from "./screens/Threads/createthread";
 
 // import Home from "./screens/Home/Home";
 import Categories from "./screens/Categories/Categories";
+import EditPost from "./screens/Posts/EditPost";
+
 
 
 function App() {
@@ -35,29 +37,32 @@ function App() {
       <Route path="/sign-in">
         <SignIn user={user} setUser={setUser} />
       </Route>
-      <Route exact path="/threads-create">
+      <Route path="/threads-create">
         <CreateThread user={user} setUser={setUser} />
       </Route>
       <Route path="/sign-up">
         <SignUp user={user} setUser={setUser} />
       </Route>
-      <Route exact path = "/threads-gaming">
+      <Route path = "/threads-gaming">
         <Gaming user={user} setUser={setUser}/>
       </Route>
-      <Route exact path ="/threads-comic">
+      <Route path ="/threads-comic">
         <Comics user={user} setUser={setUser}/>
       </Route>
-      <Route path="/sign-out">
+      <Route path="/signoout">
         <SignOut setUser={setUser} />
       </Route>
-      <Route exact path="/threads-edit/:id">
+      <Route path="/threads-edit/:id">
         <EditThread user={user} setUser={setUser} />
       </Route>
-      <Route exacts path="/threads/:id">
+      <Route path="/post-edit/:id">
+        <EditPost user={user} setUser={setUser} />
+      </Route>
+      <Route path="/threads/:id">
         <ThreadCard user={user} setUser={setUser}/>
       </Route>
       <Route path="/categories">
-        <Categories user={user} setUser={setUser}/>
+        <Categories />
       </Route>
       
     </div>

@@ -1,15 +1,28 @@
-import { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useHistory, useParams } from "react-router-dom";
 import Layout from '../../components/Layout/Layout';
+
+import { getThread } from '../../services/thread';
+import { createPost } from '../../services/post';
 
 
 
 
 export default function CreatePost(props) {
-  
+  const [ thread, setThread ] = useState([])
   const [input, setInput] = useState({ body: "", imgUrl: "" });
   const history = useHistory();
+  const { id }= useParams();
   
+  useEffect(() => {
+    const fetchThread = async () => {
+      const thread = await getThread(id);
+      console.log(thread)
+      setThread(thread);
+    }
+    fetchThread();
+  }, [id]);
+
   const handleChange = (e) => {
     const { id, value } = e.target
     
@@ -18,28 +31,27 @@ export default function CreatePost(props) {
       [id]: value
     }))
   }
-
+console.log(props.user)
   const handleSubmit= async (e) =>{
     e.preventDefault();
-    await CreatePost(input);
-    history.pushState("/");
+    await createPost(id, input);
+    history.push(`/threads/${id}`);
   };
 
   return (
-    <Layout>
+    <>
       Create a Post 
-      <form onsubmit={handleSubmit} className="form-horizontal">
-        <label>Body:</label>
+      <form onSubmit={handleSubmit} className="form-horizontal">
         <br />
-        <input id="body" value={input.body} onChnage={handleChange} />
+        <label>Body:</label>
+        <input id="body" value={input.body} onChange={handleChange} />
         <br />
         <label>Image:</label>
         <input id="imgUrl" value={input.imgUrl} onChange={handleChange} />
         <br />
+        {/* <button ref={refresh}>Submit</button> */}
         <button>Submit</button>
-
       </form>
-        
-      </Layout>
+    </>
   )
 }

@@ -7,6 +7,10 @@ export default function EditThread(props) {
     const [ input, setInput ] = useState({ title: "" , body: "", imgUrl: "" })
     const [ isUpdated, setIsUpdated ] = useState(false);
     const { id } = useParams();
+    // const [ user, setUser ] = useState(props.user)
+    // useEffect(() => {
+    //   setUser(props.user)
+    // },[])
 
     useEffect(() => {
         const fetchThread = async () => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getThreads } from '../../services/thread'
 
-export default function ThreadSingle(props) {
+export default function ThreadMapping(props) {
   const [threads, setThreads] = useState([])
 
   useEffect(() => {
@@ -16,11 +16,11 @@ export default function ThreadSingle(props) {
   }, [])
   console.log(threads)
   console.log(props.user)
-  const displayEditLink = (thread) => {
-    if (thread.userId._id === props.user?.id) {
-      return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}>Edit</Link>
-    }
-  }
+  // const displayEditLink = (thread) => {
+  //   if (thread.userId._id === props.user?.id) {
+  //     return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}>Edit</Link>
+  //   }
+  // }
     return (
       <div className="threads-home">
         {threads.map(thread => (
@@ -28,7 +28,7 @@ export default function ThreadSingle(props) {
             <h4>{thread.title}</h4>
             <Link to={`/threads/${thread._id}`} ><img style={{ width: "100px", height: "100px" }} src={thread.imgUrl} alt="cat" /></Link>
             <p>{thread.body}</p>
-            {displayEditLink(thread)}
+            {/* {displayEditLink(thread)} */}
           </div>
         ))}
 
