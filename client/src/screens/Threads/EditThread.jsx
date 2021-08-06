@@ -4,14 +4,8 @@ import Layout from '../../components/Layout/Layout'
 import { getThread, updateThread } from '../../services/thread.js';
 
 export default function EditThread(props) {
-<<<<<<< HEAD:client/src/screens/edit-thread/EditThread.jsx
-    const [ thread, setThread ] = useState({});
-    const [ input, setInput ] = useState({ title: thread.title , body: thread.body, imgUrl: thread.imgUrl })
-    const [ isUpdated, setIsUpdated ] = useState(null);
-=======
     const [ input, setInput ] = useState({ title: "" , body: "", imgUrl: "" })
     const [ isUpdated, setIsUpdated ] = useState(false);
->>>>>>> b16e622a59a85f79c61b82b70dd493ddc9758678:client/src/screens/Threads/EditThread.jsx
     const { id } = useParams();
     // const [ user, setUser ] = useState(props.user)
     // useEffect(() => {
@@ -20,30 +14,14 @@ export default function EditThread(props) {
 
     useEffect(() => {
         const fetchThread = async () => {
-<<<<<<< HEAD:client/src/screens/edit-thread/EditThread.jsx
-            const thread = await getThread(id);
-            console.log(thread);
-            setThread(thread);
-=======
             const soloThread = await getThread(id);
             setInput(soloThread);
->>>>>>> b16e622a59a85f79c61b82b70dd493ddc9758678:client/src/screens/Threads/EditThread.jsx
         }
         fetchThread();
     }, [id]);
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-<<<<<<< HEAD:client/src/screens/edit-thread/EditThread.jsx
-        setInput((prevInput) => ({
-            ...prevInput,
-            [id]: value,
-        }));
-    }
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const updated = await updateThread(id,input);
-=======
         setInput({
             ...input,
             [id]: value
@@ -53,7 +31,6 @@ export default function EditThread(props) {
         e.preventDefault();
         console.log(input)
         const updated = await updateThread(id, input);
->>>>>>> b16e622a59a85f79c61b82b70dd493ddc9758678:client/src/screens/Threads/EditThread.jsx
         setIsUpdated(updated);
     }
     console.log(input)
