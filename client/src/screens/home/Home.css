@@ -1,29 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
-.trend{
+.trend {
   display: flex;
   justify-content: flex-start;
   font-size: 20px;
   font-family: "open-sans-condensed"
 }
 
-.spans{
+.spans {
   width: 100%;
   background-color: black;
   height: 23px;
-} 
+}
 
 
-body{
+body {
   background-color: white;
 }
 
 
 
 /* Class */
-.Background{
+.Background {
   overflow: hidden;
 }
+
 .Background figure {
   position: relative;
   width: 500%;
@@ -31,20 +32,22 @@ body{
   margin: 0;
   left: 0;
 }
-.Background figure img{
-  width: 20%; 
+
+.Background figure img {
+  width: 20%;
   height: 720px;
   float: left;
-  
+
 }
-.together
-{
+
+.together {
   display: flex;
   justify-content: space-around;
   padding: 4px;
   background-color: white;
 }
-.first{
+
+.first {
   background-image: url("https://indicanews.com/wp-content/uploads/2020/05/spacex-1280x720.jpg");
   width: 400px;
   height: 200px;
@@ -56,18 +59,21 @@ body{
   flex-direction: column;
   justify-content: flex-end;
 }
-  .first h3{
+
+.first h3 {
   background-color: rgba(13, 14, 15, 0.6);
   color: white;
   margin: 0;
   bottom: 0;
   position: sticky;
 }
-.first .move{
+
+.first .move {
   position: flex;
   align-items: flex-end;
 }
-.second{
+
+.second {
   background-image: url("https://www.superherohype.com/assets/uploads/2021/06/Black-Widow-Final-Poster-featured-1280x720.jpg");
   width: 400px;
   height: 200px;
@@ -79,12 +85,14 @@ body{
   flex-direction: column;
   justify-content: flex-end;
 }
-.second h3{
+
+.second h3 {
   background-color: rgba(184, 180, 180, 0.6);
   color: white;
   margin: 0;
 }
-.third{
+
+.third {
   background-image: url("https://trackercdn.com/ghost/images/2021/7/26758_ACTIVISION_BLIZZARD_LOGO_WHITE_ON_BLACK.png");
   width: 400px;
   height: 200px;
@@ -96,12 +104,14 @@ body{
   flex-direction: column;
   justify-content: flex-end;
 }
-.third h3{
+
+.third h3 {
   background-color: rgba(32, 93, 207, 0.4);
   color: white;
   margin: 0;
 }
-.fourth{
+
+.fourth {
   background-image: url("https://www.playstationlifestyle.net/assets/uploads/2020/06/dead-space-1280x720.jpg");
   width: 400px;
   height: 200px;
@@ -113,30 +123,31 @@ body{
   flex-direction: column;
   justify-content: flex-end;
 }
-.fourth h3{
+
+.fourth h3 {
   background-color: rgba(219, 19, 19, 0.4);
   color: white;
   margin: 0;
 }
 
-@media screen and (max-width: 650px){
-  .Background figure img{
-    width: 20%; 
+@media screen and (max-width: 650px) {
+  .Background figure img {
+    width: 20%;
     height: 500px;
     float: left;
   }
 }
 
 @media screen and (max-width: 420px) {
-  .Background figure img{
+  .Background figure img {
     width: 20%;
     height: 300px;
     float: left;
   }
 }
 
-@media screen and (max-width: 650px){
-  .first{
+@media screen and (max-width: 650px) {
+  .first {
     background-image: url("https://indicanews.com/wp-content/uploads/2020/05/spacex-1280x720.jpg");
     width: 350px;
     height: 200px;
@@ -145,70 +156,76 @@ body{
     background-repeat: no-repeat;
     transition: 1s ease-in-out;
   }
-  .together{
+
+  .together {
     display: block;
   }
-  .second{
+
+  .second {
     width: 350px;
   }
-  .third{
+
+  .third {
     width: 350px;
   }
-  .fourth{
+
+  .fourth {
     width: 350px;
   }
 }
 
 @keyframes lefts {
-  0%
-  {
+  0% {
     left: 0;
-    
+
   }
-  20%
-  {
+
+  20% {
     left: 0;
   }
-  25%
-  {
+
+  25% {
     left: -100%;
   }
-  45%
-  {
+
+  45% {
     left: -100%;
   }
-  50%
-  {
+
+  50% {
     left: -200%;
   }
-  70%
-  {
+
+  70% {
     left: -200%;
   }
-  75%
-  {
+
+  75% {
     left: -300%;
   }
-  95%
-  {
+
+  95% {
     left: -300%;
   }
-  100%
-  {
+
+  100% {
     left: -400%;
   }
 }
 
 /* psudo */
-.first:hover{
-  background-size:110%;
+.first:hover {
+  background-size: 110%;
 }
-.second:hover{
-  background-size:110%;
+
+.second:hover {
+  background-size: 110%;
 }
-.third:hover{
-  background-size:110%;
+
+.third:hover {
+  background-size: 110%;
 }
-.fourth:hover{
-  background-size:110%;
+
+.fourth:hover {
+  background-size: 110%;
 }
