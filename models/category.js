@@ -6,7 +6,7 @@ const CategorySchema = new Schema(
     title: { type: String, required: true },
     body: { type: String, required: true },
     imgUrl: { type: String, required: true },
-    threads: [{ type: Schema.Types.ObjectId, ref: "Thread"}]
+    threadId: [{ type: Schema.Types.ObjectId, ref: "Thread"}]
   },
   {timestamps: true}
 )

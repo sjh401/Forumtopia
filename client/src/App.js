@@ -8,6 +8,7 @@ import SignUp from "./screens/SignUp/SignUp"
 import EditThread from "./screens/Thread/EditThread";
 import CreateThread from "./screens/Thread/CreateThread";
 import Thread from "./screens/Thread/Thread";
+import CategoryThread from "./components/TestingStuff/CategoryThread";
 
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
       </Route>
       <Route path="/thread/:id/posts">
         <Thread user={user} setUser={setUser}/>
+      </Route>
+      <Route path="/tests">
+        <CategoryThread user={user} setUser={setUser}/>
       </Route>
     </div>
   )

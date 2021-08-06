@@ -4,8 +4,8 @@ import { createThread, getThreads, getThread, updateThread, deleteThread } from 
 
 const router = Router()
 
-router.post("/threads", restrict, createThread)
-router.get("/threads", getThreads)
+router.post("/categories/:id/threads", restrict, createThread)
+router.get("/categories/:id/threads", getThreads)
 router.get("/threads/:id", getThread)
 router.put("/threads/:id", restrict, updateThread)
 router.delete("/threads/:id", restrict, deleteThread)

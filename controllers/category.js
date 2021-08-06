@@ -13,7 +13,7 @@ export const createCategory = async (req, res) => {
 
 export const getCategories = async (req, res) => {
   try {
-    const categories = await Category.find({}).populate('threads')
+    const categories = await Category.find({}).populate('threadId')
     res.send(categories)
   } catch (e) {
     res.status(404).json({error: e.message})
@@ -23,7 +23,7 @@ export const getCategories = async (req, res) => {
 export const getCategory = async (req, res) => {
   try {
     const {id} = req.params
-    const category = await Category.findById(id).populate('threads')
+    const category = await Category.findById(id).populate('threadId')
     if (category) {
       res.json(category)
     } else {
