@@ -17,7 +17,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { getPosts } from '../../services/post';
-import CreatePost from '../Posts/CreatePost';
+import CreatePost from '../Posts/createPost';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -112,7 +112,7 @@ export default function ThreadCard(props) {
             {posts.map(post => (
               <div key={post._id}>
                 <p>{post.body}</p>
-                <img src={post.imgUrl}></img>
+                <img src={post.imgUrl} alt="image1"></img>
               </div>
             ))}
           </Typography>

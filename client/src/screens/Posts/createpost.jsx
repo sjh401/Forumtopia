@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom";
-import Layout from '../../components/Layout/Layout';
-
 import { getThread } from '../../services/thread';
 import { createPost } from '../../services/post';
 
@@ -17,7 +15,6 @@ export default function CreatePost(props) {
   useEffect(() => {
     const fetchThread = async () => {
       const thread = await getThread(id);
-      console.log(thread)
       setThread(thread);
     }
     fetchThread();

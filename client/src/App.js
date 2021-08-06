@@ -9,8 +9,8 @@ import EditThread from "./screens/Threads/EditThread";
 import ThreadCard from "./screens/Threads/ThreadCard";
 import Gaming from "./screens/Threadcss/Gaming";
 import Comics from "./screens/Threadcss/Comics";
-import CreateThread from "./screens/Threads/CreateThread";
-import Home from "./screens/Home/Home";
+import CreateThread from "./screens/Threads/createThread";
+import Home from "./screens/home/Home";
 import Categories from "./screens/Categories/Categories";
 
 
