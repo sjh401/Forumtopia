@@ -12,8 +12,6 @@ import Comics from "./screens/Threadcss/Comics";
 import CreateThread from "./screens/Threads/createthread";
 import Home from "./screens/Home/Home";
 import Categories from "./screens/Categories/Categories";
-import Comedy from "./screens/Comedy/Comedy";
-
 
 
 function App() {
