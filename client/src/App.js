@@ -63,7 +63,7 @@ function App() {
         <ThreadCard user={user} setUser={setUser}/>
       </Route>
       <Route path="/categories">
-        <Categories />
+        <Categories user={user} setUser={setUser} />
       </Route>
       
     </div>

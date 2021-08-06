@@ -7,11 +7,11 @@ import { createPost } from '../../services/post';
 
 
 export default function CreatePost(props) {
-  const [ thread, setThread ] = useState([])
+  const [thread, setThread] = useState([])
   const [input, setInput] = useState({ body: "", imgUrl: "" });
   const history = useHistory();
-  const { id }= useParams();
-  
+  const { id } = useParams();
+
   useEffect(() => {
     const fetchThread = async () => {
       const thread = await getThread(id);
@@ -22,14 +22,14 @@ export default function CreatePost(props) {
 
   const handleChange = (e) => {
     const { id, value } = e.target
-    
+
     setInput(prevInput => ({
       ...prevInput,
       [id]: value
     }))
   }
-console.log(props.user)
-  const handleSubmit= async (e) =>{
+  console.log(props.user)
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await createPost(id, input);
     history.push(`/threads/${id}`);
@@ -37,7 +37,7 @@ console.log(props.user)
 
   return (
     <>
-      Create a Post 
+      Create a Post
       <form onSubmit={handleSubmit} className="form-horizontal">
         <br />
         <label>Body:</label>
