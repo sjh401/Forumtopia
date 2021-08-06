@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+
 export default function Gaming(props) {
   const classes = useStyles();
   const { id } = useParams()

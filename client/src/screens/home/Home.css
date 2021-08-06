@@ -126,6 +126,7 @@
 
 .together {
   display: block;
+  display: flex
 }
 
 .second {
