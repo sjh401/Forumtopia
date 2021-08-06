@@ -200,6 +200,10 @@ h3:hover {
   text-decoration: underline;
 } */
 
+.trending-text {
+  text-align: center;
+}
+
 .main-card-container {
   display: flex;
   justify-content: center;

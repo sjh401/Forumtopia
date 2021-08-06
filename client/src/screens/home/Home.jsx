@@ -69,7 +69,8 @@ console.log(homeData)
 
 const useStyles = makeStyles({
   root: {
-    width: 345,
+    width: 245,
+    height: 245,
   },
 });
 
@@ -78,6 +79,7 @@ export default function ImgMediaCard() {
 
   return (
     <Layout>
+      <h2 className="trending-text">Trending Today</h2>
       <div className="main-card-container">
         {homeData.map((data) => {
           return (
@@ -96,14 +98,6 @@ export default function ImgMediaCard() {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    Share
-                  </Button>
-                  <Button size="small" color="primary">
-                    Learn More
-                  </Button>
-                </CardActions>
               </Card>
             </div>
           )
