@@ -12,6 +12,7 @@ import Comics from "./screens/Threadcss/Comics";
 import CreateThread from "./screens/Threads/createThread";
 import Home from "./screens/home/Home";
 import Categories from "./screens/Categories/Categories";
+import EditPost from "./screens/Posts/EditPost";
 
 
 
@@ -50,6 +51,9 @@ function App() {
       </Route>
       <Route path="/threads-edit/:id">
         <EditThread user={user} setUser={setUser} />
+      </Route>
+      <Route path="/post-edit/:id">
+        <EditPost user={user} setUser={setUser} />
       </Route>
       <Route path="/threads/:id">
         <ThreadCard user={user} setUser={setUser}/>
