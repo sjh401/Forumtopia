@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Comics(props) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
 
   return (
     <Layout user={props.user}>
