@@ -49,6 +49,7 @@ console.log(props.user)
         <label>Image:</label>
         <input id="imgUrl" value={input.imgUrl} onChange={handleChange} />
         <br />
+        {/* <button ref={"refresh"}>Submit</button> */}
         <button>Submit</button>
       </form>
     </>

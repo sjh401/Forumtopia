@@ -35,41 +35,41 @@ export default function CreateThread(props)  {
 
   return (
     <Layout user={props.user}>
-    Create Thread 
-      <form className="create-form" onSubmit={handleSubmit} >
-        <br />
-        <input 
-          className='input-title'
-          placeholder='Title'
-          name='title'
-          value={input.title}
-          required 
-          onChange={handleChange}
-        />
-        <br />
-        
-        <textarea
-          className='textarea-body'
-          placeholder='Body'
-          name='body'
-          rows={10}
-          value={input.body}
-          required
-          onChange={handleChange}
-        />
-        <br />
-        <input 
-          className="input-image-link"
-          placeholder='Image Link'
-          name='imgUrl'
-          value={input.imgUrl}
-          required
-          onChange={handleChange}
-        />
-        <br />
-        <button type ='submit' className='submit-button'>Submit</button>
+      Create Thread 
+        <form className="create-form" onSubmit={handleSubmit} >
+          <br />
+          <input 
+            className='input-title'
+            placeholder='Title'
+            name='title'
+            value={input.title}
+            required 
+            onChange={handleChange}
+          />
+          <br />
+          
+          <textarea
+            className='textarea-body'
+            placeholder='Body'
+            name='body'
+            rows={10}
+            value={input.body}
+            required
+            onChange={handleChange}
+          />
+          <br />
+          <input 
+            className="input-image-link"
+            placeholder='Image Link'
+            name='imgUrl'
+            value={input.imgUrl}
+            required
+            onChange={handleChange}
+          />
+          <br />
+          <button type ='submit' className='submit-button'>Submit</button>
 
-      </form>
+        </form>
       </Layout>
   )
 }

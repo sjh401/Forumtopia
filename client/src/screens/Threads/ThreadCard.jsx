@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout';
 import { getThread } from '../../services/thread';
@@ -17,7 +17,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { getPosts } from '../../services/post';
-import CreatePost from '../Posts/createpost';
+import CreatePost from '../Posts/CreatePost';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,8 +44,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
-  const [ posts, setPosts ] = useState([]);
-  const { id } = useParams();  
+  const [posts, setPosts] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchThread = async () => {
