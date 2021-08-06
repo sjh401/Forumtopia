@@ -1,9 +1,8 @@
-.trend {
+/* .trend-text {
   display: flex;
   justify-content: center;
 }
 
-/* Class */
 .Background {
   overflow: hidden;
 }
@@ -27,94 +26,67 @@ h4 {
 
 }
 
-.together {
+.trending-now-container {
   display: flex;
-  justify-content: space-around;
-  padding: 4px;
+  justify-content: center;
   background-color: white;
 }
 
-.first {
+.first-image,
+.second-image,
+.third-image,
+.fourth-image {
+  margin: 10px;
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.first-image {
   background-image: url("https://indicanews.com/wp-content/uploads/2020/05/spacex-1280x720.jpg");
-  width: 400px;
-  height: 400px;
-  background-position: center;
-  background-size: 200%;
-  background-repeat: no-repeat;
-  transition: 1s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
-.first h3 {
-  background-color: rgba(13, 14, 15, 0.6);
-  color: white;
-  margin: 0;
-  bottom: 0;
-  position: sticky;
-}
-
-.first .move {
-  position: flex;
-  align-items: flex-end;
-}
-
-.second {
+.second-image {
   background-image: url("https://www.superherohype.com/assets/uploads/2021/06/Black-Widow-Final-Poster-featured-1280x720.jpg");
-  width: 400px;
-  height: 400px;
-  background-position: center;
-  background-size: 200%;
-  background-repeat: no-repeat;
-  transition: 1s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
-.second h3 {
-  background-color: rgba(184, 180, 180, 0.6);
-  color: white;
-  margin: 0;
-}
-
-.third {
+.third-image {
   background-image: url("https://trackercdn.com/ghost/images/2021/7/26758_ACTIVISION_BLIZZARD_LOGO_WHITE_ON_BLACK.png");
-  width: 400px;
-  height: 400px;
-  background-position: center;
-  background-size: 200%;
-  background-repeat: no-repeat;
-  transition: 1s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
-.third h3 {
-  background-color: rgba(32, 93, 207, 0.4);
-  color: white;
-  margin: 0;
-}
-
-.fourth {
+.fourth-image {
   background-image: url("https://www.playstationlifestyle.net/assets/uploads/2020/06/dead-space-1280x720.jpg");
-  width: 400px;
-  height: 400px;
-  background-position: center;
-  background-size: 200%;
-  background-repeat: no-repeat;
-  transition: 1s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
-.fourth h3 {
-  background-color: rgba(219, 19, 19, 0.4);
+.first-image h4,
+.second-image h4,
+.third-image h4,
+.fourth-image h4 {
   color: white;
-  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 5px
+}
+
+.first-image h4 {
+  background-color: rgba(13, 14, 15, 0.76);
+}
+
+.second-image h4 {
+  background-color: rgba(184, 180, 180, 0.76);
+}
+
+.third-image h4 {
+  background-color: rgba(32, 93, 207, 0.76);
+}
+
+.fourth-image h4 {
+  background-color: rgba(219, 19, 19, 0.76);
 }
 
 @media screen and (max-width: 650px) {
@@ -144,7 +116,7 @@ h4 {
     transition: 1s ease-in-out;
   }
 
-  .together {
+  .trending-now-container {
     display: block;
   }
 
@@ -200,7 +172,6 @@ h4 {
   }
 }
 
-/* psudo */
 .first:hover {
   background-size: 210%;
 }
@@ -227,4 +198,13 @@ h4 {
 
 h3:hover {
   text-decoration: underline;
+} */
+
+.main-card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.trend-card-container {
+  padding: 10px
 }
