@@ -17,6 +17,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { getPosts } from '../../services/post';
+import CreatePost from '../Posts/createpost';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,30 +45,29 @@ const useStyles = makeStyles((theme) => ({
 export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
   const [ posts, setPosts ] = useState([]);
-  const { id } = useParams();
+  const { id } = useParams();  
 
   useEffect(() => {
     const fetchThread = async () => {
       const thread = await getThread(id);
-      console.log(thread)
       setThread(thread);
     }
     fetchThread();
-  }, [id]);
+  }, [id,posts]);
   
   useEffect(() => {
     const fetchPosts = async () => {
-      const posts = await getPosts();
+      const posts = await getPosts(id);
       console.log(posts);
       setPosts(posts)
     }
     fetchPosts()
-  },[thread,id])
+  },[id])
   console.log(posts)
   const classes = useStyles();
 
   return (
-    <Layout >
+    <Layout user={props.user} >
       <Card className={classes.root}>
         <CardHeader
           avatar={
@@ -91,16 +91,8 @@ export default function ThreadCard(props) {
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="div">
             {thread.body} 
-            <Link to={(thread.userId?._id === props.user?.id)? `/thread-edit/${thread._id}`: `/thread/${thread._id}`} variant="body2"> Edit</Link>
-            <Link to={`/threads/${id}/posts`}>Create Post</Link>
-          </Typography>
-          <Typography variant="body2" color="textSecondary">
-            {posts.map(post => (
-              <div key={posts._id}>
-                <h6>{post.title}</h6>
-                <p>{post.body}</p>
-              </div>
-            ))}
+            {thread.userId?._id === props.user?.id &&
+            <Link to={`/threads-edit/${thread._id}`} variant="body2"> Edit</Link>}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -111,6 +103,19 @@ export default function ThreadCard(props) {
             <ShareIcon />
           </IconButton>
         </CardActions>
+      </Card>
+      <Card>
+      <Typography variant="body2" color="textSecondary" component="div">
+        <CreatePost user={props.user} />
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="div">
+            {posts.map(post => (
+              <div key={post._id}>
+                <p>{post.body}</p>
+                <img src={post.imgUrl}></img>
+              </div>
+            ))}
+          </Typography>
       </Card>
     </Layout>
   );

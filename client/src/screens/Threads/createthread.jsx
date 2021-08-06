@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Redirect } from "react-router-dom";
 import Layout from '../../components/Layout/Layout';
 import { createThread } from "../../services/thread";
@@ -7,7 +7,6 @@ import { createThread } from "../../services/thread";
 
 
 export default function CreateThread(props)  {
-  
   const [input, setInput] = useState({
     title: "",
     body: "",
@@ -35,7 +34,7 @@ export default function CreateThread(props)  {
   }
 
   return (
-    <Layout>
+    <Layout user={props.user}>
     Create Thread 
       <form className="create-form" onSubmit={handleSubmit} >
         <br />

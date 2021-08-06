@@ -44,10 +44,9 @@ export default function Gaming(props) {
   return (
     <Layout user={props.user}>
       <div>
-
         <Banner />
         <div className="group">
-          Add create thread button here
+          
           <div>
 
             <Card className={classes.root}>

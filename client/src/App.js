@@ -49,15 +49,15 @@ function App() {
       <Route path="/signoout">
         <SignOut setUser={setUser} />
       </Route>
-      <Route path="/threads/:id/posts">
-        <CreatePost user={user} setUser={setUser}/>
-      </Route>
       <Route path="/threads-edit/:id">
         <EditThread user={user} setUser={setUser} />
       </Route>
       <Route path="/threads/:id">
         <ThreadCard user={user} setUser={setUser}/>
       </Route>
+      {/* <Route path="/threads/:id/posts">
+        <CreatePost user={user} setUser={setUser}/>
+      </Route> */}
       <Route path="/categories">
         <Categories />
       </Route>

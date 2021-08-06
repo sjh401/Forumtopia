@@ -39,7 +39,7 @@ console.log(props.user)
   };
 
   return (
-    <Layout>
+    <>
       Create a Post 
       <form onSubmit={handleSubmit} className="form-horizontal">
         <br />
@@ -50,9 +50,7 @@ console.log(props.user)
         <input id="imgUrl" value={input.imgUrl} onChange={handleChange} />
         <br />
         <button>Submit</button>
-
       </form>
-        
-      </Layout>
+    </>
   )
 }

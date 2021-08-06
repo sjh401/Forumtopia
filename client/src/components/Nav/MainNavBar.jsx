@@ -5,7 +5,10 @@ import "./Navs.css"
 const authenticatedOptions = (
   <>
     <NavLink to="/signout">Sign Out</NavLink>
+
+    {/* Don't need correct? */}
     <NavLink to="/categories">Threads</NavLink>
+    <NavLink to="/threads-create">Create Thread</NavLink>
 
   </>
 )
@@ -21,8 +24,8 @@ const unauthenticatedOptions = (
 // maybe add posts and threads to here? not sure.
 const alwaysOptions = (
   <>
-    <NavLink to=""></NavLink>
-    <NavLink to=""></NavLink>
+    <NavLink to="/">Home</NavLink>
+    {/* <NavLink to=""></NavLink> */}
   </>
 )
 
@@ -43,19 +46,5 @@ const MainNavBar = (props) => {
   )
 }
 
-// export default function MainNavBar(props) {
-//   return (
-//         <div className = "menu">
-//               <div className = "name">
-//               <Link to="/">Forumtopia</Link>
-//               </div>
-//               <div className="space">
-//                 <Link to="/sign-in">Sign In</Link>
-//         <Link to="/sign-up">Sign Up</Link>
-//         <Link to="signout">Sign Out</Link>
-//               </div>
-//           </div>
-//         )
-// }
 
 export default MainNavBar
