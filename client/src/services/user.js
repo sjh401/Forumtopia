@@ -33,7 +33,7 @@ export const verify = async () => {
   }
 }
 
-export const signOut = () => {
+export const signOut = async () => {
   try {
     localStorage.removeItem("token")
     return true

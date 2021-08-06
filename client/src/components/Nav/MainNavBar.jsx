@@ -25,16 +25,16 @@ const alwaysOptions = (
     </>
 )
 
-const MainNavBar = ({ user }) => {
+const MainNavBar = (props) => {
   return (
     <nav>
       <div className="menu">
         <NavLink to="/">Forumtopia</NavLink>
         {/* he had classname for the divs underneath, I didn't but put in if you want */}
         <div>
-          {user && <div>Welcome, {user.username}</div>}
+          {props.user && <div>Welcome, {props.user.username}</div>}
           {alwaysOptions}
-          {user ? authenticatedOptions : unauthenticatedOptions}
+          {props.user ? authenticatedOptions : unauthenticatedOptions}
         </div>
       </div>
     </nav>
