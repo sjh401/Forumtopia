@@ -1,21 +1,21 @@
 import React from 'react'
-import "./Banner.css"
-export default function Banner() {
+import "./BannerComics.css"
+export default function BannerComic() {
     return (
         <div className = "container">
-            <section className="Battlefield">
+            <section className="backgroundone">
 
             </section>
 
-            <section className="Halo">
+            <section className="backgroundtwo">
 
             </section>
 
-            <section className="Splinter">
+            <section className="backgroundthree">
 
             </section>
 
-            <section className="GTA">
+            <section className="backgroundfour">
 
             </section>
  {/* <img src ="https://wallpaper.dog/large/10846744.jpg"/>
