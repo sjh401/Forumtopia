@@ -7,7 +7,7 @@ import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp";
 import SignOut from './screens/signout/SignOut';
 import EditThread from "./screens/Threads/EditThread";
-import Thread from "./screens/Threads/Thread";
+import ThreadCard from "./screens/Threads/ThreadCard";
 import Gaming from "./screens/Threadcss/Gaming";
 import Comics from "./screens/Threadcss/Comics";
 import CreateThread from "./screens/Threads/createthread";
@@ -51,7 +51,7 @@ function App() {
         <EditThread user={user} setUser={setUser} />
       </Route>
       <Route path="/thread/:id">
-        <Thread user={user} setUser={setUser}/>
+        <ThreadCard user={user} setUser={setUser}/>
       </Route>
       
     </div>

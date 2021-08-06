@@ -5,7 +5,7 @@ import ThreadSingle from '../../components/Thread/ThreadSingle'
 
 
 
-export default function HomeScreen(props) {
+export default function Home(props) {
   console.log(props.user)
   return (
     <Layout user={props.user}>
