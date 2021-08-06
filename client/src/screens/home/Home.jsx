@@ -24,7 +24,7 @@ export default function HomeScreen(props) {
     //     if(thread.userId._id === props.user?.id) {
     //         return <Link to={`/thread-edit/${thread._id}`} style={{color:"blue"}}>Edit</Link>
     //     }
-    // }
+    // } fdsafdasfads
     console.log(props.user)
     return (
         <Layout>

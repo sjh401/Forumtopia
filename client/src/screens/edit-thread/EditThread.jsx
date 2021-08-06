@@ -21,7 +21,7 @@ export default function EditThread(props) {
         setInput({
             ...input,
             [id]: value
-        })
+        });
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
