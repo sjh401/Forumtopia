@@ -13,6 +13,7 @@ import CreateThread from "./screens/Threads/CreateThread";
 import Home from "./screens/Home/Home";
 import Categories from "./screens/Categories/Categories";
 import EditPost from "./screens/Posts/EditPost";
+import PostCard from "./screens/Posts/PostCard";
 
 
 
@@ -54,6 +55,9 @@ function App() {
       </Route>
       <Route path="/post-edit/:id">
         <EditPost user={user} setUser={setUser} />
+      </Route>
+      <Route path="/post/:id">
+        <PostCard user={user} setUser={setUser} />
       </Route>
       <Route path="/threads/:id">
         <ThreadCard user={user} setUser={setUser}/>
