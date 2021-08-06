@@ -7,9 +7,14 @@ import "./Mobile.css"
 import { Link } from "react-router-dom"
 
 const options = [
+  //   "Home",
+  //   "Signup",
+  //   "Signin"
   <Link to="/">Home</Link>,
   <Link to="/sign-in">Signin</Link>,
-  <Link to="/sign-in">Signup</Link>,
+  <Link to="/sign-up">Signup</Link>,
+  <Link to="/sign-out">Sign Out</Link>,
+  <Link to="/threads">Threads</Link>,
   <Link to="/create-post">Create a post</Link>
 ];
 
@@ -37,7 +42,7 @@ export default function LongMenu() {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <MoreVertIcon className="icon-color" />
+        <MoreVertIcon className="color" />
       </IconButton>
       <Menu
         id="long-menu"
@@ -52,10 +57,9 @@ export default function LongMenu() {
           },
         }}
       >
-        {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            <div className="mobile-nav-text">{option}</div>
-
+        {options.map((option, index) => (
+          <MenuItem key={`MenuItem-${index}`} selected={option === 'Pyxis'} onClick={handleClose}>
+            {option}
           </MenuItem>
         ))}
       </Menu>

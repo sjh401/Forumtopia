@@ -2,13 +2,19 @@ import {useState, useEffect} from "react"
 import { verify} from "./services/user"
 import { Route } from "react-router-dom"
 
+import SignIn from "./screens/sign-in/SignIn";
+import SignUp from "./screens/sign-up/SignUp";
+import SignOut from './screens/signout/SignOut';
+import EditThread from "./screens/Threads/EditThread";
+import ThreadCard from "./screens/Threads/ThreadCard";
+import Gaming from "./screens/Threadcss/Gaming";
+import Comics from "./screens/Threadcss/Comics";
+import CreateThread from "./screens/Threads/CreateThread";
 import Home from "./screens/Home/Home";
-import SignIn from "./screens/SignIn/SignIn";
-import SignUp from "./screens/SignUp/SignUp"
-import EditThread from "./screens/Thread/EditThread";
-import CreateThread from "./screens/Thread/CreateThread";
-import Thread from "./screens/Thread/Thread";
-import CategoryThread from "./components/TestingStuff/CategoryThread";
+import Categories from "./screens/Categories/Categories";
+import EditPost from "./screens/Posts/EditPost";
+import PostCard from "./screens/Posts/PostCard";
+
 
 
 function App() {
@@ -35,15 +41,31 @@ function App() {
       <Route path="/sign-up">
         <SignUp user={user} setUser={setUser} />
       </Route>
-      <Route path="/thread-edit/:id">
+      <Route path = "/threads-gaming">
+        <Gaming user={user} setUser={setUser}/>
+      </Route>
+      <Route path ="/threads-comic">
+        <Comics user={user} setUser={setUser}/>
+      </Route>
+      <Route path="/sign-out">
+        <SignOut setUser={setUser} />
+      </Route>
+      <Route path="/threads-edit/:id">
         <EditThread user={user} setUser={setUser} />
       </Route>
-      <Route path="/thread/:id/posts">
-        <Thread user={user} setUser={setUser}/>
+      <Route path="/post-edit/:id">
+        <EditPost user={user} setUser={setUser} />
       </Route>
-      <Route path="/tests">
-        <CategoryThread user={user} setUser={setUser}/>
+      <Route path="/post/:id">
+        <PostCard user={user} setUser={setUser} />
       </Route>
+      <Route path="/threads/:id">
+        <ThreadCard user={user} setUser={setUser}/>
+      </Route>
+      <Route path="/categories">
+        <Categories />
+      </Route>
+      
     </div>
   )
 }
