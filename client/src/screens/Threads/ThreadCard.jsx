@@ -112,7 +112,7 @@ export default function ThreadCard(props) {
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="div">
             {thread.body} 
-            <Link to={(thread.userId._id === props.user?.id)? `/thread-edit/${thread._id}`: `/thread/${thread._id}`} variant="body2"> Edit</Link>
+            <Link to={(thread.userId?._id === props.user?.id)? `/thread-edit/${thread._id}`: `/thread/${thread._id}`} variant="body2"> Edit</Link>
           </Typography>
           <Typography variant="body2" color="textSecondary">
           </Typography>

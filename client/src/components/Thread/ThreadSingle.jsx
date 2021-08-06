@@ -26,7 +26,7 @@ export default function ThreadSingle(props) {
         {threads.map(thread => (
           <div key={thread._id} >
             <h4>{thread.title}</h4>
-            <Link to={`/thread/${thread._id}`} ><img style={{ width: "100px", height: "100px" }} src={thread.imgUrl} alt="cat" /></Link>
+            <Link to={`/threads/${thread._id}`} ><img style={{ width: "100px", height: "100px" }} src={thread.imgUrl} alt="cat" /></Link>
             <p>{thread.body}</p>
             {displayEditLink(thread)}
           </div>
