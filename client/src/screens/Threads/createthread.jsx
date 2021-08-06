@@ -1,45 +1,75 @@
 import { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Layout from '../../components/Layout/Layout';
+import { createThread } from "../../services/thread";
 
 
 
 
-export default function CreateThread(props) {
+export default function CreateThread(props)  {
   
-  const [input, setInput] = useState({ title: "", body: "", imgUrl: "" });
-  const history = useHistory();
+  const [input, setInput] = useState({
+    title: "",
+    body: "",
+    imgUrl: ""
+  });
+
+  const [isCreated, setCreated] =useState(false)
   
   const handleChange = (e) => {
-    const { id, value } = e.target
-    
+    const { name, value } = e.target
     setInput(prevInput => ({
       ...prevInput,
-      [id]: value
+      [name]: value
     }))
   }
 
   const handleSubmit= async (e) =>{
     e.preventDefault();
-    await CreateThread(input);
-    history.pushState("/");
+    const created = await createThread(input);
+    setCreated ({ created })
   };
+
+  if (isCreated) {
+    return <Redirect to={`/thread`} />
+  }
 
   return (
     <Layout>
      Create Thread 
-      <form onsubmit={handleSubmit} className="form-horizontal">
-        <label>Title: </label>
+      <form className="create-form" onSubmit={handleSubmit} >
+       
         <br />
-        <input id="title" value={input.title} onChnage={handleChange} />
+        <input 
+          className='input-title'
+          placeholder='Title'
+          name='title'
+          value={input.title}
+          required 
+          onChange={handleChange}
+        />
         <br />
-        <label>Body: </label>
-        <input id="body" value={input.body} onChnage={handleChange} />
+        
+        <textarea
+          className='textarea-body'
+          placeholder='Body'
+          name='body'
+          rows={10}
+          value={input.body}
+          required
+          onChange={handleChange}
+        />
         <br />
-        <label>Image:</label>
-        <input id="imgUrl" value={input.imgUrl} onChange={handleChange} />
+        <input 
+          className="input-image-link"
+          placeholder='Image Link'
+          name='imgUrl'
+          value={input.imgUrl}
+          required
+          onChange={handleChange}
+        />
         <br />
-        <button>Submit</button>
+        <button type ='submit' className='submit-button'>Submit</button>
 
       </form>
       </Layout>
