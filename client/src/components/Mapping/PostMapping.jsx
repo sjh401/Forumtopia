@@ -21,9 +21,9 @@ export default function PostMapping(props) {
             {posts.map(post => (
             <div key={post._id}>
                 <p>{post.body}</p>
-                <img src={post.imgUrl} style={{ width: "50px", height: "50px" }} alt="user post"></img>
+                <Link to={`/post/${post._id}`}><img src={post.imgUrl} style={{ width: "50px", height: "50px" }} alt="user post"></img></Link> 
                 {post.userId?._id === props.user?.id &&
-            <Link to={`/post-edit/${post._id}`} variant="body2"> Edit</Link>}
+                <Link to={`/post-edit/${post._id}`}> Edit</Link>}
             </div>
             ))}
         </div>
