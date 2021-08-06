@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import { verify} from "./services/user"
 import { Route } from "react-router-dom"
 
-import Home from "./screens/home/Home";
+import Home from "./screens/Home/Home";
 import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp";
 import SignOut from './screens/signout/SignOut';

@@ -14,12 +14,6 @@
 }
 
 
-body {
-  background-color: white;
-}
-
-
-
 /* Class */
 .Background {
   overflow: hidden;
@@ -130,48 +124,20 @@ body {
   margin: 0;
 }
 
-@media screen and (max-width: 650px) {
-  .Background figure img {
-    width: 20%;
-    height: 500px;
-    float: left;
-  }
+.together {
+  display: block;
 }
 
-@media screen and (max-width: 420px) {
-  .Background figure img {
-    width: 20%;
-    height: 300px;
-    float: left;
-  }
+.second {
+  width: 350px;
 }
 
-@media screen and (max-width: 650px) {
-  .first {
-    background-image: url("https://indicanews.com/wp-content/uploads/2020/05/spacex-1280x720.jpg");
-    width: 350px;
-    height: 200px;
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    transition: 1s ease-in-out;
-  }
+.third {
+  width: 350px;
+}
 
-  .together {
-    display: block;
-  }
-
-  .second {
-    width: 350px;
-  }
-
-  .third {
-    width: 350px;
-  }
-
-  .fourth {
-    width: 350px;
-  }
+.fourth {
+  width: 350px;
 }
 
 @keyframes lefts {
@@ -228,4 +194,33 @@ body {
 
 .fourth:hover {
   background-size: 110%;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 650px) {
+  .Background figure img {
+    width: 20%;
+    height: 500px;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .Background figure img {
+    width: 20%;
+    height: 300px;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .first {
+    background-image: url("https://indicanews.com/wp-content/uploads/2020/05/spacex-1280x720.jpg");
+    width: 350px;
+    height: 200px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: 1s ease-in-out;
+  }
 }
