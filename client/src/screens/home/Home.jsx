@@ -1,29 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+// import React, { useState, useEffect } from 'react'
+// import { Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
-import { getThreads } from '../../services/thread'
+// import { getThreads } from '../../services/thread'
 import "./Home.css"
 import Thread from "../Threadcss/Thread"
+import ThreadSingle from '../../components/Thread/ThreadSingle'
 
 
 
 export default function HomeScreen(props) {
-    const [ threads, setThreads ] = useState([])
+    // const [ threads, setThreads ] = useState([])
 
-    useEffect(() => {
-        const fetchThreads = async () => {
-            let data = await getThreads();
-            console.log(data)
-            setThreads(data)
-        }
-        fetchThreads()
-    }, [])
+    // useEffect(() => {
+    //     const fetchThreads = async () => {
+    //         let data = await getThreads();
+    //         console.log(data)
+    //         setThreads(data)
+    //     }
+    //     fetchThreads()
+    // }, [])
 
-    const displayEditLik = (thread) => {
-        if(thread.userId._id === props.user?.id) {
-            return <Link to={`/thread-edit/${thread._id}`} style={{color:"blue"}}>Edit</Link>
-        }
-    }
+    // const displayEditLik = (thread) => {
+    //     if(thread.userId._id === props.user?.id) {
+    //         return <Link to={`/thread-edit/${thread._id}`} style={{color:"blue"}}>Edit</Link>
+    //     }
+    // }
     console.log(props.user)
     return (
         <Layout>
@@ -46,7 +47,8 @@ export default function HomeScreen(props) {
                     </div>
                 </div>
                 <span className="spans"></span>
-                <div classname="threads-home">
+                <ThreadSingle user={props.user} />
+                {/* <div classname="threads-home">
                     {threads.map( thread => (
                         <div key={thread.userId} >
                             <h4>{thread.title}</h4>
@@ -56,7 +58,7 @@ export default function HomeScreen(props) {
                         </div>
                     ))}
 
-                </div>
+                </div> */}
                 <Thread/>
                 </div>
                 </Layout>

@@ -1,19 +1,16 @@
 import { useState, useEffect } from 'react'
-import { useParams, Redirect, useHistory } from 'react-router-dom'
+import { useParams, Redirect} from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import { getThread, updateThread } from '../../services/thread.js';
 
 export default function EditThread(props) {
-    // const [ thread, setThread ] = useState({});
     const [ input, setInput ] = useState({ title: "" , body: "", imgUrl: "" })
     const [ isUpdated, setIsUpdated ] = useState(false);
     const { id } = useParams();
-    const history = useHistory();
 
     useEffect(() => {
         const fetchThread = async () => {
             const soloThread = await getThread(id);
-            console.log(soloThread);
             setInput(soloThread);
         }
         fetchThread();
@@ -30,9 +27,7 @@ export default function EditThread(props) {
         e.preventDefault();
         console.log(input)
         const updated = await updateThread(id, input);
-        console.log(updated)
         setIsUpdated(updated);
-        // history.push("/")
     }
 
     if(isUpdated) {
