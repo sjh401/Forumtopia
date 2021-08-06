@@ -1,5 +1,5 @@
 import {useState} from "react"
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router"
 import "./SignUp.css"
 import {signUp} from "../../services/user"
 import Layout from "../../components/Layout/Layout"
@@ -7,24 +7,25 @@ import Layout from "../../components/Layout/Layout"
 
 
 export default function SignUp(props) {
-    const [input, setInput] = useState({username: "", email: "", password: ""})
+    const [ input, setInput ] = useState({username:"", email:"", password:""});
+    const { setUser } = props;
     const history = useHistory();
-const {setUser} = props
 
     const handleSubmit = async (e) => {
-        const user = await signUp(input);
-        setUser(user);
         e.preventDefault();
-        history.push("/")
-    };
+        const user = await signUp(input);
+        console.log(user);
+        setUser(user);
+        history.push("/");
+    }
 
     const handleInput = (e) => {
-        const {id, value} = e.target;
+        const { id, value } = e.target;
         setInput((prevInput) => ({
             ...prevInput,
-            [id]: value,
-        }));
-    }
+            [id]: value
+        }))
+    };
     return (
         <Layout>
             <div className="logo">
