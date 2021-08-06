@@ -6,11 +6,11 @@ import Home from "./screens/home/Home";
 import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp";
 import SignOut from './screens/signout/SignOut';
-import EditThread from "./screens/edit-thread/EditThread";
-import CreateThread from "./screens/Create /createthread";
+import EditThread from "./screens/Threads/EditThread";
 import Thread from "./screens/edit-thread/Thread";
 import Gaming from "./screens/Threadcss/Gaming";
 import Comics from "./screens/Threadcss/Comics";
+import CreateThread from "./screens/Threads/createthread";
 
 
 
