@@ -1,7 +1,4 @@
-// import React, { useState, useEffect } from 'react'
-// import { Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
-// import { getThreads } from '../../services/thread'
 import "./Home.css"
 import Thread from "../Threadcss/Thread"
 import ThreadSingle from '../../components/Thread/ThreadSingle'
@@ -9,22 +6,6 @@ import ThreadSingle from '../../components/Thread/ThreadSingle'
 
 
 export default function HomeScreen(props) {
-  // const [ threads, setThreads ] = useState([])
-
-  // useEffect(() => {
-  //     const fetchThreads = async () => {
-  //         let data = await getThreads();
-  //         console.log(data)
-  //         setThreads(data)
-  //     }
-  //     fetchThreads()
-  // }, [])
-
-  // const displayEditLik = (thread) => {
-  //     if(thread.userId._id === props.user?.id) {
-  //         return <Link to={`/thread-edit/${thread._id}`} style={{color:"blue"}}>Edit</Link>
-  //     }
-  // } fdsafdasfads
   console.log(props.user)
   return (
     <Layout user={props.user}>
@@ -48,20 +29,8 @@ export default function HomeScreen(props) {
         </div>
         <span className="spans"></span>
         <ThreadSingle user={props.user} />
-        {/* <div classname="threads-home">
-                    {threads.map( thread => (
-                        <div key={thread.userId} >
-                            <h4>{thread.title}</h4>
-                            <Link to={`/thread/${thread._id}`} ><img style={{width: "100px", height: "100px"}} src={thread.imgUrl}/></Link>
-                            <p>{thread.body}</p>
-                            {displayEditLik(thread)}
-                        </div>
-                    ))}
-
-                </div> */}
         <Thread />
       </div>
     </Layout>
-
   )
 }
