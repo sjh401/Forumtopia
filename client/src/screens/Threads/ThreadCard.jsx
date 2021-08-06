@@ -93,7 +93,7 @@ export default function ThreadCard(props) {
             {thread.body}
             {(thread.userId?._id === props.user?.id) &&
               (<Link to={`/thread-edit/${thread._id}`} variant="body2"> Edit</Link>)}
-            <Link to={`/threads/${id}/posts`}>Create Post</Link>
+            {/* <Link to={`/threads/${id}/posts`}>Create Post</Link> */}
           </Typography>
           <Typography variant="body2" color="textSecondary">
             {posts.map(post => (
