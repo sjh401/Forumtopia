@@ -1,7 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
 .trend {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  font-size: 20px;
+  font-family: "open-sans-condensed"
 }
+
+.spans {
+  width: 100%;
+  background-color: black;
+  height: 23px;
+}
+
+
+body {
+  background-color: white;
+}
+
+
 
 /* Class */
 .Background {
@@ -33,9 +50,9 @@
 .first {
   background-image: url("https://indicanews.com/wp-content/uploads/2020/05/spacex-1280x720.jpg");
   width: 400px;
-  height: 400px;
+  height: 200px;
   background-position: center;
-  background-size: 200%;
+  background-size: 100%;
   background-repeat: no-repeat;
   transition: 1s ease-in-out;
   display: flex;
@@ -59,9 +76,9 @@
 .second {
   background-image: url("https://www.superherohype.com/assets/uploads/2021/06/Black-Widow-Final-Poster-featured-1280x720.jpg");
   width: 400px;
-  height: 400px;
+  height: 200px;
   background-position: center;
-  background-size: 200%;
+  background-size: 100%;
   background-repeat: no-repeat;
   transition: 1s ease-in-out;
   display: flex;
@@ -78,9 +95,9 @@
 .third {
   background-image: url("https://trackercdn.com/ghost/images/2021/7/26758_ACTIVISION_BLIZZARD_LOGO_WHITE_ON_BLACK.png");
   width: 400px;
-  height: 400px;
+  height: 200px;
   background-position: center;
-  background-size: 200%;
+  background-size: 100%;
   background-repeat: no-repeat;
   transition: 1s ease-in-out;
   display: flex;
@@ -97,9 +114,9 @@
 .fourth {
   background-image: url("https://www.playstationlifestyle.net/assets/uploads/2020/06/dead-space-1280x720.jpg");
   width: 400px;
-  height: 400px;
+  height: 200px;
   background-position: center;
-  background-size: 200%;
+  background-size: 100%;
   background-repeat: no-repeat;
   transition: 1s ease-in-out;
   display: flex;
@@ -131,11 +148,11 @@
 
 @media screen and (max-width: 650px) {
   .first {
-    background-image: url("https://assets2.rockpapershotgun.com/steam-deck-arcade.jpg/BROK/resize/1920%3E/format/jpg/quality/80/steam-deck-arcade.jpg");
+    background-image: url("https://indicanews.com/wp-content/uploads/2020/05/spacex-1280x720.jpg");
     width: 350px;
-    height: 300px;
+    height: 200px;
     background-position: center;
-    background-size: 200%;
+    background-size: 100%;
     background-repeat: no-repeat;
     transition: 1s ease-in-out;
   }
@@ -198,22 +215,17 @@
 
 /* psudo */
 .first:hover {
-  background-size: 210%;
+  background-size: 110%;
 }
 
 .second:hover {
-  background-size: 210%;
+  background-size: 110%;
 }
 
 .third:hover {
-  background-size: 210%;
+  background-size: 110%;
 }
 
 .fourth:hover {
-  background-size: 210%;
-}
-
-
-h3:hover {
-  text-decoration: underline;
+  background-size: 110%;
 }
