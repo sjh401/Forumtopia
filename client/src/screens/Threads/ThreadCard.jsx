@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout';
 import { getThread } from '../../services/thread';
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
-  const [ posts, setPosts ] = useState([]);
+  const [posts, setPosts] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function ThreadCard(props) {
     }
     fetchThread();
   }, [id]);
-  
+
   useEffect(() => {
     const fetchPosts = async () => {
       const posts = await getPosts();
@@ -62,12 +62,12 @@ export default function ThreadCard(props) {
       setPosts(posts)
     }
     fetchPosts()
-  },[thread,id])
+  }, [thread, id])
   console.log(posts)
   const classes = useStyles();
 
   return (
-    <Layout >
+    <Layout>
       <Card className={classes.root}>
         <CardHeader
           avatar={
@@ -90,8 +90,9 @@ export default function ThreadCard(props) {
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="div">
-            {thread.body} 
-            <Link to={(thread.userId?._id === props.user?.id)? `/thread-edit/${thread._id}`: `/thread/${thread._id}`} variant="body2"> Edit</Link>
+            {thread.body}
+            {(thread.userId?._id === props.user?.id) &&
+              (<Link to={`/thread-edit/${thread._id}`} variant="body2"> Edit</Link>)}
             <Link to={`/threads/${id}/posts`}>Create Post</Link>
           </Typography>
           <Typography variant="body2" color="textSecondary">
