@@ -20,7 +20,7 @@ export default function ThreadSingle(props) {
     if (thread.userId._id === props.user?.id) {
       return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}>Edit</Link>
     }
-
+  }
     return (
       <div className="threads-home">
         {threads.map(thread => (
@@ -35,4 +35,4 @@ export default function ThreadSingle(props) {
       </div>
     )
   }
-}
+
