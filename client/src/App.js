@@ -65,7 +65,9 @@ function App() {
       <Route path="/categories">
         <Categories />
       </Route>
-      
+      <Route path="/tests">
+        <CategoryThread user={user} setUser={setUser}/>
+      </Route>
     </div>
   )
 }

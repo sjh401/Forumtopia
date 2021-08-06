@@ -7,6 +7,7 @@ export const createPost = async (req, res) => {
   try {
 
     const post = new Post(req.body)
+<<<<<<< HEAD
     
     post.userId = req.user
     
@@ -21,6 +22,22 @@ export const createPost = async (req, res) => {
 
     post.userId = user.id
     console.log(req.user)
+=======
+    console.log(`Post:`, post)
+    post.userId = req.user
+
+    const { id } = req.params
+    const thread = await Thread.findById(id)
+    console.log(`Thread: `, thread)
+    post.threadId = thread._id
+    
+
+    const user = await User.findById(req.user)
+    console.log(`User:`, user)
+    
+    post.userId = user._id
+
+>>>>>>> 74dd7d64ee9588d060eeed53b04dec01f059436b
     await post.save()
     user.posts.push(post._id)
     thread.posts.push(post._id)
@@ -37,11 +54,18 @@ export const createPost = async (req, res) => {
 export const getPosts = async (req, res) => {
   try {
     const { id } = req.params
+<<<<<<< HEAD
     console.log(id)
     const thread = await Thread.findById(id)
     console.log(thread)
     const posts = await Post.find(req.body).populate('threadId')
     console.log(posts)
+=======
+    const thread = await Thread.findById(id)
+    const posts = await Post.find(req.body).populate('threadId')
+    console.log(posts)
+    console.log(thread)
+>>>>>>> 74dd7d64ee9588d060eeed53b04dec01f059436b
     res.json(posts)
   } catch (e) {
     res.status(404).json({error: e.message})

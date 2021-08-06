@@ -1,6 +1,29 @@
-// import React from 'react'
 import { NavLink } from 'react-router-dom'
-import "./Navs.css"
+import "./Nav.css"
+
+const authenticatedOptions = (
+  <>
+    <NavLink to="/signout">Sign Out</NavLink>
+    <NavLink to="/threads-create">Create a Thread</NavLink>
+
+  </>
+)
+const unauthenticatedOptions = (
+  <>
+    <NavLink to="/sign-in">Sign In</NavLink>
+    <NavLink to="/sign-up">Sign Up</NavLink>
+    <NavLink to="/threads"></NavLink>
+    {/* <NavLink to="/signout">Sign Out</NavLink> */}
+  </>
+)
+
+// maybe add posts and threads to here? not sure.
+const alwaysOptions = (
+  <>
+    <NavLink to=""></NavLink>
+    <NavLink to=""></NavLink>
+  </>
+)
 
 const authenticatedOptions = (
   <>
@@ -34,7 +57,6 @@ const MainNavBar = (props) => {
     <nav>
       <div className="nav-bar">
         <NavLink className="site-logo" to="/">Forumtopia</NavLink>
-        {/* he had classname for the divs underneath, I didn't but put in if you want */}
         <div className="nav-links">
           {props.user && <div>Welcome, {props.user.username}</div>}
           {alwaysOptions}
