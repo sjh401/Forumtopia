@@ -26,7 +26,6 @@ function App() {
   
   return (
     <div>
-      
       <Route exact path="/">
         <Home user={user} setUser={setUser} />
       </Route>

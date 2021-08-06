@@ -117,7 +117,7 @@ export default function RecipeReviewCard(props) {
           title={thread.imgUrl}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary" component="div">
             {thread.body}
             {displayEditLik()}
           </Typography>
