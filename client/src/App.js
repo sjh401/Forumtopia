@@ -7,7 +7,7 @@ import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp";
 import SignOut from './screens/signout/SignOut';
 import EditThread from "./screens/Threads/EditThread";
-import Thread from "./screens/edit-thread/Thread";
+import Thread from "./screens/Threads/Thread";
 import Gaming from "./screens/Threadcss/Gaming";
 import Comics from "./screens/Threadcss/Comics";
 import CreateThread from "./screens/Threads/createthread";

@@ -23,7 +23,7 @@ export default function ThreadSingle(props) {
         }
     }
     return (
-        <div classname="threads-home">
+        <div className="threads-home">
         {threads.map( thread => (
             <div key={thread._id} >
                 <h4>{thread.title}</h4>

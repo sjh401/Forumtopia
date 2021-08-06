@@ -27,7 +27,7 @@ export default function HomeScreen(props) {
   // } fdsafdasfads
   console.log(props.user)
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div>
         <h1 className="trend">Trending Now</h1>
         <div className="together">

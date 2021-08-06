@@ -68,7 +68,7 @@ export default function RecipeReviewCard(props) {
         title="GTA:V Tuners"
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" color="textSecondary" component="div">
             <h2>Gaming</h2>
           A mix of Grand Theft Auto and Midnight Club is a feeling you'll get with the new GTA:V update
         </Typography>
@@ -104,7 +104,7 @@ export default function RecipeReviewCard(props) {
         title="GTA:V Tuners"
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" color="textSecondary" component="div">
             <h2>Politics</h2>
         President Biden Delivers Remarks on his Administration’s Progress Toward Fighting the COVID-19 Pandemic by Increasing Vaccinations at Home and Around the World.
         </Typography>
@@ -141,7 +141,7 @@ export default function RecipeReviewCard(props) {
         title="GTA:V Tuners"
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" color="textSecondary" component="div">
             <h2>Comics</h2>
         Spider-Man day has passed and fans are still wondering when Spider-Man: No Way Home will release,but Sony manages to drop a new Venom trailer 
         </Typography>
