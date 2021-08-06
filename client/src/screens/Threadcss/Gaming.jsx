@@ -17,6 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Banner from '../../components/Gamer/Banner';
 import Layout from "../../components/Layout/Layout"
+import { Link, useParams } from "react-router-dom"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,16 +35,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+
 export default function Gaming(props) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const { id } = useParams()
+
 
   return (
     <Layout user={props.user}>
       <div>
+
         <Banner />
         <div className="group">
-
+          Add create thread button here
           <div>
 
             <Card className={classes.root}>
@@ -68,8 +72,10 @@ export default function Gaming(props) {
               />
               <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  <h2>Grand Theft Auto</h2>
+                  {/* SHOULD BE thread._id for the link */}
+                  <Link to={`threads/${id}`}><h2>Grand Theft Auto</h2></Link>
                   A mix of Grand Theft Auto and Midnight Club is a feeling you'll get with the new GTA:V update "Los Santos Tuners".
+
                 </Typography>
               </CardContent>
               <CardActions disableSpacing>

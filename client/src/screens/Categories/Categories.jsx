@@ -6,7 +6,7 @@ export default function Categories(props) {
   return (
     <Layout user={props.user}>
       <Link to="/threads-gaming">Gaming</Link>
-      <Link to="/threads-comic">Comedy</Link>
+      <Link to="/threads-comic">Comics</Link>
     </Layout>
   )
 }

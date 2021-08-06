@@ -1,40 +1,8 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout';
 import { getThread } from '../../services/thread';
 
-// export default function Thread(props) {
-//   const [thread, setThread] = useState([]);
-//   const { id } = useParams();
-
-//   useEffect(() => {
-//     const fetchThread = async () => {
-//       const thread = await getThread(id);
-//       console.log(thread)
-//       setThread(thread);
-//     }
-//     fetchThread();
-//   }, [id]);
-
-//   const displayEditLik = () => {
-//     if (thread.userId === props.user?.id) {
-//       return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}>Edit</Link>
-//     }
-//   }
-//   console.log(props.user)
-//   return (
-//     <Layout>
-//       <div key={thread.userId} >
-//         <h4>{thread.title}</h4>
-//         <img style={{ width: "100px", height: "100px" }} alt={thread.imgUrl} src={thread.imgUrl} />
-//         <p>{thread.body}</p>
-//         {displayEditLik()}
-//       </div>
-//     </Layout>
-//   )
-// }
-
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -48,6 +16,7 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { getPosts } from '../../services/post';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
+  const [posts, setPosts] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -85,10 +55,19 @@ export default function ThreadCard(props) {
     fetchThread();
   }, [id]);
 
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const posts = await getPosts();
+      console.log(posts);
+      setPosts(posts)
+    }
+    fetchPosts()
+  }, [thread, id])
+  console.log(posts)
   const classes = useStyles();
 
   return (
-    <Layout >
+    <Layout>
       <Card className={classes.root}>
         <CardHeader
           avatar={
@@ -111,10 +90,18 @@ export default function ThreadCard(props) {
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="div">
-            {thread.body} 
-            <Link to={(thread.userId?._id === props.user?.id)? `/thread-edit/${thread._id}`: `/thread/${thread._id}`} variant="body2"> Edit</Link>
+            {thread.body}
+            {(thread.userId?._id === props.user?.id) &&
+              (<Link to={`/thread-edit/${thread._id}`} variant="body2"> Edit</Link>)}
+            {/* <Link to={`/threads/${id}/posts`}>Create Post</Link> */}
           </Typography>
           <Typography variant="body2" color="textSecondary">
+            {posts.map(post => (
+              <div key={posts._id}>
+                <h6>{post.title}</h6>
+                <p>{post.body}</p>
+              </div>
+            ))}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>

@@ -1,21 +1,23 @@
 import { useState } from 'react';
-import { Redirect } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import Layout from '../../components/Layout/Layout';
 import { createThread } from "../../services/thread";
 
 
 
 
-export default function CreateThread(props)  {
-  
+export default function CreateThread(props) {
+
   const [input, setInput] = useState({
     title: "",
     body: "",
     imgUrl: ""
   });
 
-  const [isCreated, setCreated] =useState(false)
-  
+  const { id } = useParams()
+
+  const [isCreated, setCreated] = useState(false)
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setInput(prevInput => ({
@@ -24,10 +26,10 @@ export default function CreateThread(props)  {
     }))
   }
 
-  const handleSubmit= async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const created = await createThread(input);
-    setCreated ({ created })
+    setCreated({ created })
   };
 
   if (isCreated) {
@@ -36,19 +38,19 @@ export default function CreateThread(props)  {
 
   return (
     <Layout>
-    Create Thread 
+      Create Thread
       <form className="create-form" onSubmit={handleSubmit} >
         <br />
-        <input 
+        <input
           className='input-title'
           placeholder='Title'
           name='title'
           value={input.title}
-          required 
+          required
           onChange={handleChange}
         />
         <br />
-        
+
         <textarea
           className='textarea-body'
           placeholder='Body'
@@ -59,7 +61,7 @@ export default function CreateThread(props)  {
           onChange={handleChange}
         />
         <br />
-        <input 
+        <input
           className="input-image-link"
           placeholder='Image Link'
           name='imgUrl'
@@ -68,9 +70,9 @@ export default function CreateThread(props)  {
           onChange={handleChange}
         />
         <br />
-        <button type ='submit' className='submit-button'>Submit</button>
+        <button type='submit' className='submit-button'>Submit</button>
 
       </form>
-      </Layout>
+    </Layout>
   )
 }
