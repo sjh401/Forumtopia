@@ -1,36 +1,39 @@
 import { useState, useEffect } from 'react'
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams, Redirect, useHistory } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
-import { getThread, updateThread } from '../../services/thread';
+import { getThread, updateThread } from '../../services/thread.js';
 
 export default function EditThread(props) {
-    const [ thread, setThread ] = useState({});
-    const [ input, setInput ] = useState({ title: thread.title , body: thread.body, imgUrl: thread.imgUrl })
-    const [ isUpdated, setIsUpdated ] = useState(null);
+    // const [ thread, setThread ] = useState({});
+    const [ input, setInput ] = useState({ title: "" , body: "", imgUrl: "" })
+    const [ isUpdated, setIsUpdated ] = useState(false);
     const { id } = useParams();
+    const history = useHistory();
 
     useEffect(() => {
         const fetchThread = async () => {
-            const thread = await getThread(id);
-            console.log(thread);
-            setThread(thread);
+            const soloThread = await getThread(id);
+            console.log(soloThread);
+            setInput(soloThread);
         }
         fetchThread();
     }, [id]);
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setInput((prevInput) => ({
-            ...prevInput,
-            [id]: value,
-        }));
+        setInput({
+            ...input,
+            [id]: value
+        })
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const updated = await updateThread(id,input);
+        console.log(input)
+        const updated = await updateThread(id, input);
+        console.log(updated)
         setIsUpdated(updated);
+        // history.push("/")
     }
-    console.log(input)
 
     if(isUpdated) {
         return <Redirect to={`/thread/${id}`} />
@@ -41,7 +44,8 @@ export default function EditThread(props) {
                 <label>Title</label>
                 <input
                 id="title"
-                placeholder={thread?.title}
+                name="title"
+                // placeholder={thread?.title}
                 value={input.title}
                 type="text"
                 onChange={handleChange} />
@@ -49,7 +53,8 @@ export default function EditThread(props) {
                 <label>Body</label>
                 <input
                 id="body"
-                placeholder={thread?.body}
+                name="body"
+                // placeholder={thread?.body}
                 value={input.body}
                 type="text"
                 style={{width:"150px", height:"250px"}}
@@ -58,7 +63,8 @@ export default function EditThread(props) {
                 <label>Image</label>
                 <input
                 id="imgUrl"
-                placeholder={thread?.imgUrl}
+                name="imgUrl"
+                // placeholder={thread?.imgUrl}
                 value={input.imgUrl}
                 type="text"
                 onChange={handleChange} />
