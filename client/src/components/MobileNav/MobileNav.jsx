@@ -56,9 +56,10 @@ export default function LongMenu() {
             },
             }}
         >
-            {options.map((option) => (
-            <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+         {options.map((option, index) => (
+            <MenuItem key={`MenuItem-${index}`} selected={option === 'Pyxis'} onClick={handleClose}>
                 {option}
+                {console.log(option)}
             </MenuItem>
             ))}
         </Menu>
