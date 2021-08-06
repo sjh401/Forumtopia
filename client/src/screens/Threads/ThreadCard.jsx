@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard(props) {
+export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
   const { id } = useParams();
 
@@ -85,17 +85,10 @@ export default function RecipeReviewCard(props) {
     fetchThread();
   }, [id]);
 
-  const displayEditLik = () => {
-    if (thread.userId === props.user?.id) {
-      return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}>Edit</Link>
-    }
-  }
-  console.log(props.user)
-
   const classes = useStyles();
 
   return (
-    <Layout>
+    <Layout >
       <Card className={classes.root}>
         <CardHeader
           avatar={
@@ -118,8 +111,10 @@ export default function RecipeReviewCard(props) {
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="div">
-            {thread.body}
-            {displayEditLik()}
+            {thread.body} 
+            <Link to={(thread.userId?._id === props.user?.id)? `/thread-edit/${thread._id}`: `/thread/${thread._id}`} variant="body2"> Edit</Link>
+          </Typography>
+          <Typography variant="body2" color="textSecondary">
           </Typography>
         </CardContent>
         <CardActions disableSpacing>

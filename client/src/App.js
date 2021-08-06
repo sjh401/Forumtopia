@@ -7,10 +7,11 @@ import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp";
 import SignOut from './screens/signout/SignOut';
 import EditThread from "./screens/Threads/EditThread";
-import Thread from "./screens/Threads/Thread";
+import ThreadCard from "./screens/Threads/ThreadCard";
 import Gaming from "./screens/Threadcss/Gaming";
 import Comics from "./screens/Threadcss/Comics";
 import CreateThread from "./screens/Threads/createthread";
+// import Home from "./screens/Home/Home";
 
 
 
@@ -38,20 +39,20 @@ function App() {
       <Route path="/sign-up">
         <SignUp user={user} setUser={setUser} />
       </Route>
-      <Route path = "/threads">
+      <Route path = "/threads-gaming">
         <Gaming/>
-        </Route>
-        <Route path ="/threadscomic">
-          <Comics/>
-        </Route>
-      <Route path="/signout">
+      </Route>
+      <Route path ="/threads-comic">
+        <Comics/>
+      </Route>
+      <Route path="/sign-out">
         <SignOut setUser={setUser} />
       </Route>
-      <Route path="/thread-edit/:id">
+      <Route path="/threads-edit/:id">
         <EditThread user={user} setUser={setUser} />
       </Route>
-      <Route path="/thread/:id">
-        <Thread user={user} setUser={setUser}/>
+      <Route path="/threads/:id">
+        <ThreadCard user={user} setUser={setUser}/>
       </Route>
       
     </div>
