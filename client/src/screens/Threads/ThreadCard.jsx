@@ -16,8 +16,8 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { getPosts } from '../../services/post';
 import CreatePost from '../Posts/CreatePost';
+import PostMapping from '../../components/Mapping/PostMapping';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,26 +44,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
-  const [posts, setPosts] = useState([]);
   const { id } = useParams();
 
+  const fetchThread = async () => {
+    const thread = await getThread(id);
+    setThread(thread);
+  }
+
   useEffect(() => {
-    const fetchThread = async () => {
-      const thread = await getThread(id);
-      setThread(thread);
-    }
     fetchThread();
-  }, [id,posts]);
-  
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const posts = await getPosts(id);
-      console.log(posts);
-      setPosts(posts)
-    }
-    fetchPosts()
-  },[id])
-  console.log(posts)
+  }, [id]);
+    
   const classes = useStyles();
 
   return (
@@ -105,17 +96,12 @@ export default function ThreadCard(props) {
         </CardActions>
       </Card>
       <Card>
-      <Typography variant="body2" color="textSecondary" component="div">
-        <CreatePost user={props.user} />
-      </Typography>
-      <Typography variant="body2" color="textSecondary" component="div">
-            {posts.map(post => (
-              <div key={post._id}>
-                <p>{post.body}</p>
-                <img src={post.imgUrl}></img>
-              </div>
-            ))}
-          </Typography>
+        <Typography variant="body2" color="textSecondary" component="div">
+          <CreatePost user={props.user} />
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="div">
+          <PostMapping id={id}/>
+        </Typography>
       </Card>
     </Layout>
   );

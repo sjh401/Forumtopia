@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout/Layout'
 import "./Home.css"
 import Thread from "../Threadcss/Thread"
-import ThreadSingle from '../../components/Thread/ThreadSingle'
+import ThreadMapping from '../../components/Mapping/ThreadMapping'
 
 
 
@@ -28,7 +28,7 @@ export default function Home(props) {
           </div>
         </div>
         <span className="spans"></span>
-        <ThreadSingle user={props.user} />
+        <ThreadMapping user={props.user} />
         <Thread />
       </div>
     </Layout>
