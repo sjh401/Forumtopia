@@ -46,7 +46,7 @@ function App() {
       <Route path ="/threads-comic">
         <Comics user={user} setUser={setUser}/>
       </Route>
-      <Route path="/signoout">
+      <Route path="/sign-out">
         <SignOut setUser={setUser} />
       </Route>
       <Route path="/threads-edit/:id">

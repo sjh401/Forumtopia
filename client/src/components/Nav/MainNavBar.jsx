@@ -4,7 +4,7 @@ import "./Navs.css"
 
 const authenticatedOptions = (
   <>
-    <NavLink to="/signout">Sign Out</NavLink>
+    <NavLink to="/sign-out">Sign Out</NavLink>
 
     {/* Don't need correct? */}
     <NavLink to="/categories">Threads</NavLink>
