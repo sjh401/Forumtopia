@@ -5,12 +5,14 @@ import "./Navs.css"
 const authenticatedOptions = (
   <>
     <NavLink to="/signout">Sign Out</NavLink>
+    
     </>
 )
 const unauthenticatedOptions = (
   <>
     <NavLink to="/sign-in">Sign In</NavLink>
     <NavLink to="/sign-up">Sign Up</NavLink>
+    <NavLink to="/threads"></NavLink>
     {/* <NavLink to="/signout">Sign Out</NavLink> */}
     </>
 )
