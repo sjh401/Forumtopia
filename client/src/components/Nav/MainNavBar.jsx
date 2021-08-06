@@ -33,7 +33,7 @@ const MainNavBar = (props) => {
         <NavLink to="/">Forumtopia</NavLink>
         {/* he had classname for the divs underneath, I didn't but put in if you want */}
         <div>
-          {props.user && <div>Welcome, {props.user.username}</div>}
+          {props.user && <div>Welcome, {props.user?.username}</div>}
           {alwaysOptions}
           {props.user ? authenticatedOptions : unauthenticatedOptions}
         </div>

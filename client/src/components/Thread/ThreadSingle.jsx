@@ -22,8 +22,9 @@ export default function ThreadSingle(props) {
             return <Link to={`/thread-edit/${thread._id}`} style={{color:"blue"}}>Edit</Link>
         }
     }
+    
     return (
-        <div classname="threads-home">
+        <div className="threads-home">
         {threads.map( thread => (
             <div key={thread._id} >
                 <h4>{thread.title}</h4>

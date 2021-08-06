@@ -31,14 +31,13 @@ export default function CreateThread(props)  {
   };
 
   if (isCreated) {
-    return <Redirect to={`/thread`} />
+    return <Redirect to={`/`} />
   }
 
   return (
     <Layout>
-     Create Thread 
+    Create Thread 
       <form className="create-form" onSubmit={handleSubmit} >
-       
         <br />
         <input 
           className='input-title'
