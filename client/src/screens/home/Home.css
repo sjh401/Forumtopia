@@ -125,7 +125,7 @@
 }
 
 .together {
-  display: block;
+  display: flex;
 }
 
 .second {
@@ -222,5 +222,11 @@
     background-size: 100%;
     background-repeat: no-repeat;
     transition: 1s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .together{
+    display: block;
   }
 }

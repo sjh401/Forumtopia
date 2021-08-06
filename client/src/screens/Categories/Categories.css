@@ -1,0 +1,49 @@
+.ban{
+    background-image: url("https://wallpaperaccess.com/full/930574.jpg");
+    width: 100%;
+    height: 250px;
+    animation-name: forward;
+    animation-direction: normal;
+    animation-duration: 40s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function:ease-in-out; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@keyframes forward{
+0%{
+    background-image: url("https://wallpaperaccess.com/full/930574.jpg");
+    background-position-y: 15px;
+}
+10%{
+background-image: url("https://images.hdqwalls.com/download/god-of-war-4-2018-oo-1280x720.jpg");
+}
+20%{
+    background-image: url("https://media.comicbook.com/2018/10/justice-league-dc-comics-rebirth-1141802-1280x0.jpeg");
+}
+30%{
+    background-image: url("https://f1.media.brightcove.com/8/5359769168001/5359769168001_5735347662001_5735337496001-vs.jpg?pubId=5359769168001&videoId=5735337496001");
+}
+40%{
+    background-image: url("https://sm.ign.com/ign_nordic/news/t/the-suicid/the-suicide-squad-first-trailer-arrives-tomorrow_71rw.jpg");
+}
+50%{
+    background-image: url("https://cdn.geeksandgamers.com/wp-content/uploads/2021/04/Poster-for-Shang-Chi-1280x720-1.jpg");
+}
+60%{
+    background-image: url("https://images.firstpost.com/wp-content/uploads/2021/02/Joe-Biden-signs-his-first-executive-orders-as-president-including-the-Paris-Climate-Agreement_AP.jpg");
+}
+70%{
+    background-image: url("https://news.wttw.com/sites/default/files/field/image/thumbnail_6photoCrop.jpg");
+}
+80%{
+    background-image: url("https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/01/22/951701-tokyo-olympics.jpg");
+}
+90%{
+    background-image: url("https://kfor.com/wp-content/uploads/sites/3/2021/08/Mu.jpg?w=1280");
+}
+}
