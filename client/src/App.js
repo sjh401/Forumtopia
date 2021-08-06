@@ -12,6 +12,7 @@ import Comics from "./screens/Threadcss/Comics";
 import CreateThread from "./screens/Threads/createthread";
 import Home from "./screens/Home/Home";
 import CreatePost from "./screens/Posts/createpost";
+import Categories from "./screens/Categories/Categories";
 
 
 
@@ -56,6 +57,9 @@ function App() {
       </Route>
       <Route path="/threads/:id">
         <ThreadCard user={user} setUser={setUser}/>
+      </Route>
+      <Route path="/categories">
+        <Categories />
       </Route>
       
     </div>

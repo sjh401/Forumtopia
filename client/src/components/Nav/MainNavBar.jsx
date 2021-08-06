@@ -4,14 +4,8 @@ import "./Navs.css"
 
 const authenticatedOptions = (
   <>
-<<<<<<< HEAD
-    <NavLink to="/sign-out">Sign Out</NavLink>
-    {/* categories or whatever you want to call it */}
-    <NavLink to="/categories">Threads</NavLink>
-=======
     <NavLink to="/signout">Sign Out</NavLink>
-    <NavLink to="/threads-create">Create a Thread</NavLink>
->>>>>>> 88454ac27c18f60e070c212725395612e502223b
+    <NavLink to="/categories">Threads</NavLink>
 
   </>
 )

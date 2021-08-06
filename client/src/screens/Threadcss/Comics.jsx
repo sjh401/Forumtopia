@@ -33,8 +33,6 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-}));
-
 export default function Comics(props) {
   const classes = useStyles();
 
