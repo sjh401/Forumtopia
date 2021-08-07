@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import { Link } from "react-router-dom"
 import Layout from "../../components/Layout/Layout"
-import { getCategories } from '../../services/category';
+import { getCategories, getCategory } from '../../services/category';
 import { getThreads } from '../../services/thread';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,21 +9,21 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
+// import CardActions from '@material-ui/core/CardActions';
 
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 500,
+    width: 200,
   },
   media: {
     height: 0,
@@ -50,9 +50,10 @@ export default function Categories(props) {
 
   useEffect(() => {
     const fetchThreads = async () => {
-      const get = await getThreads(category?._id)
+      const get = await getCategory(category._id)
+      console.log(category._id)
       console.log(get)
-      setThreads(get)
+      setThreads(get.threadId)
     }
     fetchThreads()
   },[category])
@@ -75,11 +76,11 @@ export default function Categories(props) {
           return (
             <div className="trend-card-container" key={thread._id}>
               <CardHeader
-                // avatar={
-                //   <Avatar aria-label="username" className={classes.avatar}>
-                //     {thread.userId?.username[0]}
-                //   </Avatar>
-                // }
+                avatar={
+                  <Avatar aria-label="username" className={classes.avatar}>
+                    {thread.userId.username}
+                  </Avatar>
+                }
                 action={
                   <IconButton aria-label="settings">
                     <MoreVertIcon />

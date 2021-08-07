@@ -56,7 +56,13 @@ export const updateThread = async (req, res) => {
   try {
     const { id } = req.params
     const { body } = req
+
     const thread = await Thread.findByIdAndUpdate(id, body, {new: true})
+
+    const category = await Category.findById(thread.categoryId);
+    category.threadId.push(thread._id)
+    await category.save()
+
     res.send(thread)
   } catch (e) {
     res.status(424).json({error: e.message})
