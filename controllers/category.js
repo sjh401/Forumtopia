@@ -56,8 +56,4 @@ export const deleteCategory = async (req, res) => {
   } catch (e) {
     res.status(404).json({error: e.message})
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 1c6da6dcef19f0ef75889d577585ccc631ed3dec
