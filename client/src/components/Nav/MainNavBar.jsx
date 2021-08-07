@@ -1,29 +1,29 @@
 import { NavLink } from 'react-router-dom'
 import "./Nav.css"
 
-const authenticatedOptions = (
-  <>
-    <NavLink to="/signout">Sign Out</NavLink>
-    <NavLink to="/threads-create">Create a Thread</NavLink>
+// const authenticatedOptions = (
+//   <>
+//     <NavLink to="/signout">Sign Out</NavLink>
+//     <NavLink to="/threads-create">Create a Thread</NavLink>
 
-  </>
-)
-const unauthenticatedOptions = (
-  <>
-    <NavLink to="/sign-in">Sign In</NavLink>
-    <NavLink to="/sign-up">Sign Up</NavLink>
-    <NavLink to="/threads"></NavLink>
-    {/* <NavLink to="/signout">Sign Out</NavLink> */}
-  </>
-)
+//   </>
+// )
+// const unauthenticatedOptions = (
+//   <>
+//     <NavLink to="/sign-in">Sign In</NavLink>
+//     <NavLink to="/sign-up">Sign Up</NavLink>
+//     <NavLink to="/threads"></NavLink>
+//     {/* <NavLink to="/signout">Sign Out</NavLink> */}
+//   </>
+// )
 
-// maybe add posts and threads to here? not sure.
-const alwaysOptions = (
-  <>
-    <NavLink to=""></NavLink>
-    <NavLink to=""></NavLink>
-  </>
-)
+// // maybe add posts and threads to here? not sure.
+// const alwaysOptions = (
+//   <>
+//     <NavLink to=""></NavLink>
+//     <NavLink to=""></NavLink>
+//   </>
+// )
 
 const authenticatedOptions = (
   <>

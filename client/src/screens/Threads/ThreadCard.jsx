@@ -16,7 +16,7 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import CreatePost from '../Posts/CreatePost';
+import CreatePost from '../Post/CreatePost';
 import PostMapping from '../../components/Mapping/PostMapping';
 
 const useStyles = makeStyles((theme) => ({

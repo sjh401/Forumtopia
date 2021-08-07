@@ -12,10 +12,7 @@ export const createPost= async (id, input) => {
 export const getPosts = async (id) => {
   try {
     const res = await api.get(`/threads/${id}/posts`);
-<<<<<<< HEAD
     console.log(res)
-=======
->>>>>>> 74dd7d64ee9588d060eeed53b04dec01f059436b
     return res.data;
   } catch (e) {
     throw e;
