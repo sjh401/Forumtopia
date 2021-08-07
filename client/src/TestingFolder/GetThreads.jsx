@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { getThreads } from '../services/thread'
+import { Link } from "react-router-dom"
 
 export default function GetThreads(props) {
   const [threads, setThreads] = useState([])
@@ -17,18 +18,18 @@ export default function GetThreads(props) {
 
   return (
     <div user={props.user}>
-      {threads.map((thread) => {
+      {threads.map((thread, index) => {
         return (
-          <div>
+          <div key={index}>
             {console.log(thread)}
             <br />
-            {thread.categoryId?._id &&
-              <div>
+            <div>
+              <Link to={`/threads/${thread._id}/posts`}>
                 {thread.title}
-                <br />
-                {thread.body}
-              </div>
-            }
+              </Link>
+              <br />
+              {thread.body}
+            </div>
           </div>
         )
 

@@ -16,6 +16,7 @@ import EditPost from "./screens/Posts/EditPost";
 import PostCard from "./screens/Posts/PostCard";
 import GetCategories from "./TestingFolder/GetCategories";
 import GetThreads from "./TestingFolder/GetThreads";
+import GetPosts from "./TestingFolder/GetPosts";
 
 
 
@@ -61,7 +62,7 @@ function App() {
       <Route path="/post/:id">
         <PostCard user={user} setUser={setUser} />
       </Route>
-      <Route path="/threads/:id">
+      <Route exact path="/threads/:id">
         <ThreadCard user={user} setUser={setUser}/>
       </Route>
       {/* <Route path="/categories">
@@ -75,6 +76,10 @@ function App() {
 
       <Route path="/categories/:id/threads">
         <GetThreads user={user} setUser={setUser}/>
+      </Route>
+
+      <Route exact path="/threads/:id/posts">
+        <GetPosts user={user} setUser={setUser}/>
       </Route>
 
       

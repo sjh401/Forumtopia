@@ -9,7 +9,7 @@ export default function GetCategories(props) {
   useEffect(() => {
     const fetchCategories = async () => {
       let data = await getCategories()
-      // console.log(data)
+      console.log(data)
       setCategories(data)
     }
     fetchCategories()
@@ -19,10 +19,10 @@ export default function GetCategories(props) {
       {categories.map((category, index) => {
         return (
           <div key={index}>
-            {/* {console.log(category._id)} */}
+            {console.log(category)}
             <br />
             <br />
-            <Link to={`categories/${category._id}/threads`}>
+            <Link to={`/categories/${category._id}/threads`}>
               {category.title}
             </Link>
             <br />
