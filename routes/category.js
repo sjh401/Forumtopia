@@ -7,7 +7,7 @@ const router = Router()
 router.post("/categories", restrict, createCategory)
 router.get("/categories", getCategories)
 router.get("/categories/:id", getCategory)
-router.put("/categories/:id", restrict, updateCategory) // probably a no?
-router.delete("/categories/:id", restrict, deleteCategory) // probably a bad idea to have
+router.put("/categories/:id", restrict, updateCategory) 
+router.delete("/categories/:id", restrict, deleteCategory) 
 
 export default router

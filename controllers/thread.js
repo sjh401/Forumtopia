@@ -1,5 +1,6 @@
 import Thread from "../models/thread.js"
 import Category from "../models/category.js"
+import User from "../models/user.js"
 
 export const createThread = async (req, res) => {
   try {
@@ -15,7 +16,7 @@ export const createThread = async (req, res) => {
 
     await thread.save()
 
-    user.threadId.push(post._id)
+    // user.threadId.push(thread._id)
     category.threadId.push(thread._id)
 
     await user.save()
@@ -30,8 +31,8 @@ export const getThreads = async (req, res) => {
   try {
     const { id } = req.params
     const category = await Category.findById(id)
-    const threads = await Thread.find(req.body).populate('userId')
-    res.send(threads)
+    const threads = await Thread.find(req.body).populate('categoryId')
+    res.json(threads)
   } catch (e) {
     res.status(404).json({error: e.message})
   }
