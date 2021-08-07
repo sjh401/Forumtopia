@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, Redirect, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import { getPost } from '../../services/post';
 

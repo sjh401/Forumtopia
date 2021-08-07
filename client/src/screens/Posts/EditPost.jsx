@@ -51,7 +51,7 @@ export default function EditPost(props) {
                 <label>Image</label>
                 <input
                 id="imgUrl"
-                id="imgUrl"
+                name="imgUrl"
                 value={input.imgUrl}
                 type="text"
                 onChange={handleChange} />

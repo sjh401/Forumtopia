@@ -4,18 +4,15 @@ import { getPosts } from '../../services/post';
 
 export default function PostMapping(props) {
     const [posts, setPosts] = useState([]);
-
-    const fetchPosts = async () => {
-        const posts = await getPosts(props.id);
-        console.log(posts);
-        setPosts(posts)
-    }
     
     useEffect(() => {
+        const fetchPosts = async () => {
+            const posts = await getPosts(props.id);
+            setPosts(posts)
+        }
     fetchPosts();
     }, [props.id]);
-    console.log(posts)
-    console.log(props.user?.id)
+    
     return (
         <div>
             {posts.map(post => (

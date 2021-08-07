@@ -46,12 +46,11 @@ export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
   const { id } = useParams();
 
-  const fetchThread = async () => {
-    const thread = await getThread(id);
-    setThread(thread);
-  }
-
   useEffect(() => {
+    const fetchThread = async () => {
+      const thread = await getThread(id);
+      setThread(thread);
+    }
     fetchThread();
   }, [id]);
 

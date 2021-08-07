@@ -4,8 +4,6 @@ import { getThread } from '../../services/thread';
 import { createPost } from '../../services/post';
 
 
-
-
 export default function CreatePost(props) {
   const [thread, setThread] = useState([])
   const [input, setInput] = useState({ body: "", imgUrl: "" });
@@ -32,7 +30,7 @@ export default function CreatePost(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createPost(id, input);
-    history.push(`/threads/${id}`);
+    history.push(`/threads/${thread._id}`);
   };
 
   return (
