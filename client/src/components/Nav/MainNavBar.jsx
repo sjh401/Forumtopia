@@ -30,7 +30,6 @@ const authenticatedOptions = (
     <NavLink to="/sign-out">Sign Out</NavLink>
 
     {/* Don't need correct? */}
-    <NavLink to="/categories">Threads</NavLink>
     <NavLink to="/threads-create">Create Thread</NavLink>
 
   </>
@@ -48,6 +47,7 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
   <>
     <NavLink to="/">Home</NavLink>
+    <NavLink to="/categories">Categories</NavLink>
     {/* <NavLink to=""></NavLink> */}
   </>
 )
