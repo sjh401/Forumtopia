@@ -1,0 +1,41 @@
+*{
+    padding:0;
+
+}
+
+.container{
+    height: 25vh;
+    display: flex;
+}
+
+section{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+}
+
+.Battlefield{
+background: url("https://wallpaper.dog/large/10846744.jpg");
+background-position: center;
+background-size: cover;
+}
+
+.Halo{
+    background: url("https://assets1.ignimgs.com/2020/07/22/halo-infinite-box-art-blogroll-1595423634469_160w.jpg?width=1280");
+    background-position: center;
+background-size: cover;
+}
+
+.Splinter{
+    background: url("http://wallpaperstock.net/splinter-cell%3A-chaos-theory_wallpapers_20762_1280x720.jpg");
+    background-position: center;
+background-size: cover;
+}
+
+.GTA{
+    background:url("https://cdn.mos.cms.futurecdn.net/Usdru3W58p6g8NGpxzUfyi.jpg");
+    background-position: center;
+    background-size: cover;
+}
