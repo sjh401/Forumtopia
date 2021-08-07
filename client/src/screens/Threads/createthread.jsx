@@ -6,15 +6,15 @@ import { createThread } from "../../services/thread";
 
 
 
-export default function CreateThread(props)  {
+export default function CreateThread(props) {
   const [input, setInput] = useState({
     title: "",
     body: "",
     imgUrl: ""
   });
 
-  const [isCreated, setCreated] =useState(false)
-  
+  const [isCreated, setCreated] = useState(false)
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setInput(prevInput => ({
@@ -23,10 +23,10 @@ export default function CreateThread(props)  {
     }))
   }
 
-  const handleSubmit= async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const created = await createThread(input);
-    setCreated ({ created })
+    setCreated({ created })
   };
 
   if (isCreated) {
@@ -35,7 +35,7 @@ export default function CreateThread(props)  {
 
   return (
     <Layout user={props.user}>
-            Create Thread
+      Create Thread
       <form className="create-form" onSubmit={handleSubmit} >
         <br />
         <input
@@ -68,7 +68,8 @@ export default function CreateThread(props)  {
         />
         <br />
         <button type='submit' className='submit-button'>Submit</button>
-        </form>
-      </Layout>
+
+      </form>
+    </Layout>
   )
 }

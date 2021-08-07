@@ -1,6 +1,6 @@
 import { Router } from "express"
 import restrict from "../helpers/restrict.js"
-import { createThread, getThreads, getThread, updateThread, deleteThread } from "../controllers/threads.js"
+import { createThread, getThreads, getThread, updateThread, deleteThread } from "../controllers/thread.js"
 
 const router = Router()
 

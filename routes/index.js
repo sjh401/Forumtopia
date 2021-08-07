@@ -14,5 +14,3 @@ router.use("/", threadRoutes)
 router.use("/", categoryRoutes)
 
 export default router
-
-// test

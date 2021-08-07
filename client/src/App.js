@@ -19,7 +19,6 @@ import PostCard from "./screens/Posts/PostCard";
 
 function App() {
   const [user, setUser] = useState(null)
-  
   useEffect(() => {
     const verifyUser = async() => {
       setUser(await verify())
@@ -64,9 +63,6 @@ function App() {
       </Route>
       <Route path="/categories">
         <Categories user={user} setUser={setUser} />
-      </Route>
-      <Route path="/tests">
-        <CategoryThread user={user} setUser={setUser}/>
       </Route>
     </div>
   )
