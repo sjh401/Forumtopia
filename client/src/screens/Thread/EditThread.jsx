@@ -4,7 +4,7 @@ import Layout from '../../components/Layout/Layout'
 import { getThread, updateThread } from '../../services/thread';
 
 export default function EditThread(props) {
-  const [input, setInput] = useState({ title: "", body: "", imgUrl: "" })
+  const [input, setInput] = useState({ title: "", body: "", imgUrl: "", categoryId: "" })
   const [thread, setThread] = useState({});
   const [isUpdated, setIsUpdated] = useState(null);
   const { id } = useParams();
@@ -58,6 +58,14 @@ export default function EditThread(props) {
         <label>Image</label>
         <input
           id="imgUrl"
+          placeholder={thread?.imgUrl}
+          value={input.imgUrl}
+          type="text"
+          onChange={handleChange} />
+        <br />
+        <label>Category</label>
+        <input
+          id="categoryId"
           placeholder={thread?.imgUrl}
           value={input.imgUrl}
           type="text"

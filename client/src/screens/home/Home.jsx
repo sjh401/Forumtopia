@@ -71,11 +71,11 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImgMediaCard() {
+export default function ImgMediaCard(props) {
   const classes = useStyles();
 
   return (
-    <Layout>
+    <Layout user={props.user}>
       <h2 className="trending-text">Trending Today</h2>
       <div className="main-card-container">
         {homeData.map((data, index) => {

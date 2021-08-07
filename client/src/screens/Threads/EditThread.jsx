@@ -2,15 +2,22 @@ import { useState, useEffect } from 'react'
 import { useParams, Redirect} from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import { getThread, updateThread } from '../../services/thread.js';
+import { getCategories } from '../../services/category';
 
 export default function EditThread(props) {
-    const [ input, setInput ] = useState({ title: "" , body: "", imgUrl: "" })
+    const [ input, setInput ] = useState({ title: "" , body: "",categoryId: "", imgUrl: "" })
     const [ isUpdated, setIsUpdated ] = useState(false);
+    const [ categories, setCategories ] = useState([])
     const { id } = useParams();
-    // const [ user, setUser ] = useState(props.user)
-    // useEffect(() => {
-    //   setUser(props.user)
-    // },[])
+
+    useEffect(() => {
+        const fetchCategories = async () => {
+            const get = await getCategories();
+            console.log(get)
+            setCategories(get);
+        }
+        fetchCategories();
+    },[id])
 
     useEffect(() => {
         const fetchThread = async () => {
@@ -67,6 +74,19 @@ export default function EditThread(props) {
                 value={input.imgUrl}
                 type="text"
                 onChange={handleChange} />
+                <br />
+                <label>Category</label>
+                <input 
+                // list="categoryId" 
+                name="categoryId" 
+                id="categoryId"
+                value={input.categoryId}
+                onChange={handleChange}/>
+                {/* <datalist id="categoryId">
+                    {categories.map(category => (
+                        <option value={category.title}/>
+                    ))}
+                </datalist> */}
                 <br />
                 <button>Update Thread</button>
             </form>
