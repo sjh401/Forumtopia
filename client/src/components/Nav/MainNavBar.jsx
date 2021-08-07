@@ -27,11 +27,8 @@ import "./Nav.css"
 
 const authenticatedOptions = (
   <>
-    <NavLink to="/sign-out">Sign Out</NavLink>
-
-    {/* Don't need correct? */}
     <NavLink to="/threads-create">Create Thread</NavLink>
-
+    <NavLink to="/sign-out">Sign Out</NavLink>
   </>
 )
 const unauthenticatedOptions = (
@@ -39,7 +36,6 @@ const unauthenticatedOptions = (
     <NavLink to="/sign-in">Sign In</NavLink>
     <NavLink to="/sign-up">Sign Up</NavLink>
     <NavLink to="/threads"></NavLink>
-    {/* <NavLink to="/signout">Sign Out</NavLink> */}
   </>
 )
 
