@@ -11,16 +11,14 @@ export const createPost = async (req, res) => {
 
     const { id } = req.params
     const thread = await Thread.findById(id)
-    post.threadId = thread._id
 
     const user = await User.findById(req.user)
     post.userId = user._id
-
     await post.save()
-    
     user.posts.push(post._id)
     thread.posts.push(post._id)
-
+    post.threadId = thread._id
+    
     await user.save()
     await thread.save()
     res.status(201).json(post)
@@ -33,8 +31,7 @@ export const getPosts = async (req, res) => {
   try {
     const { id } = req.params
     const thread = await Thread.findById(id)
-    const posts = await Post.find(req.body).populate('threadId')
- 
+    const posts = await Post.find({threadId: thread._id}).populate('threadId') 
     res.json(posts)
   } catch (e) {
     res.status(404).json({error: e.message})

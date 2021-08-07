@@ -6,19 +6,21 @@ export const createThread = async (req, res) => {
   try {
     const thread = new Thread(req.body)
     thread.userId = req.user
+    console.log("req: ", req)
+    
 
     const { id } = req.params
     const category = await Category.findById(id)
-    thread.categoryId = category._id
+    console.log("CAT ID: ", category)
 
     const user = await User.findById(req.user)
     thread.userId = user._id
+    console.log("USER ID: ", user)
 
     await thread.save()
-
-    // user.threadId.push(thread._id)
+    thread.categoryId = category._id
     category.threadId.push(thread._id)
-
+    
     await user.save()
     await category.save()
     res.status(201).json(thread)
@@ -31,7 +33,9 @@ export const getThreads = async (req, res) => {
   try {
     const { id } = req.params
     const category = await Category.findById(id)
-    const threads = await Thread.find(req.body).populate('categoryId')
+    const threads = await Thread.find({categoryId: category._id}).populate('categoryId')
+    console.log("BODY", req.body)
+    console.log("CATEGORY", category)
     res.json(threads)
   } catch (e) {
     res.status(404).json({error: e.message})

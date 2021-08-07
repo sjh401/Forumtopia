@@ -2,18 +2,20 @@ import {useState, useEffect} from "react"
 import { verify} from "./services/user"
 import { Route } from "react-router-dom"
 
-import SignIn from "./screens/sign-in/SignIn";
-import SignUp from "./screens/sign-up/SignUp";
-import SignOut from './screens/signout/SignOut';
+import SignIn from "./screens/SignIn/SignIn";
+import SignUp from "./screens/SignUp/SignUp";
+import SignOut from './screens/SignOut/SignOut';
 import EditThread from "./screens/Threads/EditThread";
 import ThreadCard from "./screens/Threads/ThreadCard";
 import Gaming from "./screens/Threadcss/Gaming";
 import Comics from "./screens/Threadcss/Comics";
 import CreateThread from "./screens/Threads/CreateThread";
 import Home from "./screens/Home/Home";
-import Categories from "./screens/Categories/Categories";
+// import Categories from "./screens/Categories/Categories";
 import EditPost from "./screens/Posts/EditPost";
 import PostCard from "./screens/Posts/PostCard";
+import GetCategories from "./TestingFolder/GetCategories";
+import GetThreads from "./TestingFolder/GetThreads";
 
 
 
@@ -62,9 +64,19 @@ function App() {
       <Route path="/threads/:id">
         <ThreadCard user={user} setUser={setUser}/>
       </Route>
-      <Route path="/categories">
+      {/* <Route path="/categories">
         <Categories user={user} setUser={setUser} />
+      </Route> */}
+
+
+      <Route exact path="/categories">
+        <GetCategories user={user} setUser={setUser}/>
       </Route>
+
+      <Route path="/categories/:id/threads">
+        <GetThreads user={user} setUser={setUser}/>
+      </Route>
+
       
     </div>
   )
