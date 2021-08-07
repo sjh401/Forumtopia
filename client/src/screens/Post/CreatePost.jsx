@@ -6,10 +6,12 @@ import Layout from '../../components/Layout/Layout';
 
 
 export default function CreatePost(props) {
-  
+  const [thread, setThread] = useState([])
   const [input, setInput] = useState({ body: "", imgUrl: "" });
   const history = useHistory();
   
+  const { id } = useParams();
+
   const handleChange = (e) => {
     const { id, value } = e.target
     
@@ -18,8 +20,8 @@ export default function CreatePost(props) {
       [id]: value
     }))
   }
-
-  const handleSubmit= async (e) =>{
+  console.log(props.user)
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await CreatePost(input);
     history.pushState("/");
@@ -27,7 +29,7 @@ export default function CreatePost(props) {
 
   return (
     <Layout>
-      Create a Post 
+      Create a Post
       <form onsubmit={handleSubmit} className="form-horizontal">
         <label>Body:</label>
         <br />
