@@ -6,6 +6,8 @@ export default function UserProfile(props) {
         <Layout user={props.user}>
             <div>
                 {props.user?.username}
+                {/* {console.log(props.user)} */}
+                {console.log(props.user)}
             </div>
         </Layout>
     )

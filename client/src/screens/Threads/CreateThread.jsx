@@ -15,6 +15,7 @@ export default function CreateThread(props) {
     categoryId: ""
   });
   
+  
   const [ categories, setCategories ] = useState([])
 
   useEffect(() => {
