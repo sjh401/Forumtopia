@@ -54,7 +54,7 @@ export default function ThreadCard(props) {
   useEffect(() => {
     fetchThread();
   }, [id]);
-    
+
   const classes = useStyles();
 
   return (
@@ -81,9 +81,9 @@ export default function ThreadCard(props) {
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="div">
-            {thread.body} 
+            {thread.body}
             {thread.userId?._id === props.user?.id &&
-            <Link to={`/threads-edit/${thread._id}`} variant="body2"> Edit</Link>}
+              <Link to={`/threads-edit/${thread._id}`} variant="body2"> Edit</Link>}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -100,7 +100,7 @@ export default function ThreadCard(props) {
           <CreatePost user={props.user} />
         </Typography>
         <Typography variant="body2" color="textSecondary" component="div">
-          <PostMapping id={id}/>
+          <PostMapping id={id} />
         </Typography>
       </Card>
     </Layout>

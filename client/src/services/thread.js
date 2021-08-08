@@ -1,17 +1,17 @@
 import api from "./apiConfig";
 
-export const getThreads = async () => {
+export const getThreads = async (id) => {
   try {
-    const res = await api.get("/threads");
+    const res = await api.get(`/categories/${id}/threads`);
     return res.data;
   } catch (e) {
     throw e;
   }
 };
 
-export const createThread = async (input) => {
+export const createThread = async (id, input) => {
   try {
-    const res = await api.post("/threads", input);
+    const res = await api.post(`/categories/${id}/threads`, input);
     return res.data;
   } catch (e) {
     throw e;

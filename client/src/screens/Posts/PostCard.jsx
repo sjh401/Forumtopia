@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams, Redirect, Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import { getPost } from '../../services/post';
 
@@ -18,8 +18,9 @@ export default function PostCard(props) {
     return (
         <Layout user={props.user} >
             <div>
-                <img src={post?.imgUrl} alt="user post" />
+                <img src={post?.imgUrl} style={{ width: "100px", height: "100px" }} alt="user post" />
                 <p>{post?.body}</p>
+                <Link to={`/threads/${post.threadId}`}>Back to Thread</Link>
             </div>
         </Layout>
     )

@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import { verify} from "./services/user"
 import { Route } from "react-router-dom"
 
-import Home from "./screens/home/Home";
+import Home from "./screens/Home/Home";
 import SignIn from "./screens/sign-in/SignIn";
 import SignUp from "./screens/sign-up/SignUp";
 import SignOut from './screens/signout/SignOut';
@@ -16,8 +16,10 @@ import CreateThread from "./screens/Threads/createthread";
 // import Home from "./screens/Home/Home";
 
 // import Home from "./screens/Home/Home";
+
 import Categories from "./screens/Categories/Categories";
 import EditPost from "./screens/Posts/EditPost";
+import PostCard from "./screens/Posts/PostCard";
 
 
 
@@ -67,11 +69,14 @@ function App() {
       <Route path="/post-edit/:id">
         <EditPost user={user} setUser={setUser} />
       </Route>
+      <Route path="/post/:id">
+        <PostCard user={user} setUser={setUser} />
+      </Route>
       <Route path="/threads/:id">
         <ThreadCard user={user} setUser={setUser}/>
       </Route>
       <Route path="/categories">
-        <Categories />
+        <Categories user={user} setUser={setUser} />
       </Route>
       
     </div>
