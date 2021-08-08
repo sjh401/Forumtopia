@@ -75,12 +75,14 @@ export const deletePost = async (req, res) => {
 
     const thread = await Thread.findById(post.threadId)
     console.log("HERE IS THE Thread PLZ",thread)
-    await thread.posts.splice((thread.posts.indexOf(`${post._id}`),1)).save()
+    thread.posts = thread.posts.filter(element => element !== post._id)
     console.log("HERE IS THE Thread PLZ",thread)
+    await thread.save()
 
     const user = await User.findById(req.user)
     console.log("HERE IS THE User PLZ",user)
-    await user.posts.splice((user.posts.indexOf(`${post._id}`),1)).save()
+    user.posts = user.posts.filter(element => element !== post._id)
+    await user.save()
 
     const poster = await Post.findByIdAndDelete(id)
 
