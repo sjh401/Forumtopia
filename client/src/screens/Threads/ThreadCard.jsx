@@ -53,7 +53,6 @@ export default function ThreadCard(props) {
     }
     fetchThread();
   }, [id]);
-
   const classes = useStyles();
 
   return (
@@ -101,7 +100,7 @@ export default function ThreadCard(props) {
             </IconButton>
           </CardActions>
           <Typography variant="body2" color="textSecondary" component="div">
-            <CreatePost user={props.user} />
+            {props.user && <CreatePost user={props.user} />}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="div">
             <PostMapping id={id} thread={thread}/>

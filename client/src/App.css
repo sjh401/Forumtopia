@@ -1,3 +1,16 @@
+.categories-selections {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+.category-trend-card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+}
+
 .edit-thread-post-link {
   color: #000;
   text-decoration: none;
@@ -66,12 +79,3 @@
   margin: 2px;
 }
 
-
-/* 
-        <textarea className="create-post-text-area" id="body" value={input.body} onChange={handleChange} />
-        <br />
-        <label className="label-two">Image:</label>
-        <input  className="create-post-image" id="imgUrl" value={input.imgUrl} onChange={handleChange} />
-        <br />
-        <button>Submit</button>
-      </form> */

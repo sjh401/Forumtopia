@@ -32,20 +32,11 @@ function App() {
       <Route path="/sign-in">
         <SignIn user={user} setUser={setUser} />
       </Route>
-      <Route path="/threads-create">
-        <CreateThread user={user} setUser={setUser} />
-      </Route>
       <Route path="/sign-up">
         <SignUp user={user} setUser={setUser} />
       </Route>
       <Route path="/sign-out">
         <SignOut setUser={setUser} />
-      </Route>
-      <Route path="/threads-edit/:id">
-        <EditThread user={user} setUser={setUser} />
-      </Route>
-      <Route path="/post-edit/:id">
-        <EditPost user={user} setUser={setUser} />
       </Route>
       <Route path="/post/:id">
         <PostCard user={user} setUser={setUser} />
@@ -56,6 +47,19 @@ function App() {
       <Route path="/categories">
         <Categories user={user} setUser={setUser} />
       </Route>
+      {user &&
+        <>
+          <Route path="/threads-edit/:id">
+            <EditThread user={user} setUser={setUser} />
+          </Route>
+          <Route path="/post-edit/:id">
+            <EditPost user={user} setUser={setUser} />
+          </Route>
+          <Route path="/threads-create">
+            <CreateThread user={user} setUser={setUser} />
+          </Route>
+        </>
+      }
     </div>
   )
 }

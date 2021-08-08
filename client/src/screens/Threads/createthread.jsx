@@ -47,45 +47,51 @@ export default function CreateThread(props) {
 
   return (
     <Layout user={props.user}>
-      Create Thread
-      <form className="create-form" onSubmit={handleSubmit} >
-        <br />
-        <input
-          className='input-title'
-          placeholder='Title'
-          name='title'
-          value={input.title}
-          required
-          onChange={handleChange}
-        />
-        <br />
-        <textarea
-          className='textarea-body'
-          placeholder='Body'
-          name='body'
-          rows={10}
-          value={input.body}
-          required
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          className="input-image-link"
-          placeholder='Image Link'
-          name='imgUrl'
-          value={input.imgUrl}
-          required
-          onChange={handleChange}
-        />
-        <br />
-        <select className="create-thread-data-list" id="categoryId" name="categoryId" onChange={handleChange} >
-            {categories.map(category => (
-                <option key={category._id} className="create-thread-data-option" value={category._id} >{category.title}</option>
-            ))}
-        </select>
-        <br />
-        <button type='submit' className='submit-button'>Submit</button>
-      </form>
+      {props.user &&
+        <>
+          <h3 className="create-edit-header">
+            Create Thread
+          </h3>
+          <form className="create-form" onSubmit={handleSubmit} >
+            <br />
+            <input
+              className='input-title'
+              placeholder='Title'
+              name='title'
+              value={input.title}
+              required
+              onChange={handleChange}
+            />
+            <br />
+            <textarea
+              className='textarea-body'
+              placeholder='Body'
+              name='body'
+              rows={10}
+              value={input.body}
+              required
+              onChange={handleChange}
+            />
+            <br />
+            <input
+              className="input-image-link"
+              placeholder='Image Link'
+              name='imgUrl'
+              value={input.imgUrl}
+              required
+              onChange={handleChange}
+            />
+            <br />
+            <select className="create-thread-data-list" id="categoryId" name="categoryId" onChange={handleChange} >
+                {categories.map(category => (
+                    <option key={category._id} className="create-thread-data-option" value={category._id} >{category.title}</option>
+                ))}
+            </select>
+            <br />
+            <button type='submit' className='submit-button'>Submit</button>
+          </form>
+        </>
+      }
     </Layout>
   )
 }

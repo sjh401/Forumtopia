@@ -38,6 +38,17 @@ export const getThreads = async (req, res) => {
   }
 }
 
+export const getThreadsUsers = async (req, res) => {
+  try {
+    const { id } = req.params
+    const category = await Category.findById(id)
+    const threads = await Thread.find(req.body).populate('userId')
+    res.json(threads)
+  } catch (e) {
+    res.status(404).json({error: e.message})
+  }
+}
+
 export const getThread = async (req, res) => {
   try {
     const { id } = req.params
