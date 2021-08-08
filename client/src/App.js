@@ -13,6 +13,7 @@ import Categories from "./screens/Categories/Categories";
 import EditPost from "./screens/Posts/EditPost";
 import PostCard from "./screens/Posts/PostCard";
 import DeleteThread from "./screens/Threads/DeleteThread";
+import UserProfile from "./screens/UserProfile/UserProfile";
 
 
 
@@ -47,6 +48,9 @@ function App() {
       </Route>
       <Route path="/categories">
         <Categories user={user} setUser={setUser} />
+      </Route>
+      <Route path="/user-profile">
+        <UserProfile user={user} setUser={setUser} />
       </Route>
       {user &&
         <>
