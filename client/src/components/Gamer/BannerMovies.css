@@ -1,0 +1,49 @@
+*{
+    padding:0;
+
+}
+
+.container{
+    height: 25vh;
+    display: flex;
+}
+
+section{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+    transition: all .5s;
+}
+
+section:hover{
+    flex: 2;
+}
+
+
+
+.back1s{
+background: url("https://www.hollywoodreporter.com/wp-content/uploads/2019/12/b25_25594_r_0.jpg");
+background-position: center;
+background-size: cover;
+}
+
+.back2s{
+    background: url("https://i2.wp.com/www.mobi-racer.com/wp-content/uploads/2021/03/The-Suicide-Squad-2021.jpg");
+    background-position: center;
+background-size: cover;
+
+}
+
+.back3s{
+    background: url("https://assets-prd.ignimgs.com/2021/05/25/f9-blogroll-1621977019242.jpg?width=1280");
+    background-position: center;
+background-size: cover;
+}
+
+.back4s{
+    background:url("https://images.hdqwalls.com/download/5k-spider-man-far-from-home-h0-1280x720.jpg");
+    background-position: center;
+    background-size: cover;
+}

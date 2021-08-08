@@ -25,6 +25,9 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
   <>
     <NavLink to="/">Home</NavLink>
+    <NavLink to="/categories">Threads</NavLink>
+    {/* <NavLink to="/threads-gaming">Gaming</NavLink>
+    <NavLink to ="/threads-comic">Comic</NavLink> */}
     {/* <NavLink to=""></NavLink> */}
   </>
 )

@@ -1,0 +1,41 @@
+*{
+    padding:0;
+
+}
+
+.container{
+    height: 25vh;
+    display: flex;
+}
+
+section{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+}
+
+.backone{
+background: url("https://classicrock995.com/wp-content/uploads/2020/06/NBA-logo-illustration-1280x720-1.jpg");
+background-position: center;
+background-size: cover;
+}
+
+.backtwo{
+    background: url("https://www.koamnewsnow.com/content/uploads/2020/04/NFL-logo.jpg");
+    background-position: center;
+background-size: cover;
+}
+
+.backthree{
+    background: url("https://www.creaturecovers.com/wp-content/uploads/2020/07/UFC-Logo.png");
+    background-position: center;
+background-size: cover;
+}
+
+.backfour{
+    background:url("https://i.ytimg.com/vi/y42PI9peurI/maxresdefault.jpg");
+    background-position: center;
+    background-size: cover;
+}

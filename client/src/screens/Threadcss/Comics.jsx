@@ -18,7 +18,7 @@ import BannerComic from '../../components/Gamer/BannerComic';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 500,
+    width: 350,
   },
   media: {
     height: 0,
@@ -58,8 +58,8 @@ export default function Comics(props) {
               />
               <CardMedia
                 className={classes.media}
-                image="https://i2.wp.com/www.mobi-racer.com/wp-content/uploads/2021/03/The-Suicide-Squad-2021.jpg"
-                title="Suicide Squad"
+                image="https://cdn.geeksandgamers.com/wp-content/uploads/2020/12/marvel-s-spider-man-miles-morales-1230434-1280x0-1280x720-1.jpeg"
+                title="Miles Morales 10th Anniversary"
               />
               <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -94,8 +94,8 @@ export default function Comics(props) {
                 />
                 <CardMedia
                   className={classes.media}
-                  image="https://assets-prd.ignimgs.com/2021/05/10/venom2-poster-thumb-1620643135206.jpg"
-                  title="GTA:V Tuners"
+                  image="https://i.pinimg.com/originals/91/85/1f/91851ffbff76b81fcf4bd76acbc2c41e.jpg"
+                    title="Grayson: Agent of Spyral"
                 />
                 <CardContent>
                   <Typography variant="body2" color="textSecondary" component="p">

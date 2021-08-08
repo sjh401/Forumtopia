@@ -17,9 +17,10 @@ import Layout from "../../components/Layout/Layout"
 import { Link, useParams } from "react-router-dom"
 
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 500,
+    width: 350,
   },
   media: {
     height: 0,

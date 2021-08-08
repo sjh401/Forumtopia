@@ -47,3 +47,12 @@ background-image: url("https://images.hdqwalls.com/download/god-of-war-4-2018-oo
     background-image: url("https://kfor.com/wp-content/uploads/sites/3/2021/08/Mu.jpg?w=1280");
 }
 }
+
+.list a{
+    text-decoration: none;
+    color: black; 
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -10,12 +10,15 @@ import EditThread from "./screens/Threads/EditThread";
 import ThreadCard from "./screens/Threads/ThreadCard";
 import Gaming from "./screens/Threadcss/Gaming";
 import Comics from "./screens/Threadcss/Comics";
+import Movies from "./screens/Threadcss/Movies"
+import Sports from "./screens/Threadcss/Sports"
 import CreateThread from "./screens/Threads/createthread";
 // import Home from "./screens/Home/Home";
 
 // import Home from "./screens/Home/Home";
 import Categories from "./screens/Categories/Categories";
 import EditPost from "./screens/Posts/EditPost";
+
 
 
 
@@ -48,6 +51,12 @@ function App() {
       </Route>
       <Route path ="/threads-comic">
         <Comics user={user} setUser={setUser}/>
+      </Route>
+      <Route path="/threads-movies">
+        <Movies user={user} setUser={setUser}/>
+      </Route>
+      <Route path = "/threads-sports">
+        <Sports user={user} setUser={setUser}/>
       </Route>
       <Route path="/sign-out">
         <SignOut setUser={setUser} />

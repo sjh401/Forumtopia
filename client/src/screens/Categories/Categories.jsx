@@ -9,12 +9,12 @@ export default function Categories(props) {
     <Layout user={props.user}>
       <div className="ban"></div>
       <span></span>
+      <div className="list">
       <Link to="/threads-gaming">Gaming</Link>
       <Link to="/threads-comic">Comics</Link>
       <Link to ="/threads-movies">Movies</Link>
-      <Link to="/threads-politics">Politics</Link>
       <Link to ="/threads-sports">Sports</Link>
-      
+      </div>
       
     </Layout>
   )

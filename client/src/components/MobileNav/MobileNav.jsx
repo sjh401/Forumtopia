@@ -4,23 +4,49 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import "./Mobile.css"
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 const options = [
-//   "Home",
-//   "Signup",
-//   "Signin"
-<Link to="/">Home</Link>,
-<Link to="/sign-in">Signin</Link>,
-<Link to="/sign-up">Signup</Link>,
-<Link to="/sign-out">Sign Out</Link>,
-<Link to="/threads">Threads</Link>,
-<Link to ="/create-post">Create a post</Link>
+
+ <NavLink to="/">Home</NavLink>,
+<NavLink to="/sign-in">Signin</NavLink>,
+<NavLink to="/sign-up">Signup</NavLink>,
+<NavLink to="/categories">Popular Topics</NavLink>,
+<NavLink to="/threads">Threads</NavLink>
 ];
+
+// const unauthenticatedOptions = (
+//     <>
+//     <NavLink to="/">Home</NavLink>
+//     <NavLink to ="sign-in">Sign In</NavLink>
+//     <NavLink to ="/sign-up">Sign Up</NavLink>
+//     <NavLink to ="/threads">Threads</NavLink>
+//     </>
+// )
+
+// const alwaysOptions = (
+//     <>
+//       <NavLink to="/">Home</NavLink>
+//       <NavLink to="/threads-gaming">Gaming</NavLink>
+//       <NavLink to ="/threads-comic">Comic</NavLink>
+//       {/* <NavLink to=""></NavLink> */}
+//     </>
+//   )
+
+//   const authenticatedOptions = (
+//     <>
+//       <NavLink to="/sign-out">Sign Out</NavLink>
+  
+//       {/* Don't need correct? */}
+//       <NavLink to="/categories">Threads</NavLink>
+//       <NavLink to="/threads-create">Create Thread</NavLink>
+  
+//     </>
+//   )
 
 const ITEM_HEIGHT = 48;
 
-export default function LongMenu() {
+export default function LongMenu(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
@@ -63,7 +89,7 @@ export default function LongMenu() {
             </MenuItem>
             ))}
         </Menu>
-        
+
         </div>
     );
 }
