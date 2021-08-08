@@ -8,6 +8,14 @@ export const getThreads = async (id) => {
     throw e;
   }
 };
+export const getThreadsUsers = async (id) => {
+  try {
+    const res = await api.get(`/categories/${id}/threads/users`);
+    return res.data;
+  } catch (e) {
+    throw e;
+  }
+};
 
 export const createThread = async (id, input) => {
   try {

@@ -35,7 +35,6 @@ export default function EditPost(props) {
     if(isUpdated) {
         return <Redirect to={`/threads/${post.threadId}`} />
     }
-    console.log(post)
     return (
         <Layout user={props.user}>
             <form onSubmit={handleSubmit}>
@@ -51,7 +50,7 @@ export default function EditPost(props) {
                 <label>Image</label>
                 <input
                 id="imgUrl"
-                id="imgUrl"
+                name="imgUrl"
                 value={input.imgUrl}
                 type="text"
                 onChange={handleChange} />

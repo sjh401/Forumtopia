@@ -46,63 +46,81 @@ export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
   const { id } = useParams();
 
-  const fetchThread = async () => {
-    const thread = await getThread(id);
-    setThread(thread);
-  }
-
   useEffect(() => {
+    const fetchThread = async () => {
+      const thread = await getThread(id);
+      setThread(thread);
+    }
     fetchThread();
   }, [id]);
+
+
+
+
+
+
 
   const classes = useStyles();
 
   return (
     <Layout user={props.user} >
-      <Card className={classes.root}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              R
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
+
+
+
+
+      
+      <div className="thread-card-container">
+        <Card className={classes.root}>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="recipe" className={classes.avatar}>
+                {/* nice? Link to userprofile?*/}
+                {thread?.userId?.username?.charAt(0)}
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title={thread.title}
+            subheader={thread.createdAt}
+          />
+          <CardMedia
+            className={classes.media}
+            // needed this to get rid of a warning
+            image={`${thread.imgUrl}`}
+            title={thread.imgUrl}
+          />
+          <CardContent>
+            <Typography variant="body2" color="textSecondary" component="div">
+              {thread.body}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="div">
+              {thread.userId?._id === props.user?.id &&
+                <>
+                  <Link to={`/threads-edit/${thread._id}`} variant="body2"  className="edit-thread-post-link"> Edit</Link>
+                  <Link to={`/threads-delete/${thread._id}`} variant="body2"  className="edit-thread-post-link">| Delete</Link>
+                </>
+              }
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
             </IconButton>
-          }
-          title={thread.title}
-          subheader={thread.createdAt}
-        />
-        <CardMedia
-          className={classes.media}
-          image={thread.imgUrl}
-          title={thread.imgUrl}
-        />
-        <CardContent>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
           <Typography variant="body2" color="textSecondary" component="div">
-            {thread.body}
-            {thread.userId?._id === props.user?.id &&
-              <Link to={`/threads-edit/${thread._id}`} variant="body2"> Edit</Link>}
+            {props.user && <CreatePost user={props.user} />}
           </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-        </CardActions>
-      </Card>
-      <Card>
-        <Typography variant="body2" color="textSecondary" component="div">
-          <CreatePost user={props.user} />
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="div">
-          <PostMapping id={id} />
-        </Typography>
-      </Card>
+          <Typography variant="body2" color="textSecondary" component="div">
+            <PostMapping id={id} thread={thread}/>
+          </Typography>
+        </Card>
+      </div>
     </Layout>
   );
 }

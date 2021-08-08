@@ -1,36 +1,79 @@
 import Layout from '../../components/Layout/Layout'
 import "./Home.css"
-import Thread from "../Threadcss/Thread"
-import ThreadMapping from '../../components/Mapping/ThreadMapping'
+import { verify } from "../../services/user"
+import { useState, useEffect } from 'react'
+
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import { getCategories } from '../../services/category'
+import { Link } from 'react-router-dom';
 
 
 
-export default function Home(props) {
-  console.log(props.user)
+const useStyles = makeStyles({
+  root: {
+    width: 245,
+    height: 245,
+  },
+});
+
+export default function ImgMediaCard(props) {
+  const [categories, setCategories] = useState([])
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const verifyUser = async () => {
+      setUser(await verify())
+    }
+    verifyUser()
+  }, [])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      let data = await getCategories();
+      setCategories(data)
+    }
+    fetchCategories()
+  }, [user])
+
+  const classes = useStyles();
+
   return (
     <Layout user={props.user}>
-      <div>
-        <h1 className="trend">Trending Now</h1>
-        <div className="together">
-          <div className="first">
-            <div className="move">
-              <h3>They Elon Musk's SpaceX launches 143 satellites on single rocket, sets world record.</h3>
-            </div>
-          </div>
-          <div className="second">
-            <h3>scarlett johansson sues Disney for breach of contract</h3>
-          </div>
-          <div className="third">
-            <h3>Activision hit with another lawsuit as female employees are in a frenzy.</h3>
-          </div>
-          <div className="fourth">
-            <h3>EA play show Dead Space. Could this be EA's big comeback</h3>
-          </div>
-        </div>
-        <span className="spans"></span>
-        <ThreadMapping user={props.user} />
-        <Thread />
+      <h2 className="trending-text">Trending Today</h2>
+      <div className="main-card-container">
+        {categories.sort((a,b)=> b.threadId.length - a.threadId.length).filter(category => category.threadId.length >0).map((category, index) => {
+          return (
+            <Link to={`/threads/${category.threadId[0]?._id}`} key={index}>
+              <div className="trend-card-container">
+                <Card className={classes.root}>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      alt="Contemplative Reptile"
+                      height="140"
+                      image={category.threadId[0]?.imgUrl}
+                    />
+                    <CardContent>
+                      <Typography variant="body2" color="textSecondary" component="h2">
+                      {category.threadId[0]?.title}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" component="p">
+                        {category.threadId[0]?.body}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </div>
+            </Link>
+          )
+        })}
       </div>
     </Layout>
-  )
+  );
 }
+

@@ -1,23 +1,16 @@
-// import React from 'react'
 import { NavLink } from 'react-router-dom'
-import "./Navs.css"
+import "./Nav.css"
 
 const authenticatedOptions = (
   <>
-    <NavLink to="/sign-out">Sign Out</NavLink>
-
-    {/* Don't need correct? */}
-    <NavLink to="/categories">Threads</NavLink>
     <NavLink to="/threads-create">Create Thread</NavLink>
-
+    <NavLink to="/sign-out">Sign Out</NavLink>
   </>
 )
 const unauthenticatedOptions = (
   <>
     <NavLink to="/sign-in">Sign In</NavLink>
     <NavLink to="/sign-up">Sign Up</NavLink>
-    <NavLink to="/threads"></NavLink>
-    {/* <NavLink to="/signout">Sign Out</NavLink> */}
   </>
 )
 
@@ -25,16 +18,15 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
   <>
     <NavLink to="/">Home</NavLink>
-    {/* <NavLink to=""></NavLink> */}
+    <NavLink to="/categories">Categories</NavLink>
   </>
 )
 
-const MainNavBar = (props) => {
+export default function MainNavBar(props) {
   return (
     <nav>
       <div className="nav-bar">
         <NavLink className="site-logo" to="/">Forumtopia</NavLink>
-        {/* he had classname for the divs underneath, I didn't but put in if you want */}
         <div className="nav-links">
           {props.user && <div>Welcome, {props.user.username}</div>}
           {alwaysOptions}
@@ -42,9 +34,7 @@ const MainNavBar = (props) => {
         </div>
       </div>
     </nav>
-
   )
 }
 
 
-export default MainNavBar
