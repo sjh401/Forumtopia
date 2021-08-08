@@ -39,12 +39,12 @@ export default function ImgMediaCard(props) {
       setCategories(data)
     }
     fetchCategories()
-  }, [user])
+  }, [])
 
   const classes = useStyles();
 
   return (
-    <Layout user={props.user}>
+    <Layout user={user}>
       <h2 className="trending-text">Trending Today</h2>
       <div className="main-card-container">
         {categories.sort((a,b)=> b.threadId.length - a.threadId.length).filter(category => category.threadId.length >0).map((category, index) => {
