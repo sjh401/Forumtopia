@@ -5,7 +5,7 @@ import { getThread, updateThread } from '../../services/thread.js';
 import { getCategories } from '../../services/category';
 
 export default function EditThread(props) {
-    const [ input, setInput ] = useState({ title: "" , body: "",categoryId: "", imgUrl: "" })
+    const [ input, setInput ] = useState({ title: "" , body: "", categoryId: "", imgUrl: "" })
     const [ isUpdated, setIsUpdated ] = useState(false);
     const [ categories, setCategories ] = useState([])
     const { id } = useParams();

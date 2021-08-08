@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Redirect } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Redirect, useParams } from "react-router-dom";
 import Layout from '../../components/Layout/Layout';
 import { createThread } from "../../services/thread";
+import { getCategories } from '../../services/category';
 
 
 
@@ -10,8 +11,22 @@ export default function CreateThread(props) {
   const [input, setInput] = useState({
     title: "",
     body: "",
-    imgUrl: ""
+    imgUrl: "",
+    categoryId: ""
   });
+  const [ categories, setCategories ] = useState([])
+  const { id } = useParams();
+
+  useEffect(() => {
+      const fetchCategories = async () => {
+          const get = await getCategories();
+          console.log(get)
+          setCategories(get);
+      }
+      fetchCategories();
+  },[])
+
+  console.log(categories)
 
   const [isCreated, setCreated] = useState(false)
 
@@ -25,10 +40,11 @@ export default function CreateThread(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const created = await createThread(input);
+    const created = await createThread(input.categoryId, input);
     setCreated({ created })
+    console.log(created)
   };
-
+  console.log(input)
   if (isCreated) {
     return <Redirect to={`/`} />
   }
@@ -66,6 +82,12 @@ export default function CreateThread(props) {
           required
           onChange={handleChange}
         />
+          <br />
+          <select className="create-thread-data-list" id="categoryId" name="categoryId" onChange={handleChange} >
+              {categories.map(category => (
+                  <option key={category._id} className="create-thread-data-option" value={category._id} >{category.title}</option>
+              ))}
+          </select>
         <br />
         <button type='submit' className='submit-button'>Submit</button>
 

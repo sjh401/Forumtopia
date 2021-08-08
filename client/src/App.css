@@ -2,6 +2,18 @@
   color: #000;
   text-decoration: none;
 }
+.create-thread-data-list {
+  display:initial;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 20px;
+  width: 100px;
+  border: 0;
+}
+.create-thread-option {
+  display: initial;
+  color: #000;
+}
 .thread-card-container {
   display: flex;
   justify-content: center;
