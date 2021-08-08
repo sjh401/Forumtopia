@@ -15,6 +15,7 @@ const SignOut = (props) => {
     signOutUser()
   }, [history, setUser])
 
+  
   return ''
 }
 
