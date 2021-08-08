@@ -78,4 +78,18 @@
   width: 200px;
   margin: 2px;
 }
+.thread-delete {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 5px 0;
+  flex-flow: column;
+  text-align: center;
+}
+.thread-delete-container {
+  display: flex;
+  justify-content: center;
+  margin: 5px 40% 5px 40%;
+  flex-flow: column;
+  max-width: 350;
 
+}

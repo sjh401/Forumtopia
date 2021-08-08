@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import Layout from "../../components/Layout/Layout"
-import { getCategories, getCategory } from '../../services/category';
+import { getCategories } from '../../services/category';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { getThreads } from '../../services/thread';
 import { getThreadsUsers } from '../../services/thread';
 
 
@@ -32,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Categories(props) {
   const [ categories, setCategories ] = useState([]);
-  const [ category, setCategory ] = useState([]);
+  const [ category, setCategory ] = useState({_id: "6110110df23e1a41bb049c8b"});
   const [ threads, setThreads ] = useState([]);
   
   useEffect(() => {
@@ -46,13 +45,11 @@ export default function Categories(props) {
   useEffect(() => {
     const fetchThreads = async () => {
       const get = await getThreadsUsers(category._id)
-      console.log(get)
       setThreads(get)
     }
     fetchThreads()
   },[category])
-  console.log(threads)
-  console.log(category)
+
   const classes = useStyles();
 
   return (
@@ -66,41 +63,43 @@ export default function Categories(props) {
           </div>
         ))}
       </div>
-      <h5 className="categories-selections">Threads by Category</h5>
+      {category._id !== "6110110df23e1a41bb049c8b" && <h5 className="categories-selections">Threads by Category</h5>}
       <div className="category-trend-card-container">
         {threads.filter(thread => category._id === thread?.categoryId).map(thread => {
             return (
-              <div className="trend-card-container" key={thread._id}>
-                <Card className={classes.root}>
-                  <CardHeader
-                    avatar={
-                      <Avatar aria-label="username" className={classes.avatar}>
-                        {thread?.userId?.username?.charAt(0)}
-                      </Avatar>
-                    }
-                    action={
-                      <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                      </IconButton>
-                    }
-                    title={thread.title.toUpperCase()}
-                    subheader={thread.createdAt}
-                  />
-                  {/* <CardActionArea> / */}
-                    <CardMedia
-                      component="img"
-                      alt="Contemplative Reptile"
-                      height="200"
-                      image={`${thread.imgUrl}`}
+              <Link to={`/threads/${thread._id}`}>
+                <div className="trend-card-container" key={thread._id}>
+                  <Card className={classes.root}>
+                    <CardHeader
+                      avatar={
+                        <Avatar aria-label="username" className={classes.avatar}>
+                          {thread?.userId?.username?.charAt(0)}
+                        </Avatar>
+                      }
+                      action={
+                        <IconButton aria-label="settings">
+                          <MoreVertIcon />
+                        </IconButton>
+                      }
+                      title={thread.title.toUpperCase()}
+                      subheader={thread.createdAt}
                     />
-                    <CardContent>
-                      <Typography variant="body2" color="textSecondary" component="div">
-                        {thread.body}
-                      </Typography>
-                    </CardContent>
-                  {/* </CardActionArea> */}
-                </Card>
-              </div>
+                    {/* <CardActionArea> / */}
+                      <CardMedia
+                        component="img"
+                        alt="Contemplative Reptile"
+                        height="200"
+                        image={`${thread.imgUrl}`}
+                      />
+                      <CardContent>
+                        <Typography variant="body2" color="textSecondary" component="div">
+                          {thread.body}
+                        </Typography>
+                      </CardContent>
+                    {/* </CardActionArea> */}
+                  </Card>
+                </div>
+              </Link>
             )
           })}
         </div>

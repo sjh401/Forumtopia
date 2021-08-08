@@ -53,10 +53,22 @@ export default function ThreadCard(props) {
     }
     fetchThread();
   }, [id]);
+
+
+
+
+
+
+
   const classes = useStyles();
 
   return (
     <Layout user={props.user} >
+
+
+
+
+      
       <div className="thread-card-container">
         <Card className={classes.root}>
           <CardHeader
@@ -86,8 +98,10 @@ export default function ThreadCard(props) {
             </Typography>
             <Typography variant="body2" color="textSecondary" component="div">
               {thread.userId?._id === props.user?.id &&
-                <Link to={`/threads-edit/${thread._id}`} variant="body2"  className="edit-thread-post-link"> Edit</Link>
-                
+                <>
+                  <Link to={`/threads-edit/${thread._id}`} variant="body2"  className="edit-thread-post-link"> Edit</Link>
+                  <Link to={`/threads-delete/${thread._id}`} variant="body2"  className="edit-thread-post-link">| Delete</Link>
+                </>
               }
             </Typography>
           </CardContent>

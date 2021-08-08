@@ -35,7 +35,6 @@ export default function EditPost(props) {
     if(isUpdated) {
         return <Redirect to={`/threads/${post.threadId}`} />
     }
-    console.log(post)
     return (
         <Layout user={props.user}>
             <form onSubmit={handleSubmit}>

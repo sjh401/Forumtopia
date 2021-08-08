@@ -83,6 +83,7 @@ export default function CreateThread(props) {
             />
             <br />
             <select className="create-thread-data-list" id="categoryId" name="categoryId" onChange={handleChange} >
+                <option value="">Select from List</option>
                 {categories.map(category => (
                     <option key={category._id} className="create-thread-data-option" value={category._id} >{category.title}</option>
                 ))}
