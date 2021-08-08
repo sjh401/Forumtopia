@@ -96,9 +96,14 @@ export default function PostCard(props) {
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="div">
                 {post.body}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="div">
+                <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link">Back</Link>
                 {post?.userId === props.user?.id &&
-                  <Link to={`/threads-edit/${post._id}`} variant="body2" className="edit-thread-post-link">Edit</Link>
-                    
+                  <>
+                    <Link to={`/threads-edit/${post._id}`} variant="body2" className="edit-thread-post-link">| Edit |</Link>
+                    <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" >Delete</Link>
+                  </>
                 }
                 </Typography>
             </CardContent>

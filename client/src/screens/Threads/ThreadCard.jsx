@@ -102,7 +102,7 @@ export default function ThreadCard(props) {
             <CreatePost user={props.user} />
           </Typography>
           <Typography variant="body2" color="textSecondary" component="div">
-            <PostMapping id={id} />
+            <PostMapping id={id} thread={thread}/>
           </Typography>
         </Card>
       </div>

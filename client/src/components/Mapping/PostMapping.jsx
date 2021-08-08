@@ -9,13 +9,14 @@ export default function PostMapping(props) {
         const fetchPosts = async () => {
             const posts = await getPosts(props.id);
             setPosts(posts)
+            console.log(posts)
         }
     fetchPosts();
     }, [props.id]);
-    
+    console.log(props.thread)
     return (
         <div className="post-mapping-div">
-            {posts.map(post => (
+            {posts.filter(post => post.threadId._id === props.thread?._id).map(post => (
             <div key={post._id} className="post-mapped">
                 <p>{post.body}</p>
                 <Link to={`/post/${post._id}`}><img src={post.imgUrl} style={{ width: "50px", height: "50px" }} alt="user post"></img></Link> 
