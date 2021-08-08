@@ -9,11 +9,12 @@ export const createPost = async (req, res) => {
     const post = new Post(req.body)
     post.userId = req.user
 
-    const { id } = req.params
-    const thread = await Thread.findById(id)
+    const { pid } = req.params
+    const thread = await Thread.findById(pid)
 
     const user = await User.findById(req.user)
     post.userId = user._id
+    
     await post.save()
     user.posts.push(post._id)
     thread.posts.push(post._id)
@@ -29,9 +30,9 @@ export const createPost = async (req, res) => {
 
 export const getPosts = async (req, res) => {
   try {
-    const { id } = req.params
-    const thread = await Thread.findById(id)
-    const posts = await Post.find({threadId: thread._id}).populate('threadId') 
+    const { pid } = req.params
+    const thread = await Thread.findById(pid)
+    const posts = await Post.find({threadId: thread._id}).populate('threadId').populate("userId")
     res.json(posts)
   } catch (e) {
     res.status(404).json({error: e.message})
@@ -40,8 +41,8 @@ export const getPosts = async (req, res) => {
 
 export const getPost = async (req, res) => {
   try {
-    const {id} = req.params
-    const post = await Post.findById(id)
+    const {pid} = req.params
+    const post = await Post.findById(pid).populate("userId")
     if (post) {
       res.json(post)
     } else {
@@ -54,9 +55,9 @@ export const getPost = async (req, res) => {
 
 export const updatePost = async (req, res) => {
   try {
-    const { id } = req.params
+    const { pid } = req.params
     const {body} = req
-    const post = await Post.findByIdAndUpdate(id, body, {new: true})
+    const post = await Post.findByIdAndUpdate(pid, body, {new: true})
     res.send(post)
   } catch (e) {
     res.status(424).json({error: e.message})
@@ -65,8 +66,8 @@ export const updatePost = async (req, res) => {
 
 export const deletePost = async (req, res) => {
   try {
-    const { id } = req.params
-    const post = await Post.findByIdAndDelete(id)
+    const { pid } = req.params
+    const post = await Post.findByIdAndDelete(pid)
     res.send(post)
 
   } catch (e) {

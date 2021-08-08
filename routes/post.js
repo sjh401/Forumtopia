@@ -4,10 +4,10 @@ import { createPost, getPosts, getPost, updatePost, deletePost} from "../control
 
 const router = Router()
 
-router.post("/threads/:id/posts", restrict, createPost)
-router.get("/threads/:id/posts", getPosts)
-router.get("/posts/:id", getPost)
-router.put("/posts/:id", restrict, updatePost)
-router.delete("/posts/:id", restrict, deletePost)
+router.post("/threads/:pid/posts", restrict, createPost)
+router.get("/threads/:pid/posts", getPosts)
+router.get("/threads/:pid/post", getPost)
+router.put("/posts/:pid", restrict, updatePost)
+router.delete("/threads/:pid/post", restrict, deletePost)
 
 export default router

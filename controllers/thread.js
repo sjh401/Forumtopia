@@ -1,28 +1,24 @@
 import Thread from "../models/thread.js"
-import Category from "../models/category.js"
+import Topic from "../models/topic.js"
 import User from "../models/user.js"
 
 export const createThread = async (req, res) => {
   try {
     const thread = new Thread(req.body)
     thread.userId = req.user
-    console.log("req: ", req)
-    
-
+  
     const { id } = req.params
-    const category = await Category.findById(id)
-    console.log("CAT ID: ", category)
-
+    const topic = await Topic.findById(id)
+  
     const user = await User.findById(req.user)
     thread.userId = user._id
-    console.log("USER ID: ", user)
 
     await thread.save()
-    thread.categoryId = category._id
-    category.threadId.push(thread._id)
+    topic.threadId.push(thread._id)
+    thread.topicId = topic._id
     
     await user.save()
-    await category.save()
+    await topic.save()
     res.status(201).json(thread)
   } catch (e) {
     res.status(500).json({error: e.message})
@@ -32,10 +28,18 @@ export const createThread = async (req, res) => {
 export const getThreads = async (req, res) => {
   try {
     const { id } = req.params
-    const category = await Category.findById(id)
-    const threads = await Thread.find({categoryId: category._id}).populate('categoryId')
-    console.log("BODY", req.body)
-    console.log("CATEGORY", category)
+    const topic = await Topic.findById(id)
+    const threads = await Thread.find({topicId: topic._id}).populate('topicId').populate('userId').populate('posts')
+    res.json(threads)
+  } catch (e) {
+    res.status(404).json({error: e.message})
+  }
+}
+
+export const getGeneralThreads = async (req, res) => {
+  try {
+
+    const threads = await Thread.find({}).populate('userId')
     res.json(threads)
   } catch (e) {
     res.status(404).json({error: e.message})

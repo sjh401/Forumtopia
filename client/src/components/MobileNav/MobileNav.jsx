@@ -3,13 +3,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import "./Mobile.css"
 import { Link } from "react-router-dom"
+import "./MobileNav.css"
 
 const options = [
-  //   "Home",
-  //   "Signup",
-  //   "Signin"
   <Link to="/">Home</Link>,
   <Link to="/sign-in">Signin</Link>,
   <Link to="/sign-up">Signup</Link>,
@@ -33,16 +30,14 @@ export default function LongMenu() {
   };
 
   return (
-    <div className="bar">
-
-
+    <div className="mobile-nav">
       <IconButton
         aria-label="more"
         aria-controls="long-menu"
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <MoreVertIcon className="color" />
+        <MoreVertIcon />
       </IconButton>
       <Menu
         id="long-menu"
@@ -58,12 +53,11 @@ export default function LongMenu() {
         }}
       >
         {options.map((option, index) => (
-          <MenuItem key={`MenuItem-${index}`} selected={option === 'Pyxis'} onClick={handleClose}>
+          <MenuItem key={index} selected={option === 'Pyxis'} onClick={handleClose}>
             {option}
           </MenuItem>
         ))}
       </Menu>
-
     </div>
   );
 }

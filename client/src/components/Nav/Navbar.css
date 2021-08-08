@@ -1,0 +1,36 @@
+.navbar {
+  background-color: rgb(8, 8, 8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: white
+}
+
+.site-logo {
+  color: white;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+.user-welcome {
+  margin-bottom: 10px;
+}
+
+.global-username {
+  color: rgb(255, 157, 0);
+}
+
+
+.signed-in-nav a,
+.signed-out-nav a {
+  color: white;
+  padding-right: 12px;
+  text-decoration: none;
+}
+
+.signed-in-nav a:hover,
+.signed-out-nav a:hover,
+.site-logo:hover {
+  color: rgb(231, 231, 231);
+}

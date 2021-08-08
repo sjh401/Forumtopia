@@ -2,7 +2,16 @@ import api from "./apiConfig";
 
 export const getThreads = async (id) => {
   try {
-    const res = await api.get(`/categories/${id}/threads`);
+    const res = await api.get(`/topics/${id}/threads`);
+    return res.data;
+  } catch (e) {
+    throw e;
+  }
+};
+
+export const getGeneralThreads = async () => {
+  try {
+    const res = await api.get(`/threads`);
     return res.data;
   } catch (e) {
     throw e;
@@ -11,7 +20,7 @@ export const getThreads = async (id) => {
 
 export const createThread = async (id, input) => {
   try {
-    const res = await api.post(`/categories/${id}/threads`, input);
+    const res = await api.post(`/topics/${id}/threads`, input);
     return res.data;
   } catch (e) {
     throw e;
@@ -20,7 +29,7 @@ export const createThread = async (id, input) => {
 
 export const getThread = async (id) => {
   try {
-    const res = await api.get(`/threads/${id}`);
+    const res = await api.get(`/topics/${id}/thread`);
     return res.data;
   } catch (e) {
     throw e;

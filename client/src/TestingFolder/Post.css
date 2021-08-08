@@ -1,0 +1,50 @@
+.post-form {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.card-button {
+  margin: 10px;
+  border: none;
+  background-color: rgba(139, 69, 19, 0);
+}
+
+.card-button:hover {
+  cursor: pointer;
+}
+
+.create-form-input,
+.create-form-button,
+.update-form-input,
+.update-form-button {
+  text-align: center;
+  padding: 20px;
+  border: none;
+  margin: 2px;
+  border-radius: .5em;
+}
+
+.create-form-button:hover,
+.update-form-button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px darkgray inset;
+  color: rgba(0, 0, 0, 0.781)
+}
+
+.comment-text {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.username {
+  color: blue
+}

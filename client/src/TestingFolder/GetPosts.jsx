@@ -1,41 +1,55 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { getPosts } from '../services/post'
-import { Link } from "react-router-dom"
+import PostCard from "./PostCard"
+import SingleThreadCard from "./SingleThreadCard"
+import Layout from "../components/Layout/Layout"
+import "./Post.css"
+import MakePost from './MakePost'
+// import Loading from './Loading'
+
 
 export default function GetPosts(props) {
   const [posts, setPosts] = useState([])
-  const { id } = useParams()
+  const [toggle, setToggle] = useState(false);
+  const { pid } = useParams()
+
+  // console.log(pid)
 
   useEffect(() => {
     const fetchPosts = async () => {
-      let data = await getPosts(id)
-      console.log(data)
+      let data = await getPosts(pid)
       setPosts(data)
     }
     fetchPosts()
-  }, [id])
+  }, [pid, toggle])
 
+  if (!posts.length) {
+    return <MakePost />
+  }
+
+  const postCards = posts
+    .map((post, index) =>
+      index < 50 ? (
+        <PostCard setToggle={setToggle} user={props.user} key={index} post={post} />
+      ) : null
+    )
 
   return (
-    <div user={props.user}>
-      {posts[0]?.threadId.body}
-      {posts.map((post, index) => {
-        return (
-          <div key={index}>
-            {console.log(post)}
-            <br />
-            <div>
-
-              {/* {post.threadId?.body} */}
-
-              <br />
-              {post.body}
-            </div>
-          </div>
-        )
-
-      })}
-    </div>
+    <Layout user={props.user}>
+      <div className="post-card">
+        <div className="single-thread-card">
+          <SingleThreadCard user={props.user} post={posts} />
+        </div>
+        <div className="comment-text"><p>Comment as <span className="username">{props.user?.username}</span></p></div>
+        <MakePost setToggle={setToggle} />
+        <>{postCards.reverse()}</>
+        {/* {posts.map((post, index) => {
+          return (
+            <PostCard setToggle={setToggle} user={props.user} key={index} post={post} />
+          )
+        })} */}
+      </div>
+    </Layout>
   )
 }

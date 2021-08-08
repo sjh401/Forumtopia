@@ -1,11 +1,10 @@
 import MobileNav from "../MobileNav/MobileNav"
 import Footer from "../Footer/Footer"
-import MainNavBar from "../Nav/MainNavBar"
-import "./Layout.css"
+import Navbar from "../Nav/Navbar"
 
 const Layout = (props) => (
   <div>
-    <MainNavBar className="main" user={props.user} />
+    <Navbar className="main" user={props.user} />
     <MobileNav user={props.user} />
     <div>{props.children}</div>
     <Footer />
