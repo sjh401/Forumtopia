@@ -16,7 +16,7 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import CreatePost from '../Post/CreatePost';
+import CreatePost from '../Posts/CreatePost';
 import PostMapping from '../../components/Mapping/PostMapping';
 
 const useStyles = makeStyles((theme) => ({
@@ -58,50 +58,50 @@ export default function ThreadCard(props) {
 
   return (
     <Layout user={props.user} >
-      <Card className={classes.root}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              R
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
+      <div className="main-card-container">
+        <Card className={classes.root}>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="recipe" className={classes.avatar}>
+                R
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title={thread.title}
+            subheader={thread.createdAt}
+          />
+          <CardMedia
+            className={classes.media}
+            image={thread.imgUrl}
+            title={thread.imgUrl}
+          />
+          <CardContent>
+            <Typography variant="body2" color="textSecondary" component="div">
+              {thread.body}
+              {thread.userId?._id === props.user?.id &&
+                <Link to={`/threads-edit/${thread._id}`} variant="body2"> Edit</Link>}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
             </IconButton>
-          }
-          title={thread.title}
-          subheader={thread.createdAt}
-        />
-        <CardMedia
-          className={classes.media}
-          image={thread.imgUrl}
-          title={thread.imgUrl}
-        />
-        <CardContent>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
           <Typography variant="body2" color="textSecondary" component="div">
-            {thread.body}
-            {thread.userId?._id === props.user?.id &&
-              <Link to={`/threads-edit/${thread._id}`} variant="body2"> Edit</Link>}
+            <CreatePost user={props.user} />
           </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-        </CardActions>
-      </Card>
-      <Card>
-        <Typography variant="body2" color="textSecondary" component="div">
-          <CreatePost user={props.user} />
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="div">
-          <PostMapping id={id} />
-        </Typography>
-      </Card>
+          <Typography variant="body2" color="textSecondary" component="div">
+            <PostMapping id={id} />
+          </Typography>
+        </Card>
+      </div>
     </Layout>
   );
 }

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom";
 import { getThread } from '../../services/thread';
 import { createPost } from '../../services/post';
+import "../../App.css"
+
 
 
 export default function CreatePost(props) {
@@ -34,19 +36,19 @@ export default function CreatePost(props) {
   };
 
   return (
-    <>
-      Create a Post
-      <form onSubmit={handleSubmit} className="form-horizontal">
+    <div className="create-post-div">
+      <div className="create-post-title">Post as {props.user.username}</div>
+      <form onSubmit={handleSubmit} className="create-post-form">
         <br />
-        <label>Body:</label>
-        <input id="body" value={input.body} onChange={handleChange} />
+        {/* <label className="label-one">Body:</label> */}
+        <textarea className="create-post-text-area" placeholder="post" id="body" value={input.body} onChange={handleChange} />
         <br />
-        <label>Image:</label>
-        <input id="imgUrl" value={input.imgUrl} onChange={handleChange} />
+        {/* <label className="label-two">Image:</label> */}
+        <input  className="create-post-image" placeholder="image" id="imgUrl" value={input.imgUrl} onChange={handleChange} />
         <br />
         {/* <button ref={refresh}>Submit</button> */}
-        <button>Submit</button>
+        <button className="create-post-button">Submit</button>
       </form>
-    </>
+    </div>
   )
 }

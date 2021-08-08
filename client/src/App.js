@@ -4,7 +4,7 @@ import { Route } from "react-router-dom"
 
 import SignIn from "./screens/SignIn/SignIn";
 import SignUp from "./screens/SignUp/SignUp";
-import SignOut from './screens/signout/SignOut';
+import SignOut from "./screens/SignOut/SignOut";
 import EditThread from "./screens/Threads/EditThread";
 import ThreadCard from "./screens/Threads/ThreadCard";
 import Gaming from "./screens/Threadcss/Gaming";

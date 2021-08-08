@@ -65,9 +65,10 @@ export default function Categories(props) {
 
   return (
     <Layout user={props.user}>
-      <div className="category-selections">
+      <div className="categories-selections">
         {categories.map(category => (
-          <div key={category._id}>
+          <div key={category._id} className="category-selection">
+            <img src={category.imgUrl} alt="category" style={{width:"100px"}}/>
             <button onClick={(e) => setCategory(category)}>{category.title}</button>
           </div>
         ))}
