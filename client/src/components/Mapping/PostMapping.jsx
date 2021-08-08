@@ -9,11 +9,10 @@ export default function PostMapping(props) {
         const fetchPosts = async () => {
             const posts = await getPosts(props.id);
             setPosts(posts)
-            console.log(posts)
         }
     fetchPosts();
     }, [props.id]);
-    console.log(props.thread)
+
     return (
         <div className="post-mapping-div">
             {posts.filter(post => post.threadId._id === props.thread?._id).map(post => (

@@ -13,7 +13,6 @@ export default function EditThread(props) {
     useEffect(() => {
         const fetchCategories = async () => {
             const get = await getCategories();
-            console.log(get)
             setCategories(get);
         }
         fetchCategories();
@@ -36,11 +35,10 @@ export default function EditThread(props) {
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(input)
         const updated = await updateThread(id, input);
         setIsUpdated(updated);
     }
-    console.log(input)
+
     if(isUpdated) {
         return <Redirect to={`/`} />
     }
@@ -51,7 +49,6 @@ export default function EditThread(props) {
                 <input
                 id="title"
                 name="title"
-                // placeholder={thread?.title}
                 value={input.title}
                 type="text"
                 onChange={handleChange} />
@@ -60,7 +57,6 @@ export default function EditThread(props) {
                 <input
                 id="body"
                 name="body"
-                // placeholder={thread?.body}
                 value={input.body}
                 type="text"
                 style={{width:"150px", height:"250px"}}
@@ -70,23 +66,15 @@ export default function EditThread(props) {
                 <input
                 id="imgUrl"
                 name="imgUrl"
-                // placeholder={thread?.imgUrl}
                 value={input.imgUrl}
                 type="text"
                 onChange={handleChange} />
                 <br />
-                <label>Category</label>
-                <input 
-                // list="categoryId" 
-                name="categoryId" 
-                id="categoryId"
-                value={input.categoryId}
-                onChange={handleChange}/>
-                {/* <datalist id="categoryId">
-                    {categories.map(category => (
-                        <option value={category.title}/>
-                    ))}
-                </datalist> */}
+                <select className="create-thread-data-list" id="categoryId" name="categoryId" onChange={handleChange} >
+                {categories.map(category => (
+                <option key={category._id} className="create-thread-data-option" value={category._id} >{category.title}</option>
+                ))};
+                </select>
                 <br />
                 <button>Update Thread</button>
             </form>

@@ -29,8 +29,6 @@ export default function LongMenu() {
 
   return (
     <div className="bar">
-
-
       <IconButton
         aria-label="more"
         aria-controls="long-menu"
@@ -55,11 +53,9 @@ export default function LongMenu() {
         {options.map((option, index) => (
           <MenuItem key={index} selected={option === 'Pyxis'} onClick={handleClose}>
             <div className="mobile-nav-text">{option}</div>
-
           </MenuItem>
         ))}
       </Menu>
-
     </div>
   );
 }

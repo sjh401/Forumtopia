@@ -7,8 +7,6 @@ import SignUp from "./screens/SignUp/SignUp";
 import SignOut from "./screens/SignOut/SignOut";
 import EditThread from "./screens/Threads/EditThread";
 import ThreadCard from "./screens/Threads/ThreadCard";
-import Gaming from "./screens/Threadcss/Gaming";
-import Comics from "./screens/Threadcss/Comics";
 import CreateThread from "./screens/Threads/CreateThread";
 import Home from "./screens/Home/Home";
 import Categories from "./screens/Categories/Categories";
@@ -39,12 +37,6 @@ function App() {
       </Route>
       <Route path="/sign-up">
         <SignUp user={user} setUser={setUser} />
-      </Route>
-      <Route path = "/threads-gaming">
-        <Gaming user={user} setUser={setUser}/>
-      </Route>
-      <Route path ="/threads-comic">
-        <Comics user={user} setUser={setUser}/>
       </Route>
       <Route path="/sign-out">
         <SignOut setUser={setUser} />

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout';
-import { getThread } from '../../services/thread';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -16,8 +15,6 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import CreatePost from '../Posts/CreatePost';
-import PostMapping from '../../components/Mapping/PostMapping';
 import { deletePost, getPost } from '../../services/post';
 
 const useStyles = makeStyles((theme) => ({
@@ -53,7 +50,6 @@ export default function PostCard(props) {
         const fetchPost = async () => {
             const soloPost = await getPost(id);
             setPost(soloPost);
-            console.log(soloPost)
         }
         fetchPost();
     }, [id]);
@@ -73,7 +69,7 @@ export default function PostCard(props) {
             <CardHeader
                 avatar={
                 <Avatar aria-label="recipe" className={classes.avatar}>
-                    {/* nice? Link to userprofile?*/}
+                    {/* Link to userprofile?*/}
                     {post?.userId?.username?.charAt(0)}
                 </Avatar>
                 }
@@ -87,7 +83,7 @@ export default function PostCard(props) {
             />
             <CardMedia
                 className={classes.media}
-                image={post.imgUrl}
+                image={`${post.imgUrl}`}
                 title={post.imgUrl}
             />
             <CardContent>

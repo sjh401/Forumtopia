@@ -4,8 +4,6 @@ import "./SignUp.css"
 import {signUp} from "../../services/user"
 import Layout from "../../components/Layout/Layout"
 
-
-
 export default function SignUp(props) {
     const [ input, setInput ] = useState({username:"", email:"", password:""});
     const { setUser } = props;
@@ -14,7 +12,6 @@ export default function SignUp(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const user = await signUp(input);
-        console.log(user);
         setUser(user);
         history.push("/");
     }

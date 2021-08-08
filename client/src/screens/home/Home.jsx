@@ -6,16 +6,13 @@ import { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-// import homeData from "./homeData"
 import { getCategories } from '../../services/category'
 import { Link } from 'react-router-dom';
 
-// console.log(homeData)
+
 
 const useStyles = makeStyles({
   root: {
@@ -38,7 +35,6 @@ export default function ImgMediaCard(props) {
   useEffect(() => {
     const fetchCategories = async () => {
       let data = await getCategories();
-      console.log(data)
       setCategories(data)
     }
     fetchCategories()
@@ -51,7 +47,6 @@ export default function ImgMediaCard(props) {
       <h2 className="trending-text">Trending Today</h2>
       <div className="main-card-container">
         {categories.sort((a,b)=> b.threadId.length - a.threadId.length).filter(category => category.threadId.length >0).map((category, index) => {
-        {/* {categories.sort((a,b)=> b.updatedAt - a.updatedAt).filter(category => category.threadId.length >0).map((category, index) => { */}
           return (
             <Link to={`/threads/${category.threadId[0]?._id}`} key={index}>
               <div className="trend-card-container">
@@ -77,7 +72,6 @@ export default function ImgMediaCard(props) {
             </Link>
           )
         })}
-
       </div>
     </Layout>
   );

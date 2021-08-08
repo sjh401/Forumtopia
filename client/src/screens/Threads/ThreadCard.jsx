@@ -50,7 +50,6 @@ export default function ThreadCard(props) {
     const fetchThread = async () => {
       const thread = await getThread(id);
       setThread(thread);
-      console.log(thread)
     }
     fetchThread();
   }, [id]);
@@ -78,12 +77,15 @@ export default function ThreadCard(props) {
           />
           <CardMedia
             className={classes.media}
-            image={thread.imgUrl}
+            // needed this to get rid of a warning
+            image={`${thread.imgUrl}`}
             title={thread.imgUrl}
           />
           <CardContent>
             <Typography variant="body2" color="textSecondary" component="div">
               {thread.body}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="div">
               {thread.userId?._id === props.user?.id &&
                 <Link to={`/threads-edit/${thread._id}`} variant="body2"  className="edit-thread-post-link"> Edit</Link>
                 

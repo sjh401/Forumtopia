@@ -25,12 +25,14 @@ export default function SignIn(props) {
 
   return (
     <Layout>
-        <div className="logo">
-                <h1>Forumtopia</h1>
-            </div>
-            <div className = "back">
-            </div>
-      Sign In
+      <div className="logo">
+        <h1>Forumtopia</h1>
+      </div>
+      <div className = "back">
+      </div>
+      <div>
+        Sign In
+      </div>
       <br />
       <form onSubmit={handleSubmit}>
         <label>Username:</label>
