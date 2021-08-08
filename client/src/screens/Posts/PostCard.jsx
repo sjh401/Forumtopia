@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useHistory } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout';
 import { getThread } from '../../services/thread';
 
@@ -18,7 +18,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CreatePost from '../Posts/CreatePost';
 import PostMapping from '../../components/Mapping/PostMapping';
-import { getPost } from '../../services/post';
+import { deletePost, getPost } from '../../services/post';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
 export default function PostCard(props) {
     const [ post, setPost ] = useState([]);
     const { id } = useParams();
+    const history = useHistory();
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -57,18 +58,14 @@ export default function PostCard(props) {
         fetchPost();
     }, [id]);
 
+    const deleteThisPost = async () => {
+      await deletePost(post._id)
+      history.push(`/threads/${post?.threadId}`)
+
+    }
+
     const classes = useStyles();
 
-//   return (
-//     <Layout user={props.user} >
-//         <div>
-//             <img src={post?.imgUrl} style={{ width: "100px", height: "100px" }} alt="user post" />
-//             <p>{post?.body}</p>
-//             <Link to={`/threads/${post.threadId}`}>Back to Thread</Link>
-//         </div>
-//     </Layout>
-// )
-// }
     return (
         <Layout user={props.user} >
         <div className="thread-card-container">
@@ -102,7 +99,7 @@ export default function PostCard(props) {
                 {post?.userId === props.user?.id &&
                   <>
                     <Link to={`/threads-edit/${post._id}`} variant="body2" className="edit-thread-post-link">| Edit |</Link>
-                    <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" >Delete</Link>
+                    <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" onClick={deleteThisPost}>Delete</Link>
                   </>
                 }
                 </Typography>

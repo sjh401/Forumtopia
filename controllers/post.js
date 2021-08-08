@@ -69,9 +69,22 @@ export const updatePost = async (req, res) => {
 export const deletePost = async (req, res) => {
   try {
     const { id } = req.params
-    const post = await Post.findByIdAndDelete(id)
-    res.send(post)
+    const post = await Post.findById(id)
+    console.log("HERE IS THE POST PLZ",post)
 
+
+    const thread = await Thread.findById(post.threadId)
+    console.log("HERE IS THE Thread PLZ",thread)
+    await thread.posts.splice((thread.posts.indexOf(`${post._id}`),1)).save()
+    console.log("HERE IS THE Thread PLZ",thread)
+
+    const user = await User.findById(req.user)
+    console.log("HERE IS THE User PLZ",user)
+    await user.posts.splice((user.posts.indexOf(`${post._id}`),1)).save()
+
+    const poster = await Post.findByIdAndDelete(id)
+
+    res.send(poster)
   } catch (e) {
     res.status(404).json({error: e.message})
   }
