@@ -57,7 +57,7 @@ export default function ThreadCard(props) {
 
   const displayEditLink = () => {
     if (thread.userId === props.user?.id) {
-      return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}>Edit</Link>
+      return <Link to={`/thread-edit/${thread._id}`}  className="edit-thread-post-link">Edit</Link>
     }
   }
 

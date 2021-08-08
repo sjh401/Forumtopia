@@ -14,13 +14,13 @@ export default function PostMapping(props) {
     }, [props.id]);
     
     return (
-        <div>
+        <div className="post-mapping-div">
             {posts.map(post => (
-            <div key={post._id}>
+            <div key={post._id} className="post-mapped">
                 <p>{post.body}</p>
                 <Link to={`/post/${post._id}`}><img src={post.imgUrl} style={{ width: "50px", height: "50px" }} alt="user post"></img></Link> 
                 {post.userId?._id === props.user?.id &&
-                <Link to={`/post-edit/${post._id}`}> Edit</Link>}
+                <Link to={`/post-edit/${post._id}`}  className="edit-thread-post-link"> Edit</Link>}
             </div>
             ))}
         </div>

@@ -1,3 +1,12 @@
+.edit-thread-post-link {
+  color: #000;
+  text-decoration: none;
+}
+.thread-card-container {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 5px 0;
+}
 .create-post-div {
   display: grid;
   grid: auto auto auto auto auto/  10px auto 10px
@@ -13,11 +22,12 @@
   grid-area: 2/2/4/3;
   text-align: center;
   width: 100%;
+  /* height: 100%; */
 }
 .create-post-image {
   grid-area: 4/2/5/3;
   text-align: center;
-  /* border: solid 0.3px black; */
+  border: solid 0.3px black;
   width: 100%;
 }
 .create-post-button {
@@ -27,6 +37,21 @@
   background-color: #fff;
   border: none;
   opacity: 75%;
+}
+
+.post-mapping-div {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.post-mapped {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  justify-content: center;
+  /* border: 0.3px solid black; */
+  width: 200px;
+  margin: 2px;
 }
 
 

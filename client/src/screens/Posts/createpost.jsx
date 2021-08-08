@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getThread } from '../../services/thread';
 import { createPost } from '../../services/post';
 import "../../App.css"
@@ -9,7 +9,7 @@ import "../../App.css"
 export default function CreatePost(props) {
   const [thread, setThread] = useState([])
   const [input, setInput] = useState({ body: "", imgUrl: "" });
-  const history = useHistory();
+  // const history = useHistory();
   const { id } = useParams();
 
   useEffect(() => {
@@ -32,12 +32,13 @@ export default function CreatePost(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createPost(id, input);
-    history.push(`/threads/${thread._id}`);
+    // history.push(`/threads/${thread._id}`);
+    window.location.reload(false);
   };
 
   return (
     <div className="create-post-div">
-      <div className="create-post-title">Post as {props.user.username}</div>
+      <div className="create-post-title">Post as {props.user?.username}</div>
       <form onSubmit={handleSubmit} className="create-post-form">
         <br />
         {/* <label className="label-one">Body:</label> */}

@@ -23,7 +23,7 @@ export default function ThreadMapping(props) {
   console.log(props.user)
   // const displayEditLink = (thread) => {
   //   if (thread.userId._id === props.user?.id) {
-  //     return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}>Edit</Link>
+  //     return <Link to={`/thread-edit/${thread._id}`} style={{ color: "blue" }}  className="edit-thread-post-link">Edit</Link>
   //   }
   // }
     return (

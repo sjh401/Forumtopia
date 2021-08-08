@@ -50,6 +50,7 @@ export default function ThreadCard(props) {
     const fetchThread = async () => {
       const thread = await getThread(id);
       setThread(thread);
+      console.log(thread)
     }
     fetchThread();
   }, [id]);
@@ -58,12 +59,13 @@ export default function ThreadCard(props) {
 
   return (
     <Layout user={props.user} >
-      <div className="main-card-container">
+      <div className="thread-card-container">
         <Card className={classes.root}>
           <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatar}>
-                R
+                {/* nice? Link to userprofile?*/}
+                {thread?.userId?.username?.charAt(0)}
               </Avatar>
             }
             action={
@@ -83,7 +85,9 @@ export default function ThreadCard(props) {
             <Typography variant="body2" color="textSecondary" component="div">
               {thread.body}
               {thread.userId?._id === props.user?.id &&
-                <Link to={`/threads-edit/${thread._id}`} variant="body2"> Edit</Link>}
+                <Link to={`/threads-edit/${thread._id}`} variant="body2"  className="edit-thread-post-link"> Edit</Link>
+                
+              }
             </Typography>
           </CardContent>
           <CardActions disableSpacing>
