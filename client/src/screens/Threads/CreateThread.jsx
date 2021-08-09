@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import Layout from '../../components/Layout/Layout';
 import { createThread } from "../../services/thread";
 import { getCategories } from '../../services/category';
+import "./CreateThread.css"
 
 
 
