@@ -3,7 +3,7 @@ import Category from "./models/category.js"
 
 const insertCat = async () =>{
 
-    await db.forumtopiaDatabase()
+    await db.dropDatabase()
     categories = [
         {
             title: "Sports",
