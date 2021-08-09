@@ -15,7 +15,7 @@ export default function PostMapping(props) {
 
     return (
         <div className="post-mapping-div">
-            {posts.filter(post => post.threadId._id === props.thread?._id).map(post => (
+            {posts.filter(post => post?.threadId?._id === props.thread?._id).map(post => (
             <div key={post._id} className="post-mapped">
                 <p>{post.body}</p>
                 <Link to={`/post/${post._id}`}><img src={post.imgUrl} style={{ width: "50px", height: "50px" }} alt="user post"></img></Link> 
