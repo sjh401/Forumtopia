@@ -1,0 +1,18 @@
+.home-text {
+  /* text-align: center; */
+  color: white;
+  margin-top: 150px;
+  background-color: rgb(255, 157, 0);
+  border-radius: 2em;
+  padding: 10px;
+  font-weight: 300;
+}
+
+.home-text:hover {
+  font-style: italic;
+}
+
+.main-text-container {
+  display: flex;
+  justify-content: center;
+}

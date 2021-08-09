@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getGeneralThreads } from '../services/thread'
 import ThreadCard from "./ThreadCard"
 import "./Thread.css"
+import "../screens/Home/Home.css"
 import Loading from './Loading'
 
 export default function GetGeneralThreads(props) {
@@ -29,7 +30,6 @@ export default function GetGeneralThreads(props) {
     )
   return (
     <div className="thread-card">
-      <h2>Latest Threads</h2>
       <>{generalCards.reverse()}</>
 
     </div>

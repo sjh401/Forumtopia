@@ -1,0 +1,8 @@
+.group-topic {
+  display: flex;
+  justify-content: center;
+}
+
+.individual-topic {
+  padding: 50px
+}
