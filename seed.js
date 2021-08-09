@@ -1,5 +1,5 @@
-import db from "../db/index.js"
-import Category from "./models/category"
+import db from "./db/index.js"
+import Category from "./models/category.js"
 
 const insertCat = async () =>{
 
