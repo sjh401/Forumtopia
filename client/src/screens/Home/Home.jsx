@@ -46,7 +46,7 @@ export default function ImgMediaCard(props) {
 
   if(!categories) return( <div>Loading...</div>)
 
-  const CATEGORIES = categories?.map((category, index) => {
+  const CATEGORIES = categories?.sort((a,b)=> b?.threadId.length - a?.threadId.length).filter(category => category.threadId.length >0).map((category, index) => {
       return (<Link to={`/threads/${category.threadId[0]?._id}`} key={index}>
         <div className="trend-card-container">
           <Card className={classes.root}>
@@ -74,34 +74,6 @@ export default function ImgMediaCard(props) {
     <Layout user={user}>
       <h2 className="trending-text">Trending Today</h2>
       <div className="main-card-container">
-        {/* {categories.sort((a,b)=> b?.threadId.length - a?.threadId.length).filter(category => category.threadId.length >0).map((category, index) => { */}
-        {/* {categories.filter(category => category.threadId.length >0).map((category, index) => {
-          return (
-            <Link to={`/threads/${category.threadId[0]?._id}`} key={index}>
-              <div className="trend-card-container">
-                <Card className={classes.root}>
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      alt="Contemplative Reptile"
-                      height="140"
-                      image={category.threadId[0]?.imgUrl}
-                    />
-                    <CardContent>
-                      <Typography variant="body2" color="textSecondary" component="h2">
-                      {category.threadId[0]?.title}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        {category.threadId[0]?.body}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </div>
-            </Link>
-          )
-        })}
-         */}
         {CATEGORIES}
       </div>
     </Layout>
