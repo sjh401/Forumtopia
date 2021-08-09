@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getTopics } from "../services/topic"
-import Layout from "../components/Layout/Layout"
-import { Link } from "react-router-dom"
+// import Layout from "../components/Layout/Layout"
+// import { Link } from "react-router-dom"
 import Loading from './Loading'
 import TopicCard from "./TopicCard"
 import "./Topic.css"
