@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 4567
 
 app.use(express.json())
 app.use(cors())
-app.use(morgan("dev"))
+
+app.use(morgan("tiny"))
 
 app.use("/api", routes)
 

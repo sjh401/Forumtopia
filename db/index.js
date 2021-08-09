@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const MONGODB_URI = process.env.PROD_MONGODB || "mongodb://127.0.0.1:27017/forumtopiaDatabase"
 
 // toggle off if not debugging
-mongoose.set("debug", true)
+mongoose.set("debug", false)
 
 mongoose.set("useCreateIndex", true)
 
