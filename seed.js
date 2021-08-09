@@ -26,7 +26,7 @@ const insertCat = async () =>{
             imgUrl: "https://static01.nyt.com/images/2021/07/23/business/23OnTech-Games-video-Still/23OnTech-Games-video-Still-videoLarge.png"
         }
     ]
-    await Category.instertMany(categories)
+    await Category.insertMany(categories)
 
     db.close
 }
