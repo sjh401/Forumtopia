@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PostCard(props) {
     const [ post, setPost ] = useState([]);
+    // const [ toggle, setToggle ] = useState(false)
     const { id } = useParams();
     const history = useHistory();
 
@@ -56,8 +57,9 @@ export default function PostCard(props) {
 
     const deleteThisPost = async () => {
       await deletePost(post._id)
-      history.push(`/threads/${post?.threadId}`)
-
+      // setToggle(prevToggle => !prevToggle)
+      // return <Redirect to={`/threads/${id}`} toggle={toggle} setToggle={setToggle}/>
+      history.go()
     }
 
     const classes = useStyles();
@@ -95,7 +97,7 @@ export default function PostCard(props) {
                 {post?.userId === props.user?.id &&
                   <>
                     <Link to={`/posts-edit/${post._id}`} variant="body2" className="edit-thread-post-link">| Edit |</Link>
-                    <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" onClick={deleteThisPost}>Delete</Link>
+                    <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" onClick={deleteThisPost} >Delete</Link>
                   </>
                 }
                 </Typography>

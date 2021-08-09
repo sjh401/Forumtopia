@@ -44,7 +44,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
+  // const [ toggle, setToggle ] = useState(false)
   const { id } = useParams();
+
+  // useEffect(() => {
+  //   setToggle(props.toggle)
+  // },[props.toggle])
 
   useEffect(() => {
     const fetchThread = async () => {
@@ -54,21 +59,10 @@ export default function ThreadCard(props) {
     fetchThread();
   }, [id]);
 
-
-
-
-
-
-
   const classes = useStyles();
 
   return (
     <Layout user={props.user} >
-
-
-
-
-      
       <div className="thread-card-container">
         <Card className={classes.root}>
           <CardHeader
