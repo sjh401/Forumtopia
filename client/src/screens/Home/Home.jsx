@@ -46,7 +46,7 @@ export default function ImgMediaCard(props) {
 
   if(!categories) return( <div>Loading...</div>)
 
-  const CATEGORIES = categories.filter(category => category.threadId.length >0).map((category, index) => {
+  const CATEGORIES = categories?.map((category, index) => {
       return (<Link to={`/threads/${category.threadId[0]?._id}`} key={index}>
         <div className="trend-card-container">
           <Card className={classes.root}>
