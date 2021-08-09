@@ -7,7 +7,7 @@ const getToken = () => {
 }
 
 const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? null : "http://localhost:4567/api"
+  baseURL: process.env.NODE_ENV === 'production' ? "https://forumtopia.herokuapp.com/api" : "http://localhost:4567/api"
 })
 
 api.interceptors.request.use(async (config) => {
