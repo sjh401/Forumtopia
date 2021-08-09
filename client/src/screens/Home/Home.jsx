@@ -44,12 +44,13 @@ export default function ImgMediaCard(props) {
   const classes = useStyles();
 
   if(!categories) return( <div>Loading...</div>)
+
   return (
     <Layout user={user}>
       <h2 className="trending-text">Trending Today</h2>
       <div className="main-card-container">
-        {categories.sort((a,b)=> b?.threadId.length - a?.threadId.length).filter(category => category.threadId.length >0).map((category, index) => {
-        // {categories.sort((a,b)=> b.threadId.length - a.threadId.length).filter(category => category.threadId.length >0).map((category, index) => {
+        {/* {categories.sort((a,b)=> b?.threadId.length - a?.threadId.length).filter(category => category.threadId.length >0).map((category, index) => { */}
+        {categories.filter(category => category.threadId.length >0).map((category, index) => {
           return (
             <Link to={`/threads/${category.threadId[0]?._id}`} key={index}>
               <div className="trend-card-container">
