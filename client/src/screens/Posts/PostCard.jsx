@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PostCard(props) {
     const [ post, setPost ] = useState([]);
-    // const [ toggle, setToggle ] = useState(false)
     const { id } = useParams();
     const history = useHistory();
 
@@ -57,8 +56,6 @@ export default function PostCard(props) {
 
     const deleteThisPost = async () => {
       await deletePost(post._id)
-      // setToggle(prevToggle => !prevToggle)
-      // return <Redirect to={`/threads/${id}`} toggle={toggle} setToggle={setToggle}/>
       history.go()
     }
 
