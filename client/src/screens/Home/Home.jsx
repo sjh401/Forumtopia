@@ -62,9 +62,9 @@ export default function ImgMediaCard(props) {
               image={category.threadId[0]?.imgUrl}
             />}</Link>
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
+            {/* <Typography variant="body2" color="textSecondary" component="p">
               {category.threadId[0]?.body}
-            </Typography>
+            </Typography> */}
           </CardContent>
         </Card>
       </div>
