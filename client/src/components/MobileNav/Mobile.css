@@ -1,10 +1,11 @@
 .icon-color {
-  color: black;
+  color: white;
   display: none
 }
 
 .bar {
   display: none;
+  background-color: black;
 }
 
 .mobile-nav-text a {
@@ -13,8 +14,9 @@
 
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .bar {
     display: block;
+    text-align: left;
   }
 }

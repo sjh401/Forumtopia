@@ -1,0 +1,10 @@
+.post-body {
+  text-decoration: none;
+  color: black;
+}
+
+.username {
+  color: blue;
+  margin: 0;
+  padding-top: 50px;
+}

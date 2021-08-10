@@ -33,7 +33,7 @@ export const getPosts = async (req, res) => {
   try {
     const { id } = req.params
     const thread = await Thread.findById(id)
-    const posts = await Post.find(req.body).populate('threadId')
+    const posts = await Post.find(req.body).populate('threadId').populate('userId')
  
     res.json(posts)
   } catch (e) {
@@ -44,7 +44,7 @@ export const getPosts = async (req, res) => {
 export const getPost = async (req, res) => {
   try {
     const {id} = req.params
-    const post = await Post.findById(id)
+    const post = await Post.findById(id).populate('userId')
     if (post) {
       res.json(post)
     } else {

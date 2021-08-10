@@ -28,7 +28,7 @@ export default function MainNavBar(props) {
       <div className="nav-bar">
         <NavLink className="site-logo" to="/">Forumtopia</NavLink>
         <div className="nav-links">
-          {props.user && <div>Welcome, {props.user.username}</div>}
+          {props.user && <div className="user-welcome">Welcome, {props.user.username}</div>}
           {alwaysOptions}
           {props.user ? authenticatedOptions : unauthenticatedOptions}
         </div>

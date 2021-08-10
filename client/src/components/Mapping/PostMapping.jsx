@@ -1,28 +1,30 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getPosts } from '../../services/post';
+import "./Mapping.css"
 
 export default function PostMapping(props) {
-    const [posts, setPosts] = useState([]);
-    
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const posts = await getPosts(props.id);
-            setPosts(posts)
-        }
-    fetchPosts();
-    }, [props.id]);
+  const [posts, setPosts] = useState([]);
 
-    return (
-        <div className="post-mapping-div">
-            {posts?.filter(post => post?.threadId?._id === props.thread?._id).map(post => (
-            <div key={post._id} className="post-mapped">
-                <p>{post.body}</p>
-                <Link to={`/post/${post._id}`}><img src={post.imgUrl} style={{ width: "50px", height: "50px" }} alt="user post"></img></Link> 
-                {post.userId?._id === props.user?.id &&
-                <Link to={`/post-edit/${post._id}`}  className="edit-thread-post-link"> Edit</Link>}
-            </div>
-            ))}
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const posts = await getPosts(props.id);
+      setPosts(posts)
+    }
+    fetchPosts();
+  }, [props.id]);
+
+  return (
+    <div className="post-mapping-div">
+      {posts?.filter(post => post?.threadId?._id === props.thread?._id).map(post => (
+        <div key={post._id} className="post-mapped">
+          <p className="username">{post.userId?.username}</p>
+          <Link className="post-body" to={`/post/${post._id}`}><p>{post.body}</p>
+            {post.imgUrl && <img src={post.imgUrl} style={{ width: "200px" }} alt="user post"></img>}</Link>
+          {post.userId?._id === props.user?.id &&
+            <Link to={`/post-edit/${post._id}`} className="edit-thread-post-link"> Edit</Link>}
         </div>
-    )
+      ))}
+    </div>
+  )
 }

@@ -14,10 +14,21 @@
   align-items: center;
 }
 
+.nav-links,
+.nav-links a {
+  color: white;
+  margin-bottom: 15px
+}
+
 .nav-links a {
   color: white;
   text-decoration: none;
   padding-right: 15px;
+
+}
+
+.user-welcome {
+  margin: 15px
 }
 
 .menu {
@@ -28,7 +39,7 @@
 }
 
 @media screen and (max-width:600px) {
-  .space {
+  nav {
     display: none;
 
   }
@@ -39,8 +50,4 @@
     font-size: 30px;
     text-decoration: none;
   }
-}
-
-body{
-  color: white;
 }

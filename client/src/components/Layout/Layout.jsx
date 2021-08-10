@@ -6,8 +6,8 @@ import "./Layout.css"
 const Layout = (props) => (
   <div>
     <MainNavBar className="main" user={props.user} />
-    <MobileNav user={props.user}/>
-    <div>{props.children}</div>
+    <MobileNav user={props.user} />
+    <div className="main-content">{props.children}</div>
     <Footer />
   </div>
 )
