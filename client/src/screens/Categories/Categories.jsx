@@ -64,7 +64,7 @@ export default function Categories(props) {
       <div className="category-trend-card-container">
         {threads.filter(thread => category._id === thread?.categoryId).map(thread => {
           return (
-            <Link to={`/threads/${thread._id}`} key={thread._id}>
+            <Link to={`/threads/${thread._id}`} key={thread._id} style={{textDecoration:"none"}}>
               <div className="trend-card-container">
                 <Card className={classes.root}>
                   <CardHeader

@@ -51,7 +51,7 @@ export default function ImgMediaCard(props) {
     return (
       <div className="trend-card-container" key={index}>
         <Card className={classes.root}>
-          <Link to={`/threads/${category.threadId[0]?._id}`} key={index}>
+          <Link to={`/threads/${category.threadId[0]?._id}`} style={{textDecoration:"none"}}>
             <CardHeader
               title={category.threadId[0]?.title}
             />

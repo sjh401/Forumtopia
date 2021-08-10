@@ -34,7 +34,7 @@ export default function CreatePost(props) {
         <br />
         <input  className="create-post-image" placeholder="image" id="imgUrl" value={input.imgUrl} onChange={handleChange} />
         <br />
-        <button className="create-post-button" style={{color: "black", opacity:"100%"}}>Submit</button>
+        <button className="edit-thread-post-link" style={{color: "black", opacity:"100%"}}>Submit</button>
       </form>
     </div>
   )
