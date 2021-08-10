@@ -57,7 +57,7 @@ export default function PostCard(props) {
           <CardHeader
             title={post.title}
             // link to user profile
-            subheader={`${post?.userId?.username} | ${post.createdAt?.substr(0, 10)}`}
+            subheader={`${props.user?.id} | ${post.createdAt?.substr(0, 10)}`}
           />
           {post.imgUrl && <CardMedia
             className={classes.media}
