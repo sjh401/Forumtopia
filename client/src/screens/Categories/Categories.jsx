@@ -13,7 +13,8 @@ import { getThreadsUsers } from '../../services/thread';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 500,
+    width: 400,
+    height: 400,
     paddingBottom: 50,
   },
   media: {
