@@ -207,6 +207,7 @@ h3:hover {
 .main-card-container {
   display: flex;
   justify-content: center;
+  flex-flow: row wrap;
 }
 
 .trend-card-container {
