@@ -12,7 +12,7 @@ export default function PostMapping(props) {
         }
     fetchPosts();
     }, [props.id]);
-
+    console.log(posts)
     return (
         <div className="post-mapping-div">
             {posts?.filter(post => post?.threadId?._id === props.thread?._id).map(post => (
@@ -20,7 +20,7 @@ export default function PostMapping(props) {
                 <p>{post.body}</p>
                 <Link to={`/post/${post._id}`}><img src={post.imgUrl} style={{ width: "50px", height: "50px" }} alt="user post"></img></Link> 
                 {post.userId?._id === props.user?.id &&
-                <Link to={`/post-edit/${post._id}`}  className="edit-thread-post-link"> Edit</Link>}
+                <Link to={`/post-edit/${post._id}`}  className="edit-thread-post-link" user={props.user}> Edit</Link>}
             </div>
             ))}
         </div>

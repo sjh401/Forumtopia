@@ -69,20 +69,20 @@ export const updatePost = async (req, res) => {
 export const deletePost = async (req, res) => {
   try {
     const { id } = req.params
-    const post = await Post.findById(id)
-    console.log("HERE IS THE POST PLZ",post)
+    // const post = await Post.findById(id)
+    // console.log("HERE IS THE POST PLZ",post)
 
 
-    const thread = await Thread.findById(post.threadId)
-    console.log("HERE IS THE Thread PLZ",thread)
-    thread.posts = thread.posts.filter(element => element !== post._id)
-    console.log("HERE IS THE Thread PLZ",thread)
-    await thread.save()
+    // const thread = await Thread.findById(post.threadId)
+    // console.log("HERE IS THE Thread PLZ",thread)
+    // thread.posts = thread.posts.filter(element => element !== post._id)
+    // console.log("HERE IS THE Thread PLZ",thread)
+    // await thread.save()
 
-    const user = await User.findById(req.user)
-    console.log("HERE IS THE User PLZ",user)
-    user.posts = user.posts.filter(element => element !== post._id)
-    await user.save()
+    // const user = await User.findById(req.user)
+    // console.log("HERE IS THE User PLZ",user)
+    // user.posts = user.posts.filter(element => element !== post._id)
+    // await user.save()
 
     const poster = await Post.findByIdAndDelete(id)
 

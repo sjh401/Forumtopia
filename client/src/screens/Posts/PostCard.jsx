@@ -16,6 +16,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { deletePost, getPost } from '../../services/post';
+import { getThread, updateThread } from '../../services/thread';
+import { updateUser } from '../../services/user';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,6 +45,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PostCard(props) {
     const [ post, setPost ] = useState([]);
+    const [ thread, setThread ] = useState([]);
+    const [ user, setUser ] = useState([]);
     const { id } = useParams();
     const history = useHistory();
 
@@ -54,11 +58,25 @@ export default function PostCard(props) {
         fetchPost();
     }, [id]);
 
+    useEffect(() => {
+      const fetchThreads = async () => {
+        const thread = await getThread(post.threadId)
+        setThread(thread)
+      }
+      // const 
+      fetchThreads()
+    }, [post])
+
     const deleteThisPost = async () => {
+      thread.posts = thread.posts.filter(post => post._id !== id)
+      user.posts = user.posts.filter(post => post._id !== id)
+      await updateThread(thread._id, thread)
+      await updateUser(user._id, user)
       await deletePost(post._id)
       history.go()
     }
-
+    console.log(user)
+    console.log(props.user)
     const classes = useStyles();
 
     return (

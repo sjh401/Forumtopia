@@ -41,3 +41,12 @@ export const signOut = async () => {
     throw e
   }
 }
+
+export const updateUser = async (id, user) => {
+  try {
+    const res = await api.put(`/users/${id}`, user);
+    return res.data;
+  } catch (e) {
+    throw e;
+  }
+};
