@@ -70,7 +70,7 @@ export default function PostCard(props) {
             </Typography>
             <Typography variant="body2" color="textSecondary" component="div">
               <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link">Back</Link>
-              {post?.userId?._id === props.user?.id &&
+              {(post?.userId?._id === props.user?.id || post?.userId === props.user?.id) &&
                 <>
                   <Link to={`/posts-edit/${post._id}`} variant="body2" className="edit-thread-post-link"> | Edit | </Link>
                   <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" onClick={deleteThisPost} >Delete</Link>
