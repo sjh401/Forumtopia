@@ -63,7 +63,7 @@ function App() {
           <Route path="/threads-delete/:id">
             <DeleteThread user={user} setUser={setUser} />
           </Route>
-          <Route path="/post-edit/:id">
+          <Route path="/posts-edit/:id">
             <EditPost user={user} setUser={setUser} />
           </Route>
         </>

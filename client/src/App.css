@@ -60,8 +60,9 @@
   margin: 0 40% 0 40%;
   width: 20%;
   background-color: #fff;
+  color: #000;
   border: none;
-  opacity: 75%;
+  opacity: 100% !important;
 }
 
 .post-mapping-div {

@@ -56,8 +56,7 @@ export default function PostCard(props) {
 
     const deleteThisPost = async () => {
       await deletePost(post._id)
-      history.push(`/threads/${post?.threadId}`)
-
+      history.go()
     }
 
     const classes = useStyles();
@@ -94,8 +93,8 @@ export default function PostCard(props) {
                 <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link">Back</Link>
                 {post?.userId === props.user?.id &&
                   <>
-                    <Link to={`/threads-edit/${post._id}`} variant="body2" className="edit-thread-post-link">| Edit |</Link>
-                    <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" onClick={deleteThisPost}>Delete</Link>
+                    <Link to={`/posts-edit/${post._id}`} variant="body2" className="edit-thread-post-link">| Edit |</Link>
+                    <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" onClick={deleteThisPost} >Delete</Link>
                   </>
                 }
                 </Typography>

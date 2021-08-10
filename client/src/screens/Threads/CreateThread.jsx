@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import Layout from '../../components/Layout/Layout';
 import { createThread } from "../../services/thread";
 import { getCategories } from '../../services/category';
+import "./CreateThread.css"
 
 
 
@@ -45,7 +46,7 @@ export default function CreateThread(props) {
   if (isCreated) {
     return <Redirect to={`/`} />
   }
-
+  
   return (
     <Layout user={props.user}>
       {props.user &&
@@ -53,7 +54,8 @@ export default function CreateThread(props) {
           <h3 className="create-edit-header">
             Create Thread
           </h3>
-          <form className="create-form" onSubmit={handleSubmit} >
+          <form className="create-form" 
+          onSubmit={handleSubmit} >
             <br />
             <input
               className='input-title'
@@ -86,7 +88,7 @@ export default function CreateThread(props) {
             <select className="create-thread-data-list" id="categoryId" name="categoryId" onChange={handleChange} >
                 <option value="">Select from List</option>
                 {categories.map(category => (
-                    <option key={category._id} className="create-thread-data-option" value={category._id} >{category.title}</option>
+                  <option key={category._id} className="create-thread-data-option" value={category._id} >{category.title}</option>
                 ))}
             </select>
             <br />
