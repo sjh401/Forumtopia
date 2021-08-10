@@ -33,7 +33,7 @@ export default function EditPost(props) {
 
     // not sure if we are going back to the post or thread. probably thread since we won't need to view individual post without going to an actual post screen
     if(isUpdated) {
-        return <Redirect to={`/threads/${post.threadId}`} />
+        return <Redirect to={`/post/${post._id}`} />
     }
     return (
         <Layout user={props.user}>

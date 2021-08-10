@@ -40,7 +40,7 @@ export default function EditThread(props) {
     }
 
     if(isUpdated) {
-        return <Redirect to={`/`} />
+        return <Redirect to={`/threads/${input._id}`} />
     }
     return (
         <Layout user={props.user}>

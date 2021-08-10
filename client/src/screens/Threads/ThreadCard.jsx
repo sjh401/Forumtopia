@@ -10,12 +10,14 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CreatePost from '../Posts/CreatePost';
 import PostMapping from '../../components/Mapping/PostMapping';
+import "../../App.css"
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 500,
-    height: 400,
+    height: 700,
     paddingBottom: 50,
+    overflow: "scroll",
   },
   media: {
     height: 0,
@@ -25,12 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ThreadCard(props) {
   const [thread, setThread] = useState([]);
-  // const [ toggle, setToggle ] = useState(false)
   const { id } = useParams();
-
-  // useEffect(() => {
-  //   setToggle(props.toggle)
-  // },[props.toggle])
 
   useEffect(() => {
     const fetchThread = async () => {
@@ -45,7 +42,7 @@ export default function ThreadCard(props) {
   if (!thread) {
     return "Loading..."
   }
-
+  console.log(props.user)
   return (
     <Layout user={props.user} >
       <div className="thread-card-container">
@@ -67,18 +64,20 @@ export default function ThreadCard(props) {
             <Typography variant="body2" color="textSecondary" component="div">
               {thread.userId?._id === props.user?.id &&
                 <>
-                  <Link to={`/threads-edit/${thread._id}`} variant="body2" className="edit-thread-post-link"> Edit</Link>
+                  <Link to={`/threads-edit/${thread._id}`} variant="body2" className="edit-thread-post-link">Edit </Link>
                   <Link to={`/threads-delete/${thread._id}`} variant="body2" className="edit-thread-post-link">| Delete</Link>
                 </>
               }
             </Typography>
           </CardContent>
+          <CardContent>
           <Typography variant="body2" color="textSecondary" component="div">
             {props.user && <CreatePost user={props.user} />}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="div">
             <PostMapping id={id} thread={thread} user={props.user} />
           </Typography>
+          </CardContent>
         </Card>
       </div>
     </Layout>

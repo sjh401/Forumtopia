@@ -34,6 +34,7 @@ export default function PostCard(props) {
     const fetchPost = async () => {
       const soloPost = await getPost(id);
       setPost(soloPost);
+      console.log(soloPost)
     }
     fetchPost();
   }, [id]);
@@ -44,7 +45,7 @@ export default function PostCard(props) {
   }
 
   const classes = useStyles();
-
+  console.log(props.user)
   if (!post) {
     return "Loading..."
   }
@@ -69,9 +70,9 @@ export default function PostCard(props) {
             </Typography>
             <Typography variant="body2" color="textSecondary" component="div">
               <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link">Back</Link>
-              {post?.userId === props.user?.id &&
+              {post?.userId?._id === props.user?.id &&
                 <>
-                  <Link to={`/posts-edit/${post._id}`} variant="body2" className="edit-thread-post-link">| Edit |</Link>
+                  <Link to={`/posts-edit/${post._id}`} variant="body2" className="edit-thread-post-link"> | Edit | </Link>
                   <Link to={`/threads/${post?.threadId}`} className="edit-thread-post-link" onClick={deleteThisPost} >Delete</Link>
                 </>
               }
