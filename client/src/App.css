@@ -31,10 +31,17 @@
   color: #000;
 }
 
-.thread-card-container {
+.thread-card-containers {
   display: flex;
   justify-content: center;
   margin: 5px 0 5px 0;
+  color: #000;
+  background-size: auto;
+  width: 200px;
+  height: 175px;
+  background-size:200px 175px;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,1);
 }
 
 .create-post-div {

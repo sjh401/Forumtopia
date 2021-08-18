@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import { signIn } from "../../services/user"
 import Layout from "../../components/Layout/Layout"
-import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 export default function SignIn(props) {
   const [input, setInput] = useState({ username: "", password: "" })
   const { setUser } = props;
-  const history = useHistory();
+  const [ isUpdated, setIsUpdated ] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await signIn(input)
     setUser(user)
-    history.push("/");
+    setIsUpdated(user)
   }
 
   const handleInput = (e) => {
@@ -23,10 +23,14 @@ export default function SignIn(props) {
     }))
   }
 
+  if(isUpdated) {
+    return <Redirect to={`/`}/>
+}
+
   return (
     <Layout>
       <div className="logo">
-        <h1>Forumtopia</h1>
+        <h1 className="logo-text">Forumtopia</h1>
       </div>
       <div className = "back">
       </div>

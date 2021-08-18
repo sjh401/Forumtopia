@@ -10,6 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 // import Typography from '@material-ui/core/Typography';
 import { getCategories } from '../../services/category'
 import { Link } from 'react-router-dom';
+import ThreadMapping from '../../components/Mapping/ThreadMapping';
 
 
 
@@ -49,33 +50,25 @@ export default function ImgMediaCard(props) {
 
   const CATEGORIES = categories?.sort((a, b) => b?.threadId.length - a?.threadId.length).filter(category => category.threadId.length > 0).map((category, index) => {
     return (
-      <div className="trend-card-container" key={index}>
-        <Card className={classes.root}>
-          <Link to={`/threads/${category.threadId[0]?._id}`} style={{textDecoration:"none", color:"#000"}}>
-            <CardHeader
-              title={category.threadId[0]?.title}
-            />
-            {category.threadId[0]?.imgUrl && <CardMedia
-              component="img"
-              alt="Contemplative Reptile"
-              height="140"
-              image={category.threadId[0]?.imgUrl}
-            />}</Link>
-          <CardContent>
-            {/* <Typography variant="body2" color="textSecondary" component="p">
-              {category.threadId[0]?.body}
-            </Typography> */}
-          </CardContent>
-        </Card>
+      <div className="thread-card-containers" style={{backgroundImage:`url(${category.threadId[0]?.imgUrl})`}}>
+      <Link to={`/threads/${category.threadId[0]?._id}`} key={index} style={{textDecoration:"none", color:"#000"}}>
+        hello
+      </Link>
       </div>
     )
   })
-
+  // `url(${category.threadId[0]?.imgUrl})`
   return (
     <Layout user={user}>
       <h2 className="trending-text">Trending Today</h2>
-      <div className="main-card-container">
         {CATEGORIES}
+      <div className="home-grid">
+        <div className="home-grid-left">
+          <ThreadMapping user={props.user} />
+        </div>
+        <div className="home-grid-right">
+          right
+        </div>
       </div>
     </Layout>
   );

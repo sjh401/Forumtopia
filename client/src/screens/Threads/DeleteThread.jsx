@@ -16,6 +16,7 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { getCategory, updateCategory } from '../../services/category';
 
 
 
@@ -44,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
 
     export default function DeleteThread(props) {
     const [thread, setThread] = useState([]);
+    const [category, setCategory] = useState([]);
     const { id } = useParams();
     const history = useHistory();
 
@@ -51,15 +53,21 @@ const useStyles = makeStyles((theme) => ({
         const fetchThread = async () => {
         const thread = await getThread(id);
         setThread(thread);
+        const category = await getCategory(thread.categoryId)
+        setCategory(category)
         }
         fetchThread();
     }, [id]);
 
     const deleteThisThread = async () => {
+        let changed = category
+        changed = changed.threadId.filter(element => element !== thread._id)
+        await updateCategory(thread.categoryId)
         await deleteThread(id)
-        history.push("/categories")
+        history.go("/categories")
     }
-
+    console.log(thread)
+    console.log(category)
     const classes = useStyles();
 
     return (

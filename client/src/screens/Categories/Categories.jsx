@@ -46,6 +46,7 @@ export default function Categories(props) {
 
   const classes = useStyles();
 
+  // console.log(categories)
   if (!categories) {
     return "Loading..."
   }
