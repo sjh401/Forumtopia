@@ -1,0 +1,22 @@
+.user-grid {
+    display: grid;
+    grid: 5vh 75vh/ 50% 50%;
+    /* margin: 10px; */
+    overflow: auto;
+}
+
+.user-grid-threads {
+    grid-area: 2/1/3/2;
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-end;
+    flex-flow: column wrap;
+}
+
+.user-grid-posts {
+    grid-area: 2/2/3/3;
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-flow: column wrap;
+}

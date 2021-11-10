@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout/Layout';
 import UserPosts from '../../components/userProfile/UserPosts';
 import UserThreads from '../../components/userProfile/UserThreads';
-import { getCategories } from '../../services/category';
-import { getPosts } from '../../services/post';
 import { getThreads } from '../../services/thread';
+
+import './UserProfile.css'
 
 export default function UserProfile(props) {
     // const [ categories, setCategories ] = useState([]);
