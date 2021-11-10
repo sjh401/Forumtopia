@@ -1,0 +1,14 @@
+.trending-categories {
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-flow: column wrap;
+    padding: 10px;
+  }
+  .user-tab {
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-flow: column wrap;
+    padding: 10px;
+  }

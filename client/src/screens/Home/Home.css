@@ -14,13 +14,29 @@
 
 .home-grid {
   display: grid;
-  grid: 5vh 30vh/ 60% 40%;
+  grid: 5vh 70vh/ 52% 48%;
 }
 .home-grid-left {
   grid-area: 2/1/2/2;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items:flex-start;
+  margin-right: 25px;
 }
 .home-grid-right {
   grid-area: 2/2/2/3;
   text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+  flex-flow: column wrap;
+  margin-left: 25px;
+}
+
+
+@media only screen and (max-width: 850px) {
+  .home-grid {
+    display: grid;
+    grid: 5vh 30vh/ 60% 40%;
+  }
 }

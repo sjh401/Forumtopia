@@ -29,7 +29,7 @@
 
 @media screen and (max-width:600px) {
   .space {
-    display: none;
+    /* display: none; */
 
   }
 

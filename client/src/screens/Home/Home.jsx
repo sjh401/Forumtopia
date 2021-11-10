@@ -11,6 +11,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { getCategories } from '../../services/category'
 import { Link } from 'react-router-dom';
 import ThreadMapping from '../../components/Mapping/ThreadMapping';
+import TrendingCategories from '../../components/HomeComponents/TrendingCategories';
+import UserTab from '../../components/HomeComponents/UserTab';
 
 
 
@@ -22,16 +24,9 @@ const useStyles = makeStyles({
 });
 
 
-export default function ImgMediaCard(props) {
+export default function Home(props) {
   const [categories, setCategories] = useState([])
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    const verifyUser = async () => {
-      setUser(await verify())
-    }
-    verifyUser()
-  }, [])
+  const { user } = props
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -50,24 +45,29 @@ export default function ImgMediaCard(props) {
 
   const CATEGORIES = categories?.sort((a, b) => b?.threadId.length - a?.threadId.length).filter(category => category.threadId.length > 0).map((category, index) => {
     return (
-      <div className="thread-card-containers" style={{backgroundImage:`url(${category.threadId[0]?.imgUrl})`}}>
-      <Link to={`/threads/${category.threadId[0]?._id}`} key={index} style={{textDecoration:"none", color:"#000"}}>
-        hello
-      </Link>
-      </div>
+        <Link to={`/threads/${category.threadId[0]?._id}`} key={index} style={{textDecoration:"none", color:"#000"}}>
+          <div className="thread-card-containers" style={{backgroundImage:`url(${category.threadId[0]?.imgUrl})`}}>
+            <div className="thread-category-text">
+              {category.threadId[0].title}
+            </div>
+          </div>
+        </Link>
     )
   })
   // `url(${category.threadId[0]?.imgUrl})`
   return (
     <Layout user={user}>
       <h2 className="trending-text">Trending Today</h2>
+      <div className="thread-categories">
         {CATEGORIES}
+      </div>
       <div className="home-grid">
         <div className="home-grid-left">
-          <ThreadMapping user={props.user} />
+          <ThreadMapping user={user} />
         </div>
         <div className="home-grid-right">
-          right
+          <TrendingCategories />
+          <UserTab user={user}/>
         </div>
       </div>
     </Layout>

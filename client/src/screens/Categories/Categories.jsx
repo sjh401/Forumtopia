@@ -58,7 +58,7 @@ export default function Categories(props) {
         {categories.map(category => (
           <div key={category._id} className="category-selection" onClick={(e) => setCategory(category)}>
             <h2>{category.title}</h2>
-            <img src={category.imgUrl} alt="category" style={{ width: "200px", borderRadius: ".5em" }} />
+            <img src={category.imgUrl} alt="category" style={{ height: "200px", borderRadius: ".5em" }} />
           </div>
         ))}
       </div>

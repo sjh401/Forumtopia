@@ -1,22 +1,19 @@
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom"
 
 import CardHeader from '@material-ui/core/CardHeader';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-// import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
-import { getCategories } from '../../services/category'
 import { getThreads } from '../../services/thread';
 
 const useStyles = makeStyles({
     root: {
-    width: 245,
-    height: 245,
-    },
+    width: 500,
+    height: 500,
+    margin: 5,
+    }, 
 });
 
 export default function ThreadMapping(props) {
@@ -32,25 +29,23 @@ export default function ThreadMapping(props) {
 
     const classes = useStyles();
 
-    console.log(threads)
-    
     if (!threads) {
         return "Loading..."
     }
 
     return (
         <div className="thread-mapping-div">
-            {threads.map((thread, index) => {
+            {threads.sort((a, b) => b.createdAt- a.createdAt).map((thread, index) => {
                 return (
-                        <Card className={classes.root}>
+                        <Card className={classes.root} key={index}>
                         <Link to={`/threads/${thread?._id}`} style={{textDecoration:"none", color:"#000"}}>
                             <CardHeader
                             title={thread?.title}
                             />
                             {thread?.imgUrl && <CardMedia
                             component="img"
-                            alt="Contemplative Reptile"
-                            height="140"
+                            alt={thread?.title}
+                            height="250"
                             image={thread?.imgUrl}
                             />}</Link>
                         </Card>

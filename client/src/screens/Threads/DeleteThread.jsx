@@ -66,8 +66,7 @@ const useStyles = makeStyles((theme) => ({
         await deleteThread(id)
         history.go("/categories")
     }
-    console.log(thread)
-    console.log(category)
+
     const classes = useStyles();
 
     return (
@@ -82,7 +81,6 @@ const useStyles = makeStyles((theme) => ({
                     <CardHeader
                         avatar={ 
                         <Avatar aria-label="recipe" className={classes.avatar}>
-                            {/* nice? Link to userprofile?*/}
                             {thread?.userId?.username?.charAt(0)}
                         </Avatar>
                         }

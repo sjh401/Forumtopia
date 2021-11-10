@@ -1,14 +1,20 @@
 .categories-selections {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
   text-align: center;
+}
+.category-selection {
+  width: 350px;
 }
 
 .category-trend-card-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-content: center;
   text-align: center;
 }
 
@@ -33,15 +39,33 @@
 
 .thread-card-containers {
   display: flex;
-  justify-content: center;
-  margin: 5px 0 5px 0;
+  /* flex-flow: row wrap; */
+  align-items: flex-end;
+  margin: 5px;
   color: #000;
   background-size: auto;
   width: 200px;
   height: 175px;
   background-size:200px 175px;
   background-repeat: no-repeat;
-  background-color: rgba(0,0,0,1);
+  /* background-color: rgba(0,0,0,1); */
+}
+.thread-categories {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.thread-category-text {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 5px;
+  background-color: rgba(0,0,0,.7);
+  color: #fff;
+  height: 30px;
+  width: 100%;
+
 }
 
 .create-post-div {
@@ -112,5 +136,17 @@
   margin: 5px 40% 5px 40%;
   flex-flow: column;
   max-width: 350;
+}
 
+.thread-mapping-div {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 850px) {
+  .thread-mapping-div {
+    padding: 5px;
+  }
 }
