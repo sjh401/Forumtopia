@@ -13,6 +13,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import { deletePost, getPost } from '../../services/post';
 
+import "./Post.css"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 500,

@@ -21,7 +21,6 @@ export const getThreadsUsers = async (id) => {
 export const getThreads = async () => {
   try {
     const res = await api.get('/threads');
-    console.log(res.data)
     return res.data;
   } catch (e) {
     throw e;

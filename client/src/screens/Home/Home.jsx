@@ -54,7 +54,7 @@ export default function Home(props) {
         </Link>
     )
   })
-  // `url(${category.threadId[0]?.imgUrl})`
+
   return (
     <Layout user={user}>
       <h2 className="trending-text">Trending Today</h2>
@@ -66,8 +66,8 @@ export default function Home(props) {
           <ThreadMapping user={user} />
         </div>
         <div className="home-grid-right">
-          <TrendingCategories />
-          <UserTab user={user}/>
+          <TrendingCategories categories={categories}/>
+          <UserTab user={user} categories={categories}/>
         </div>
       </div>
     </Layout>
