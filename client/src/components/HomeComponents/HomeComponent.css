@@ -12,3 +12,9 @@
     flex-flow: column wrap;
     padding: 10px;
   }
+  .two-column-grid {
+    display: grid;
+    width:200px;
+    height: 35px;
+    grid: 1fr/ 45% 55%;
+  }

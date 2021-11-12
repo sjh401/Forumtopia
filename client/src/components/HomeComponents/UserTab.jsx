@@ -23,16 +23,17 @@ export default function UserTab({user,categories}) {
     }
 
     useEffect(() => {
-        const userThreads = categories.map(category => {return category.threadId}).flat().filter(thread => thread.userId === user.id)
+        const userThreads = categories?.map(category => {return category.threadId}).flat().filter(thread => thread.userId === user?.id)
         setThreads(userThreads);
         setPopularCat(mostPopularUserCategory(threads))
-    },[categories]);
+    },[categories, user]);
 
     console.log(threads)
     console.log(popularCat)
     return (
         <div className="user-tab">
-            <h4>User: {user?.username}</h4>
+            <div>User: {user?.username}</div>
+            <Link to={`/user-profile/${user?.id}`}>User Profile</Link>
             <div>
                 <div>Favorite Category</div>
                 <div>{categories?.filter(category => category._id === popularCat).map(category => {
@@ -56,7 +57,7 @@ export default function UserTab({user,categories}) {
                     }
                     })}</div>
             </div>
-            <Link to={`/user-profile/${user?.id}`}>User Profile</Link>
+            
         </div>
     )
 }
