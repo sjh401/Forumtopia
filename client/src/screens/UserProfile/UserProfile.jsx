@@ -1,55 +1,41 @@
-// import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import Layout from '../../components/Layout/Layout';
-// import { getCategories } from '../../services/category';
+import { useState, useEffect } from 'react';
+import Layout from '../../components/Layout/Layout';
+import UserPosts from '../../components/userProfile/UserPosts';
+import UserThreads from '../../components/userProfile/UserThreads';
+import { getThreads } from '../../services/thread';
 
-// export default function UserProfile(props) {
-//     const [ categories, setCategories ] = useState([]);
-//     const [ threads, setThreads ] = useState([]);
-//     const [ posts, setPosts ] = useState([]);
+import './UserProfile.css'
 
-//     useEffect(() => {
-//         const fetchCategories = async () => {
-//             const get = await getCategories();
-//             setCategories(get);
-//         }
-//         fetchCategories();
-//     },[])
+export default function UserProfile(props) {
+    // const [ categories, setCategories ] = useState([]);
+    const [ threads, setThreads ] = useState([]);
 
-//     // useEffect(() => {
-//     //     setThreads(categories?.map((category) => {
-//     //         // let a = [];
-//     //         let b = category.threadId;
-//     //         while(b.length) {
-//     //             threads = [...threads, b[0]]
-//     //             b = b.shift()
-//     //         }
-//     //         // threads = [...threads, ...a]
-//     //     }))
-//     //     // setPosts(categories?.map((category) => [...threads, category.threadId[0]]))
-//     // }, [categories])
+    const { user }= props
 
-//     console.log(categories)
+    useEffect(() => {
+        const fetchThreads = async () => {
+            const get = await getThreads();
+            setThreads(get.filter(element => {
+                return element.userId === user?.id
+            }))}
+        fetchThreads();
+}, [user])
 
-//     console.log(threads)
 
-//     // console.log("posts ", posts)
+    return (
+        <Layout user={user}>
+            <div>
+                <h1>Welcome {user?.username}</h1>
 
-//     return (
-//         <Layout user={props.user}>
-//             <div>
-//                 <h1>Welcome {props.user?.username}</h1>
-//                 {/* {console.log(props.user)} */}
-//                 {console.log(props.user)}
-//             </div>
-//             <div className="user-grid">
-//                 <div className="user-grid-threads">
-//                     thread
-//                 </div>
-//                 <div className="user-grid-posts">
-//                     posts
-//                 </div>
-//             </div>
-//         </Layout>
-//     )
-// }
+            </div>
+            <div className="user-grid">
+                <div className="user-grid-threads">
+                    <UserThreads threads={threads} />
+                </div>
+                <div className="user-grid-posts">
+                    <UserPosts threads={threads} />
+                </div>
+            </div>
+        </Layout>
+    )
+}

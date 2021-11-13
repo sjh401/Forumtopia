@@ -1,25 +1,31 @@
 .categories-selections {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
   text-align: center;
+}
+.category-selection {
+  width: 350px;
 }
 
 .category-trend-card-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-content: center;
   text-align: center;
 }
 
 .edit-thread-post-link {
-  color: #000;
+  color: #1c1c1c;
   text-decoration: none;
 }
 
 .create-thread-data-list {
   display: initial;
-  color: #000;
+  color: #1c1c1c;
   font-family: Arial, Helvetica, sans-serif;
   height: 20px;
   width: 100px;
@@ -28,13 +34,38 @@
 
 .create-thread-option {
   display: initial;
-  color: #000;
+  color: #1c1c1c;
 }
 
-.thread-card-container {
+.thread-card-containers {
   display: flex;
+  /* flex-flow: row wrap; */
+  align-items: flex-end;
+  margin: 5px;
+  color: #1c1c1c;
+  background-size: auto;
+  width: 200px;
+  height: 175px;
+  background-size:200px 175px;
+  background-repeat: no-repeat;
+
+}
+.thread-categories {
+  display: flex;
+  flex-flow: row wrap;
   justify-content: center;
-  margin: 5px 0 5px 0;
+}
+
+.thread-category-text {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 5px;
+  background-color: rgba(28,28,28,.7);
+  color: #f8f7ff;
+  height: 30px;
+  width: 100%;
+
 }
 
 .create-post-div {
@@ -69,8 +100,8 @@
   grid-area: 5/2/6/3;
   margin: 0 40% 0 40%;
   width: 20%;
-  background-color: #fff;
-  color: #000;
+  background-color: #f8f7ff;
+  color: #1c1c1c;
   border: none;
   opacity: 100% !important;
 }
@@ -105,5 +136,27 @@
   margin: 5px 40% 5px 40%;
   flex-flow: column;
   max-width: 350;
+}
 
+.thread-mapping-div {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  padding: 10px;
+}
+.delete-button{
+  border: solid #f8f7ff;
+  background-color: #ce505f;
+  padding: 5px;
+  color: #f8f7ff;
+}
+.delete-button:hover{
+  background-color: #eaa434;
+  color: #1c1c1c;
+}
+
+@media only screen and (max-width: 850px) {
+  .thread-mapping-div {
+    padding: 5px;
+  }
 }

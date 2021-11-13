@@ -27,9 +27,9 @@ export const getCategory = async (id) => {
   }
 };
 
-export const updateCategory = async (id, thread) => {
+export const updateCategory = async (id, category) => {
   try {
-    const res = await api.put(`/categories/${id}`, thread);
+    const res = await api.put(`/categories/${id}`, category);
     return res.data;
   } catch (e) {
     throw e;

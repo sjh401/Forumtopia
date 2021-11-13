@@ -3,7 +3,7 @@ img{
 }
 
 .text span{
-    background: white;
+    background: #f8f7ff;
     width: 298px;
     height: 1px;
     position: absolute;
@@ -31,7 +31,7 @@ img{
     position: absolute;
     top: 200px;
     left: 100px;
-    color: white
+    color: #f8f7ff
 }
 @keyframes lefts{
     0%
@@ -79,6 +79,6 @@ img{
         position: absolute;
         top: 200px;
         left: 1000px;
-        color: white
+        color: #f8f7ff
     }
 }

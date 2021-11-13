@@ -13,6 +13,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import { deletePost, getPost } from '../../services/post';
 
+import "./Post.css"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 500,
@@ -34,7 +36,7 @@ export default function PostCard(props) {
     const fetchPost = async () => {
       const soloPost = await getPost(id);
       setPost(soloPost);
-      console.log(soloPost)
+
     }
     fetchPost();
   }, [id]);
@@ -45,7 +47,7 @@ export default function PostCard(props) {
   }
 
   const classes = useStyles();
-  console.log(props.user)
+
   if (!post) {
     return "Loading..."
   }
@@ -56,7 +58,6 @@ export default function PostCard(props) {
         <Card className={classes.root}>
           <CardHeader
             title={post.title}
-            // link to user profile
             subheader={`${props.user?.id} | ${post.createdAt?.substr(0, 10)}`}
           />
           {post.imgUrl && <CardMedia

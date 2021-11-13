@@ -1,38 +1,35 @@
 .site-logo {
   text-decoration: none;
-  color: white;
+  color: #f8f7ff;
   font-size: x-large;
   font-weight: 800;
   padding-left: 15px;
+  text-align: center;
+
 }
 
 .nav-bar {
-  background-color: black;
+  background-color: #1c1c1c;
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  justify-content: space-between; 
+  padding: 1vh;
   align-items: center;
+  height: 4vh;
+  min-height: 30px;
 }
 
-.nav-links,
-.nav-links a {
-  color: white;
-  margin-bottom: 15px
-}
-
-.nav-links a {
-  color: white;
+.nav-bar-links {
+  color: #f8f7ff;
   text-decoration: none;
   padding-right: 15px;
 
 }
-
-.user-welcome {
-  margin: 15px
+.user-welcome{
+  color: #f8f7ff;
 }
 
 .menu {
-  background-color: black;
+  background-color: #1c1c1c;
   display: flex;
   justify-content: space-between;
 

@@ -1,15 +1,16 @@
 .icon-color {
-  color: white;
+  color: #f8f7ff;
   display: none
 }
 
 .bar {
   display: none;
-  background-color: black;
+  background-color: #1c1c1c;
 }
 
-.mobile-nav-text a {
-  color: black;
+.mobile-nav-text {
+  color: #1c1c1c;
+  text-decoration: none;
 }
 
 

@@ -42,7 +42,7 @@ export default function ThreadCard(props) {
   if (!thread) {
     return "Loading..."
   }
-  console.log(props.user)
+
   return (
     <Layout user={props.user} >
       <div className="thread-card-container">

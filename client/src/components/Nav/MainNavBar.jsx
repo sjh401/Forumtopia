@@ -3,22 +3,22 @@ import "./Nav.css"
 
 const authenticatedOptions = (
   <>
-    <NavLink to="/threads-create">Create Thread</NavLink>
-    <NavLink to="/sign-out">Sign Out</NavLink>
+    <NavLink to="/threads-create" className="nav-bar-links">Create Thread</NavLink>
+    <NavLink to="/sign-out" className="nav-bar-links">Sign Out</NavLink>
   </>
 )
 const unauthenticatedOptions = (
   <>
-    <NavLink to="/sign-in">Sign In</NavLink>
-    <NavLink to="/sign-up">Sign Up</NavLink>
+    <NavLink to="/sign-in" className="nav-bar-links">Sign In</NavLink>
+    <NavLink to="/sign-up" className="nav-bar-links">Sign Up</NavLink>
   </>
 )
 
 // maybe add posts and threads to here? not sure.
 const alwaysOptions = (
   <>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/categories">Categories</NavLink>
+    {/* <NavLink to="/">Home</NavLink> */}
+    <NavLink to="/categories" className="nav-bar-links">Categories</NavLink>
   </>
 )
 

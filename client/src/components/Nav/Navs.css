@@ -1,13 +1,13 @@
 .site-logo {
   text-decoration: none;
-  color: white;
+  color: #f8f7ff;
   font-size: x-large;
   font-weight: 800;
   padding-left: 15px;
 }
 
 .nav-bar {
-  background-color: black;
+  background-color: #1c1c1c;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -15,13 +15,13 @@
 }
 
 .nav-links a {
-  color: white;
+  color: #f8f7ff;
   text-decoration: none;
   padding-right: 15px;
 }
 
 .menu {
-  background-color: black;
+  background-color: #1c1c1c;
   display: flex;
   justify-content: space-between;
 
@@ -29,7 +29,7 @@
 
 @media screen and (max-width:600px) {
   .space {
-    display: none;
+    /* display: none; */
 
   }
 

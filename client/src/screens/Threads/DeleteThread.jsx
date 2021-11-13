@@ -12,10 +12,10 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { updateCategory } from '../../services/category';
 
 
 
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         transform: 'rotate(180deg)',
     },
     avatar: {
-        backgroundColor: red[500],
+        backgroundColor: "#3066be",
     },
     }));
 
@@ -56,6 +56,8 @@ const useStyles = makeStyles((theme) => ({
     }, [id]);
 
     const deleteThisThread = async () => {
+
+        await updateCategory(thread.categoryId)
         await deleteThread(id)
         history.push("/categories")
     }
@@ -67,14 +69,13 @@ const useStyles = makeStyles((theme) => ({
             <div className="thread-delete">
                 <div className="thread-delete-container">
                     <h2>Confrim Delete</h2>
-                    <button onClick={deleteThisThread} >Confirm</button>
+                    <button onClick={deleteThisThread} className="delete-button">CONFIRM DELETE</button>
                 </div>
                 <div className="thread-delete-container">
                     <Card className={classes.root}>
                     <CardHeader
                         avatar={ 
                         <Avatar aria-label="recipe" className={classes.avatar}>
-                            {/* nice? Link to userprofile?*/}
                             {thread?.userId?.username?.charAt(0)}
                         </Avatar>
                         }
@@ -84,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
                         </IconButton>
                         }
                         title={thread.title}
-                        subheader={thread.createdAt}
+                        // subheader={thread.createdAt}
                     />
                     <CardMedia
                         className={classes.media}

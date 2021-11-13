@@ -6,27 +6,20 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import "./Mobile.css"
 import { Link } from "react-router-dom"
 
-const options = [
-  <Link to="/">Home</Link>,
-  <Link to="/sign-in">Signin</Link>,
-  <Link to="/sign-in">Signup</Link>,
-  <Link to="/create-post">Create a post</Link>
-];
-
 const ITEM_HEIGHT = 48;
 
-export default function LongMenu() {
+export default function LongMenu({user}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
+  
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  
   return (
     <div className="bar">
       <IconButton
@@ -46,15 +39,33 @@ export default function LongMenu() {
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
-            width: '20ch',
+            width: 150,
           },
         }}
       >
-        {options.map((option, index) => (
-          <MenuItem key={index} selected={option === 'Pyxis'} onClick={handleClose}>
-            <div className="mobile-nav-text">{option}</div>
+
+          <MenuItem onClick={handleClose}>
+            <Link to="/" className="mobile-nav-text"><div>Home</div></Link>
           </MenuItem>
-        ))}
+          {user ? 
+            <div>
+            <MenuItem onClick={handleClose}>
+              <Link to={`/user-profile/${user?.id}`} className="mobile-nav-text"><div>User Profile</div></Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/create-post" className="mobile-nav-text"><div>Create a post</div></Link>
+            </MenuItem> 
+            </div>
+            :
+            <div>
+            <MenuItem onClick={handleClose}>
+              <Link to="/sign-in" className="mobile-nav-text"><div>Sign In</div></Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/sign-in" className="mobile-nav-text"><div>Sign Up</div></Link>
+            </MenuItem>
+            </div>
+          }
       </Menu>
     </div>
   );
