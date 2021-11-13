@@ -28,6 +28,7 @@ export default function UserTab({user,categories}) {
         }
         setPopularCat(mostPopularUserCategory(threads))
     }, [categories,threads])
+    if(!user) return (<></>)
     return (
         <div className="user-tab home-component-border">
             <div className="user-header">User: {user?.username}</div>
