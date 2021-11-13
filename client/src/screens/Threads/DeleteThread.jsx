@@ -12,11 +12,10 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { getCategory, updateCategory } from '../../services/category';
+import { updateCategory } from '../../services/category';
 
 
 
@@ -39,13 +38,12 @@ const useStyles = makeStyles((theme) => ({
         transform: 'rotate(180deg)',
     },
     avatar: {
-        backgroundColor: red[500],
+        backgroundColor: "#3066be",
     },
     }));
 
     export default function DeleteThread(props) {
     const [thread, setThread] = useState([]);
-    const [category, setCategory] = useState([]);
     const { id } = useParams();
     const history = useHistory();
 
@@ -53,18 +51,15 @@ const useStyles = makeStyles((theme) => ({
         const fetchThread = async () => {
         const thread = await getThread(id);
         setThread(thread);
-        const category = await getCategory(thread.categoryId)
-        setCategory(category)
         }
         fetchThread();
     }, [id]);
 
     const deleteThisThread = async () => {
-        let changed = category
-        changed = changed.threadId.filter(element => element !== thread._id)
+
         await updateCategory(thread.categoryId)
         await deleteThread(id)
-        history.go("/categories")
+        history.push("/categories")
     }
 
     const classes = useStyles();
@@ -74,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
             <div className="thread-delete">
                 <div className="thread-delete-container">
                     <h2>Confrim Delete</h2>
-                    <button onClick={deleteThisThread} >Confirm</button>
+                    <button onClick={deleteThisThread} className="delete-button">CONFIRM DELETE</button>
                 </div>
                 <div className="thread-delete-container">
                     <Card className={classes.root}>
@@ -90,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
                         </IconButton>
                         }
                         title={thread.title}
-                        subheader={thread.createdAt}
+                        // subheader={thread.createdAt}
                     />
                     <CardMedia
                         className={classes.media}

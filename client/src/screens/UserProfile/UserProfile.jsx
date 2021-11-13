@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout/Layout';
 import UserPosts from '../../components/userProfile/UserPosts';
 import UserThreads from '../../components/userProfile/UserThreads';
@@ -22,10 +21,6 @@ export default function UserProfile(props) {
         fetchThreads();
 }, [user])
 
-
-    console.log(threads)
-
-    // console.log("posts ", posts)
 
     return (
         <Layout user={user}>

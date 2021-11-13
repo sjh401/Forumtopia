@@ -1,6 +1,6 @@
 .site-logo {
   text-decoration: none;
-  color: white;
+  color: #f8f7ff;
   font-size: x-large;
   font-weight: 800;
   padding-left: 15px;
@@ -9,7 +9,7 @@
 }
 
 .nav-bar {
-  background-color: black;
+  background-color: #1c1c1c;
   display: flex;
   justify-content: space-between; 
   padding: 1vh;
@@ -19,17 +19,17 @@
 }
 
 .nav-bar-links {
-  color: white;
+  color: #f8f7ff;
   text-decoration: none;
   padding-right: 15px;
 
 }
 .user-welcome{
-  color: #fff;
+  color: #f8f7ff;
 }
 
 .menu {
-  background-color: black;
+  background-color: #1c1c1c;
   display: flex;
   justify-content: space-between;
 

@@ -10,7 +10,7 @@ export default function UserPosts(props) {
     useEffect(() => {
         const allPosts = threads.map(element => {return element.posts})
         setPosts(allPosts.flat().filter(element => {return element.id === id}))
-    }, [threads])
+    }, [threads, id])
 
     return (
         <div>

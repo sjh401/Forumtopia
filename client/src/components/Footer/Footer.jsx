@@ -6,7 +6,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
   return (
-    <footer style={{backgroundColor: "black"}}>
+    <footer style={{backgroundColor: "#1c1c1c"}}>
       <div>
         Created by:
         <div className="footer">

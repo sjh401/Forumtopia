@@ -36,7 +36,7 @@ export default function PostCard(props) {
     const fetchPost = async () => {
       const soloPost = await getPost(id);
       setPost(soloPost);
-      console.log(soloPost)
+
     }
     fetchPost();
   }, [id]);
@@ -47,7 +47,7 @@ export default function PostCard(props) {
   }
 
   const classes = useStyles();
-  console.log(props.user)
+
   if (!post) {
     return "Loading..."
   }

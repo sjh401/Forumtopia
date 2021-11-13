@@ -23,7 +23,7 @@ export default function UserThreads(props) {
 
     useEffect(() => {
         setUserThreads(threads.filter(element => {return element.id === id}))
-    }, [threads])
+    }, [threads, id])
 
     const classes = useStyles();
 
@@ -36,7 +36,7 @@ export default function UserThreads(props) {
             {userThreads?.sort((a, b) => b.createdAt- a.createdAt).map((thread, index) => {
                 return (
                     <Card className={classes.root} key={index}>
-                    <Link to={`/threads/${thread._id}`} style={{textDecoration:"none", color:"#000"}}>
+                    <Link to={`/threads/${thread._id}`} style={{textDecoration:"none", color:"#1c1c1c"}}>
                         <CardHeader
                         title={thread.title}
                         />
