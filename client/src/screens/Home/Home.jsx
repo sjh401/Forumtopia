@@ -63,7 +63,7 @@ export default function Home(props) {
       </div>
       <div className="home-grid">
         <div className="home-grid-left">
-          <ThreadMapping user={user} />
+          <ThreadMapping user={user} categories={categories}/>
         </div>
         <div className="home-grid-right">
           <TrendingCategories categories={categories}/>

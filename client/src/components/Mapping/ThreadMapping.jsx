@@ -6,7 +6,6 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import { Link } from 'react-router-dom';
 
-import { getThreads } from '../../services/thread';
 import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -28,12 +27,9 @@ export default function ThreadMapping(props) {
 
 
     useEffect(() => {
-        const fetchThreads = async () => {
-            let data = await getThreads();
-            setThreads(data)
-        }
-        fetchThreads()
-    }, [])
+            const allThreads = props.categories?.map(category => {return category.threadId}).flat().sort((a, b) => Date.parse(b.createdAt)- Date.parse(a.createdAt))
+            setThreads(allThreads)
+    }, [props.categories])
 
 
     if (!threads) {

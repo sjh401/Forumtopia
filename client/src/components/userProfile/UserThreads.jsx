@@ -33,7 +33,7 @@ export default function UserThreads(props) {
 
     return (
         <div>
-            {userThreads?.sort((a, b) => b.createdAt- a.createdAt).map((thread, index) => {
+            {userThreads?.sort((a, b) => Date.parse(b.createdAt)- Date.parse(a.createdAt)).map((thread, index) => {
                 return (
                     <Card className={classes.root} key={index}>
                     <Link to={`/threads/${thread._id}`} style={{textDecoration:"none", color:"#1c1c1c"}}>
